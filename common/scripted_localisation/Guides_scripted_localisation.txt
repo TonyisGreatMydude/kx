@@ -2,9 +2,16 @@
 ### Setup ###
 #############
 
-
-#### HIJACKED GUIDES LMAOOOOOOOOOOOOOOOOOOOO ####
-
+defined_text = {
+	name = GetGuideDesc
+	
+	text = {
+		trigger = {
+			tag = GER
+		}
+		localization_key = "GER_guides"
+	}
+}
 defined_text = {
 	name = GetGuidesCount
 	

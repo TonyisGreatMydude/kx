@@ -1,0 +1,117 @@
+guiTypes = {
+	containerWindowType =  {
+		name = "KX_open_guides_container"
+		position = { x = 82 y = 425 }
+		orientation = upper_left
+
+		buttonType = {
+			name = "button_open"
+			position = { x = 17 y = 0 }
+			quadTextureSprite ="GFX_button_148x34"
+			buttonFont = "hoi_16mbs"
+			buttonText = "Path Guides"
+		}
+	}
+	
+	containerWindowType = {
+		name = "guides_window"
+		position = { x = -332 y = -400 }
+		size = { width = 665 height = 800 }
+
+		fade_time = 300
+		fade_type = linear
+		moveable = no
+		show_sound = menu_open_window
+		click_to_front = no
+
+		orientation = center
+
+		background = {
+			name = "guidebg"
+			quadTextureSprite = "GFX_tiled_plain_bg"
+		}
+
+		
+
+		instantTextboxType = {
+			name = "title"
+			position = { x = 75 y = 9 }
+			font = "hoi_36header"
+			borderSize = {x = 0 y = 0}
+			text = "Kaiserredux Path Guides"
+			maxWidth = 500
+			maxHeight = 20
+			format = left	
+		}
+
+		buttonType = {
+			name = "button_close"
+			position = {x = -44 y = 12 }
+			spriteType = "GFX_NV_btn_close"
+			clicksound = click_close
+			pdx_tooltip = "CLOSE"
+			shortcut = "ESCAPE"
+			orientation = UPPER_RIGHT
+		}
+		
+		containerWindowType = {
+			name = "guides_window"
+			position = { x = 10 y = 50 }
+			size = { width = 645 height = 740 } 
+			margin = { top = 10 bottom = 10 }
+			Orientation = upper_left
+			clipping = no
+		
+			verticalScrollbar = "right_vertical_slider"
+		
+			background = {
+				name = "bodybackground"
+				quadTextureSprite = "GFX_tiled_window_thin_border"
+			}
+			
+			iconType = {
+				name = "playerflag"
+				quadTextureSprite = "GFX_shield_medium"
+				position = { x = 21 y = 10 }
+				Orientation = upper_left
+			}
+				
+			iconType = {
+				name = "playerflag_frame"
+				position = { x = 16 y = 8 }
+				spriteType = "GFX_large_flag_frame"
+				orientation = upper_left
+			}
+			
+			instantTextBoxType = {
+				name = "playername"
+				position = { x = 115 y = 17 }
+				font = "hoi_36header"
+				text = "[THIS.GetName]"
+				format = left
+				maxWidth = 800
+				maxHeight = 24
+				fixedsize = yes
+			}
+		}
+	}
+	
+	containerWindowType = { #Guide 1
+		name = "guide1_entry_body"
+		position = { x = -308 y = -270}	
+		size = { width = 616 height = 680 }
+		orientation = center
+	
+		
+		instantTextBoxType = {
+			name = "guide1_desc"
+			position = { x = 14 y = 6 }
+			font = "hoi_16mbs"
+			text = "[THIS.GetGuideDesc]"
+			format = left
+			maxWidth = 600
+			maxHeight = 650
+			scrollbarType = standardtext_slider
+		}
+	}	
+}
