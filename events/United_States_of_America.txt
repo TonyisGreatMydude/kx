@@ -24,17 +24,17 @@ country_event = { # Start up Event
 		}
 		hidden_effect = {
 		country_event = {
+			id = ustates.500
+				hours = 2
+			} #G-W Bill
+		country_event = {
 				id = ustates.27
 				days = 8
 			} #Criminals
-		}
-		hidden_effect = {
 		country_event = {
 				id = ustates.29
 				days = 20
 			} #ODP Bids
-		}
-		hidden_effect = {
 		country_event = {
 				id = ustates.1200
 				days = 50
@@ -97,13 +97,13 @@ country_event = { # The Coalition Ticket?
 
 	trigger = {
 		tag = USA
-		date > 1936.2.05
 		NOT = {
 			has_country_flag = USA_coalition_party
 			has_country_flag = USA_no_coalition_party
 			has_country_flag = USA_considered_coalition
 		}
 	}
+	is_triggered_only = yes
 
 	immediate = {
 		set_country_flag = USA_considered_coalition
@@ -197,6 +197,10 @@ country_event = { # Republican Nomination
 		hidden_effect = {
 		set_country_flag = USA_curtis_nominated
 		country_event = {
+				id = ustates.4001
+				days = 15
+			} 
+			country_event = {
 				id = ustates.5
 				days = 35
 			} #Dem Nomination
@@ -248,15 +252,8 @@ country_event = { # Curtis's Health in question
 
 	fire_only_once = yes
 
-	trigger = {
-		tag = USA
-		date > 1936.3.10
-		has_country_flag = USA_curtis_nominated
-		OR = {
-			has_country_flag = USA_gwbill_passes
-			has_country_flag = USA_gwbill_notpasses
-		}
-	}
+	is_triggered_only = yes
+	
 	option = { # Landon
 		name = ustates.4001.a
 		ai_chance = {
@@ -677,6 +674,16 @@ country_event = { # Increasing Radicalizing
 				id = ustates.12
 				days = 30
 			} #Progs Flee to GOP
+		}
+		country_event = {
+				id = nimatron.14
+				days = 15
+			} #Meeting in Derby Line
+		CAN = {
+			country_event = {
+				id = nimatron.15
+				days = 15
+			} #Meeting in Rock Island
 		}
 	}
 }
@@ -1723,7 +1730,7 @@ country_event = { #Campaigning Hardens Militia Lines
 	
 	option = {
 		name = ustates.3300.a
-		add_stability = 0.05
+		add_stability = -0.05
 	}
 }
 
@@ -2621,11 +2628,7 @@ country_event = { # The 1936 Election - Coalition
 			add_ideas = USA_William_Frederick_Lemke_eco_ade
 			add_ideas = USA_Gerald_K_Smith_sec_pau
 		}
-		add_popularity = {
-			ideology = authoritarian_democrat
-			popularity = 0.11
-		}
-
+		
 		hidden_effect = {
 			random_other_country = {
 				news_event = {
@@ -5582,7 +5585,7 @@ country_event = { # Radicals Upset
 				factor = 0
 				has_game_rule = {
 					rule = USA_civil_war
-					option = USA_CIVIL_WAR_AVOIDED_CURDON
+					option = USA_CIVIL_WAR_1937_ESTABLISHMENT
 				}
 			}
 		}
@@ -5597,6 +5600,16 @@ country_event = { # Radicals Upset
 	option = {
 		name = ustates.7100.b #Disagree
 		add_stability = 0.03
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = USA_civil_war
+					option = USA_CIVIL_WAR_AVOIDED_CURDON
+				}
+			}
+		}
 		hidden_effect = {
 			country_event = { id = ustates.75 days = 1 }
 		}
@@ -5621,7 +5634,7 @@ country_event = { # Issue of the Militias
 				factor = 0
 				has_game_rule = {
 					rule = USA_civil_war
-					option = USA_CIVIL_WAR_AVOIDED_CURDON
+					option = USA_CIVIL_WAR_1937_ESTABLISHMENT
 				}
 			}
 		}
@@ -5637,7 +5650,7 @@ country_event = { # Issue of the Militias
 				factor = 0
 				has_game_rule = {
 					rule = USA_civil_war
-					option = USA_CIVIL_WAR_1937_ESTABLISHMENT
+					option = USA_CIVIL_WAR_AVOIDED_CURDON
 				}
 			}
 		}
@@ -5926,13 +5939,13 @@ country_event = { # MacArthur and the Army Remove Republicans
 				ideology = junta_subtype
 				traits = { american_caesar }
 			}
+			add_popularity = {
+				ideology = paternal_autocrat
+				popularity = 0.2
+			}
 			LEC = {
 				country_event = { id = lecyankded.8 days = 1 }
 			}
-		}
-		add_popularity = {
-		ideology = paternal_autocrat
-		popularity = 0.2
 		}
 	}
 
@@ -8648,6 +8661,10 @@ country_event = { # King Coup
 			id = ustates.1294
 			days = 5
 			}
+			country_event = {
+			id = ustates.1297
+			days = 3
+			}
 		}		
 	}
 }
@@ -8894,6 +8911,493 @@ country_event = { # WCC Stuff 2
 	}
 }
 
+country_event = { # navy flags
+	id = ustates.1297
+	immediate = {log = "[GetDateText]: [Root.GetName]: event ustates.1297"}
+	title = ustates.1297.t
+	desc = ustates.1297.d
+	picture = GFX_report_event_USA_navy
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { # keep the flag
+		name = ustates.1297.a
+		ai_chance = {
+			factor = 50
+		}
+	}
+	option = { # navy ensign
+		name = ustates.1297.b
+		ai_chance = {
+			factor = 50
+		}
+		set_country_flag = USA_navy_flag
+		hidden_effect = {
+			set_cosmetic_tag = USA_america_navy1
+			}
+	}
+	option = { # navy ensign
+		name = ustates.1297.c
+		ai_chance = {
+			factor = 0
+		}
+		hidden_effect = {
+			set_cosmetic_tag = USA_america_navy2
+			}
+	}
+}
+
+country_event = { # expansion for naval junta
+	id = ustates.1298
+	immediate = {log = "[GetDateText]: [Root.GetName]: event ustates.1298"}
+	title = ustates.1298.t
+	desc = ustates.1298.d
+	picture = GFX_report_event_USA_navy
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #nah
+		name = ustates.1298.a
+		ai_chance = {
+			factor = 100
+		}
+		add_political_power = 50
+		add_stability = 0.0075
+	}
+	option = { #to the atlantic we go
+		name = ustates.1298.b
+		ai_chance = {
+			factor = 0
+		}
+		every_state = {
+			limit = {
+				is_core_of = CUB
+			}
+			add_claim_by = USA
+		}
+		every_state = {
+			limit = {
+				is_core_of = CAF
+			}
+			add_claim_by = USA
+		}
+		every_state = {
+			limit = {
+				is_core_of = HAI
+			}
+			add_claim_by = USA
+		}
+		every_state = {
+			limit = {
+				is_core_of = DOM
+			}
+			add_claim_by = USA
+		}
+		every_state = {
+			limit = {
+				is_core_of = PRI
+			}
+			add_claim_by = USA
+		}
+		hidden_effect = {
+			add_state_claim = 1038
+			add_state_claim = 309
+			add_state_claim = 695
+			add_state_claim = 1077
+			add_state_claim = 101
+			add_state_claim = 926
+			add_state_claim = 100
+			add_state_claim = 299
+			add_state_claim = 720
+			add_state_claim = 649
+			add_state_claim = 270
+
+		create_wargoal = {
+			target = CUB
+			type = annex_everything
+		 }
+		 create_wargoal = {
+			target = CAF	
+			type = annex_everything
+		 }
+	 	create_wargoal = {
+			target = HAI
+			type = annex_everything
+		 }
+	 	create_wargoal = {
+			target = PRI
+			type = annex_everything
+		 }	
+		 create_wargoal = {
+			target = 309.owner
+			type = annex_everything
+		 }
+	 	create_wargoal = {
+			target = 299.owner
+			type = annex_everything
+		 }
+		 create_wargoal = {
+			target = 720.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = 649.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = 270.owner
+			type = annex_everything
+		}
+		}
+	}
+	option = {# the pacific too
+		name = ustates.1298.c
+		every_state = {
+			limit = {
+				is_core_of = CUB
+			}
+			add_claim_by = USA
+		}
+		every_state = {
+			limit = {
+				is_core_of = CAF
+			}
+			add_claim_by = USA
+		}
+		every_state = {
+			limit = {
+				is_core_of = HAI
+			}
+			add_claim_by = USA
+		}
+		every_state = {
+			limit = {
+				is_core_of = DOM
+			}
+			add_claim_by = USA
+		}
+		every_state = {
+			limit = {
+				is_core_of = PRI
+			}
+			add_claim_by = USA
+		}
+		every_state = {
+			limit = {
+				is_core_of = PHI
+			}
+			add_claim_by = USA
+		}
+		every_state = {
+			limit = {
+				is_core_of = GEA
+			}
+			add_claim_by = USA
+		}
+		every_state = {
+			limit = {
+				is_core_of = DEI
+			}
+			add_claim_by = USA
+		}
+		every_state = {
+			limit = {
+				is_core_of = INS
+			}
+			add_claim_by = USA
+		}
+		hidden_effect = {
+			add_state_claim = 1038
+			add_state_claim = 309
+			add_state_claim = 695
+			add_state_claim = 1077
+			add_state_claim = 101
+			add_state_claim = 926
+			add_state_claim = 100
+			add_state_claim = 299
+			add_state_claim = 720
+			add_state_claim = 526
+			add_state_claim = 751
+			add_state_claim = 645
+			add_state_claim = 648
+			add_state_claim = 649
+			add_state_claim = 270
+		
+		create_wargoal = {
+			target = CUB
+			type = annex_everything
+		 }
+		 create_wargoal = {
+			target = CAF	
+			type = annex_everything
+		 }
+	 	create_wargoal = {
+			target = HAI
+			type = annex_everything
+		 }
+	 	create_wargoal = {
+			target = PRI
+			type = annex_everything
+		 }	
+		 create_wargoal = {
+			target = 309.owner
+			type = annex_everything
+		 }
+	 	create_wargoal = {
+			target = 299.owner
+			type = annex_everything
+		 }
+		 create_wargoal = {
+			target = 720.owner
+			type = annex_everything
+		 }
+		 create_wargoal = {
+			target = 720.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = GEA
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = PHI
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = DEI
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = INS
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = JAP
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = 751.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = 347.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = 649.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = 270.owner
+			type = annex_everything
+		}
+		}
+	}	
+	option = {# fuck it, everywhere
+		name = ustates.1298.e
+		every_state = {
+			limit = {
+				is_core_of = CUB
+			}
+			add_claim_by = USA
+		}
+		every_state = {
+			limit = {
+				is_core_of = CAF
+			}
+			add_claim_by = USA
+		}
+		every_state = {
+			limit = {
+				is_core_of = HAI
+			}
+			add_claim_by = USA
+		}
+		every_state = {
+			limit = {
+				is_core_of = DOM
+			}
+			add_claim_by = USA
+		}
+		every_state = {
+			limit = {
+				is_core_of = PRI
+			}
+			add_claim_by = USA
+		}
+		every_state = {
+			limit = {
+				is_core_of = PHI
+			}
+			add_claim_by = USA
+		}
+		every_state = {
+			limit = {
+				is_core_of = GEA
+			}
+			add_claim_by = USA
+		}
+		every_state = {
+			limit = {
+				is_core_of = DEI
+			}
+			add_claim_by = USA
+		}
+		every_state = {
+			limit = {
+				is_core_of = INS
+			}
+			add_claim_by = USA
+		}
+		hidden_effect = {
+			add_state_claim = 1038
+			add_state_claim = 309
+			add_state_claim = 695
+			add_state_claim = 1077
+			add_state_claim = 101
+			add_state_claim = 926
+			add_state_claim = 100
+			add_state_claim = 299
+			add_state_claim = 720
+			add_state_claim = 526
+			add_state_claim = 751
+			add_state_claim = 645
+			add_state_claim = 648
+			add_state_claim = 118
+			add_state_claim = 753
+			add_state_claim = 268
+			add_state_claim = 1225
+			add_state_claim = 773
+			add_state_claim = 1221
+			add_state_claim = 137
+			add_state_claim = 1220
+			add_state_claim = 58
+			add_state_claim = 649
+			add_state_claim = 270
+		
+		create_wargoal = {
+			target = CUB
+			type = annex_everything
+		 }
+		 create_wargoal = {
+			target = CAF	
+			type = annex_everything
+		 }
+	 	create_wargoal = {
+			target = HAI
+			type = annex_everything
+		 }
+	 	create_wargoal = {
+			target = PRI
+			type = annex_everything
+		 }	
+		 create_wargoal = {
+			target = 309.owner
+			type = annex_everything
+		 }
+	 	create_wargoal = {
+			target = 299.owner
+			type = annex_everything
+		 }
+		 create_wargoal = {
+			target = 720.owner
+			type = annex_everything
+		 }
+		 create_wargoal = {
+			target = 720.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = GEA
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = PHI
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = DEI
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = INS
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = JAP
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = 751.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = 751.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = 645.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = 648.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = 118.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = 753.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = 268.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = 1225.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = 773.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = 1221.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = 137.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = 1220.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = 58.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = 347.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = 649.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = 270.owner
+			type = annex_everything
+		}
+		}
+	}	
+}
+
 country_event = { # Trial of the Weapons companies
 	id = ustates.129
 	immediate = {log = "[GetDateText]: [Root.GetName]: event ustates.129"}
@@ -8921,7 +9425,7 @@ country_event = { # Trial of the Weapons companies
 			}
 			country_event = {
 				id = ustates.133
-				days = 28
+				days =  28
 			}
 		}
 	}
@@ -9431,12 +9935,21 @@ country_event = { # Alaska Statehood
 	trigger = {
 		owns_state = 463
 		owns_state = 1273
+		NOT = {
+			has_country_flag = USA_fourty_nine_states
+		}
 	}
 
 	is_triggered_only = yes
 
 	option = { # they are a state
 		name = ustates.153.a
+			trigger = {
+			USA = {
+				NOT = { has_country_flag = USA_navy_flag }
+				NOT = { has_cosmetic_tag = USA_america_navy2 }
+				}
+			}
 		set_country_flag = USA_fourty_nine_states
 		hidden_effect = {
 			if = {
@@ -9446,6 +9959,7 @@ country_event = { # Alaska Statehood
 				set_cosmetic_tag = USA_america_50
 				else = {
 					set_cosmetic_tag = USA_america_49
+					set_country_flag = USA_fifty_states
 				}
 			}
 		}
@@ -9475,11 +9989,91 @@ country_event = { # Alaska Statehood
 			}
 		}
 	}
-	option = { # they are a territory
+	option = { # they are a state
 		name = ustates.153.b
+			trigger = {
+			USA = {
+			has_country_flag = USA_navy_flag
+			}
+		}
+		set_country_flag = USA_fourty_nine_states
+		hidden_effect = {
+			if = {
+				limit = {
+					has_country_flag = USA_fifty_states
+				}
+				set_cosmetic_tag = USA_america_navy1_50
+				else = {
+					set_cosmetic_tag = USA_america_navy1_49
+					set_country_flag = USA_fifty_states
+				}
+			}
+		}
+		add_political_power = 50
+		if = {
+			limit = {
+				NOT = {
+					463 = {
+						is_core_of = ROOT
+					}
+				}
+			}
+			463 = {
+				add_core_of = ROOT
+			}
+		}	
+		if = {	
+			limit = {
+				NOT = {
+					1273 = {
+						is_core_of = ROOT
+					}
+				}
+			}
+			1273 = {
+				add_core_of = ROOT
+			}
+		}
+	}
+	option = { # they are a state
+		name = ustates.153.c
+			trigger = {
+			USA = {
+			has_cosmetic_tag = USA_america_navy2
+				}
+			}
+		set_country_flag = USA_fourty_nine_states
+		add_political_power = 50
+		if = {
+			limit = {
+				NOT = {
+					463 = {
+						is_core_of = ROOT
+					}
+				}
+			}
+			463 = {
+				add_core_of = ROOT
+			}
+		}	
+		if = {	
+			limit = {
+				NOT = {
+					1273 = {
+						is_core_of = ROOT
+					}
+				}
+			}
+			1273 = {
+				add_core_of = ROOT
+			}
+		}
+	}
+	option = { # they are a territory
+		name = ustates.153.e
 		ai_chance = {
 			factor = 0
-		}
+			}
 	}
 }
 
@@ -9498,17 +10092,24 @@ country_event = { # Hawaii Statehood
 
 	is_triggered_only = yes
 
-	option = { # Flavor
+	option = { # they are a state
 		name = ustates.154.a
-		set_country_flag = USA_fifty_states
+			trigger = {
+			USA = {
+				NOT = { has_country_flag = USA_navy_flag }
+				NOT = { has_cosmetic_tag = USA_america_navy2 }
+				}
+			}
+		set_country_flag = USA_fourty_nine_states
 		hidden_effect = {
 			if = {
 				limit = {
-					has_country_flag = USA_fourty_nine_states
+					has_country_flag = USA_fifty_states
 				}
 				set_cosmetic_tag = USA_america_50
 				else = {
 					set_cosmetic_tag = USA_america_49
+					set_country_flag = USA_fifty_states
 				}
 			}
 		}
@@ -9524,10 +10125,66 @@ country_event = { # Hawaii Statehood
 			629 = {
 				add_core_of = ROOT
 			}
+		}	
+	}
+	option = { # they are a state
+		name = ustates.154.b
+			trigger = {
+			USA = {
+			has_country_flag = USA_navy_flag
+			}
+		}
+		set_country_flag = USA_fourty_nine_states
+		hidden_effect = {
+			if = {
+				limit = {
+					has_country_flag = USA_fifty_states
+				}
+				set_cosmetic_tag = USA_america_navy1_50
+				else = {
+					set_cosmetic_tag = USA_america_navy1_49
+					set_country_flag = USA_fifty_states
+				}
+			}
+		}
+		add_political_power = 50
+		if = {
+			limit = {
+				NOT = {
+					463 = {
+						is_core_of = ROOT
+					}
+				}
+			}
+			463 = {
+				add_core_of = ROOT
+			}
 		}
 	}
-	option = { # Flavor
-		name = ustates.154.b
+	option = { # they are a state
+		name = ustates.154.c
+			trigger = {
+			USA = {
+			has_cosmetic_tag = USA_america_navy2
+				}
+			}
+		set_country_flag = USA_fourty_nine_states
+		add_political_power = 50
+		if = {
+			limit = {
+				NOT = {
+					629 = {
+						is_core_of = ROOT
+					}
+				}
+			}
+			629 = {
+				add_core_of = ROOT
+			}
+		}		
+	}
+	option = { # they are a territory
+		name = ustates.154.e
 		ai_chance = {
 			factor = 0
 		}
@@ -9551,6 +10208,9 @@ country_event = { # Puerto Rico Statehood
 
 	option = { # Flavor
 		name = ustates.155.a
+			trigger = {
+				has_cosmetic_tag = USA_america_50
+			}
 		hidden_effect = {
 			set_cosmetic_tag = USA_america_51
 		}
@@ -9571,6 +10231,49 @@ country_event = { # Puerto Rico Statehood
 	}
 	option = { # Flavor
 		name = ustates.155.b
+			trigger = {
+				has_cosmetic_tag = USA_america_navy1_50
+			}
+		hidden_effect = {
+			set_cosmetic_tag = USA_america_navy1_51
+		}
+		add_political_power = -50
+		set_country_flag = USA_fifty_one_states
+		if = {
+			limit = {
+				NOT = {
+					686 = {
+						is_core_of = ROOT
+					}
+				}
+			}
+			686 = {
+				add_core_of = ROOT
+			}
+		}
+	}
+	option = { # Flavor
+		name = ustates.155.b
+			trigger = {
+				has_cosmetic_tag = USA_america_navy2
+		}
+		add_political_power = -50
+		set_country_flag = USA_fifty_one_states
+		if = {
+			limit = {
+				NOT = {
+					686 = {
+						is_core_of = ROOT
+					}
+				}
+			}
+			686 = {
+				add_core_of = ROOT
+			}
+		}
+	}
+	option = { # Flavor
+		name = ustates.155.e
 		add_political_power = 50
 	}
 }
@@ -11839,6 +12542,20 @@ country_event = { # 1940 Republican Primary
 			set_country_flag = USA_1940_republican_primary_harding
 		}
 	}
+	option = { # nominate Charles Halleck
+		name = ustates.201.h
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					ruling_only = yes
+					name = "Alf Landon"
+				}
+			}
+		}
+		hidden_effect = {
+			set_country_flag = USA_1940_republican_primary_halleck
+		}
+	}
 	option = { # nominate Thomas Dewey
 		name = ustates.201.e
 		trigger = {
@@ -12220,6 +12937,7 @@ country_event = { # 1940 Election
 						has_country_flag = USA_1940_republican_primary_hoover
 						has_country_flag = USA_1940_republican_primary_curtis
 						has_country_flag = USA_1940_republican_primary_harding
+						has_country_flag = USA_1940_republican_primary_halleck
 				}
 			}
 			set_politics = {
@@ -12272,6 +12990,23 @@ country_event = { # 1940 Election
 					traits = { USA_scandalous_progressive }
 				}
 				add_ideas = USA_John_W_Bricker_veep_sli
+				add_ideas = USA_Norman_H_Davis_for_mli
+				add_ideas = USA_Ray_Lyman_Wilbur_Sr_eco_mli
+				add_ideas = USA_John_Jay_McCloy_sec_mli
+			}
+			if = { # Harding
+				limit = {
+						has_country_flag = USA_1940_republican_primary_halleck
+				}
+				create_country_leader = {
+					name = "Charles Halleck"
+					desc = "POLITICS_CHARLES_HALLECK_DESC"
+					picture = "gfx/leaders/USA/Portrait_USA_Charles_Halleck.png"
+					expire = "1965.1.1"
+					ideology = liberal_conservative_subtype
+					traits = { USA_foe_of_the_establishment }
+				}
+				add_ideas = USA_Wendell_Willkie_veep_sli
 				add_ideas = USA_Norman_H_Davis_for_mli
 				add_ideas = USA_Ray_Lyman_Wilbur_Sr_eco_mli
 				add_ideas = USA_John_Jay_McCloy_sec_mli
@@ -13450,6 +14185,10 @@ country_event = { # 1944 Democrat Primary
 			OR = {
 				has_government = social_conservative
 				has_government = market_liberal
+				AND = {
+					has_government = social_liberal
+					has_country_flag = USA_1940_election_lib_democrat
+				}
 			}
 			has_country_flag = USA_1940_election_democrat
 		}
@@ -13458,8 +14197,14 @@ country_event = { # 1944 Democrat Primary
 		text = ustates.206.d.not_president
 		trigger = {
 			NOT = {
-				has_government = social_conservative
-				has_government = market_liberal
+				OR = {
+					has_government = social_conservative
+					has_government = market_liberal
+				}
+				AND = {
+					has_government = social_liberal
+					has_country_flag = USA_1940_election_lib_democrat
+				}
 			}
 		}
 	}
@@ -13537,6 +14282,10 @@ country_event = { # 1944 Democrat Primary
 			OR = {
 				has_government = social_conservative
 				has_government = market_liberal
+				AND = {
+					has_government = social_liberal
+					has_country_flag = USA_1940_election_lib_democrat
+				}
 			}
 		}
 		hidden_effect = {
@@ -13544,8 +14293,34 @@ country_event = { # 1944 Democrat Primary
 		}
 		if = {
 			limit = {
+				has_country_flag = USA_1940_democratic_primary_smith
+			}
+			set_country_flag = USA_1944_democratic_primary_smith
+		}
+		if = {
+			limit = {
 				has_country_leader = {
 					name = "Wendell Willkie"
+					ruling_only = yes
+				}
+			}
+			hidden_effect = {
+				modify_country_flag = {
+					flag = USA_conservative_democratic_power
+					value = -1
+				}
+			}
+			hidden_effect = {
+				modify_country_flag = {
+					flag = USA_liberal_democratic_power
+					value = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_leader = {
+					name = "Al Smith"
 					ruling_only = yes
 				}
 			}
@@ -13631,6 +14406,19 @@ country_event = { # 1944 Election
 
 	immediate = {
 		hidden_effect = {
+			
+		}
+	}
+
+	option = { # Progressive
+		name = ustates.207.a
+		trigger = {
+			has_country_flag = USA_progressives_exist
+			NOT  = {
+				has_country_flag = USA_deadlock_garner
+			}
+		}
+		hidden_effect = {
 			if = {
 				limit = {
 					has_country_flag = USA_1944_progressive_primary_follette
@@ -13682,71 +14470,6 @@ country_event = { # 1944 Election
 					ideology = moderate_socialist_subtype
 					traits = { author }
 				}
-			}
-			if = {
-				limit = {
-					has_country_flag = USA_1944_republican_primary_dewey
-				}
-				create_country_leader = {
-					name = "Thomas Dewey"
-					desc = "POLITICS_THOMAS_DEWEY_DESC"
-					picture = "gfx/leaders/NEE/Portrait_NEE_Thomas_Dewey.png"
-					expire = "1965.1.1"
-					ideology = centrist_subtype
-					traits = { great_survivor }
-				}
-			}
-			if = {
-				limit = {
-					NOT = {
-						has_country_flag = USA_1944_republican_primary_dewey
-						has_country_flag = USA_1944_republican_primary_president
-					}
-				}
-				create_country_leader = {
-					name = "Quentin Roosevelt"
-					desc = "POLITICS_QUENTIN_ROOSEVELT_DESC"
-					picture = "gfx/leaders/USA/Portrait_USA_quentin_roosevelt.png"
-					expire = "1965.1.1"
-					ideology = centrist_subtype
-					traits = { USA_bullmoose_jr }
-				}
-			}
-			if = {
-				limit = {
-					has_country_flag = USA_1944_democratic_primary_murray
-				}
-				create_country_leader = {
-					name = "James E. Murray"
-					desc = "POLITICS_JAMES_MURRAY_DESC"
-					picture = "gfx/leaders/USA/Portrait_USA_James_Murray.png"
-					expire = "1965.1.1"
-					ideology = liberal_conservative_subtype
-					traits = { tenacious_negotiator }
-				}
-			}
-			if = {
-				limit = {
-					has_country_flag = USA_1944_democratic_primary_barkley
-				}
-				create_country_leader = {
-					name = "Alben W. Barkley"
-					desc = "POLITICS_ALBEN_BARKLEY_DESC"
-					picture = "gfx/leaders/USA/Portrait_USA_Alben_Barkley.png"
-					expire = "1965.1.1"
-					ideology = liberal_conservative_subtype
-					traits = { USA_old_alben }
-				}
-			}
-		}
-	}
-
-	option = { # Progressive
-		name = ustates.207.a
-		trigger = {
-			has_country_flag = USA_progressives_exist
-			NOT  = {
-				has_country_flag = USA_deadlock_garner
 			}
 		}
 		set_country_flag = USA_had_1944_election
@@ -13873,6 +14596,37 @@ country_event = { # 1944 Election
 			}
 		}
 		hidden_effect = {
+			if = {
+				limit = {
+					has_country_flag = USA_1944_republican_primary_dewey
+				}
+				create_country_leader = {
+					name = "Thomas Dewey"
+					desc = "POLITICS_THOMAS_DEWEY_DESC"
+					picture = "gfx/leaders/NEE/Portrait_NEE_Thomas_Dewey.png"
+					expire = "1965.1.1"
+					ideology = centrist_subtype
+					traits = { great_survivor }
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = USA_1944_republican_primary_dewey
+						has_country_flag = USA_1944_republican_primary_president
+					}
+				}
+				create_country_leader = {
+					name = "Quentin Roosevelt"
+					desc = "POLITICS_QUENTIN_ROOSEVELT_DESC"
+					picture = "gfx/leaders/USA/Portrait_USA_quentin_roosevelt.png"
+					expire = "1965.1.1"
+					ideology = centrist_subtype
+					traits = { USA_bullmoose_jr }
+				}
+			}
+		}
+		hidden_effect = {
 			set_country_flag = USA_1944_election_republican
 		}
 		if = {
@@ -13989,6 +14743,48 @@ country_event = { # 1944 Election
 		}
 		else = {
 			increase_ruling_party_popularity_by_20 = yes
+		}
+		hidden_effect = {
+		
+			if = {
+				limit = {
+					has_country_flag = USA_1944_democratic_primary_murray
+				}
+				create_country_leader = {
+					name = "James E. Murray"
+					desc = "POLITICS_JAMES_MURRAY_DESC"
+					picture = "gfx/leaders/USA/Portrait_USA_James_Murray.png"
+					expire = "1965.1.1"
+					ideology = liberal_conservative_subtype
+					traits = { tenacious_negotiator }
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = USA_1940_democratic_primary_smith
+				}
+				create_country_leader = {
+					name = "Al Smith"
+					desc = "POLITICS_AL_SMITH_DESC"
+					picture = "gfx/leaders/NEE/Al_Smith.png"
+					expire = "1965.1.1"
+					ideology = liberal_conservative_subtype
+					traits = { tenacious_negotiator }
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = USA_1944_democratic_primary_barkley
+				}
+				create_country_leader = {
+					name = "Alben W. Barkley"
+					desc = "POLITICS_ALBEN_BARKLEY_DESC"
+					picture = "gfx/leaders/USA/Portrait_USA_Alben_Barkley.png"
+					expire = "1965.1.1"
+					ideology = liberal_conservative_subtype
+					traits = { USA_old_alben }
+				}
+			}
 		}
 
 		hidden_effect = {
@@ -15490,6 +16286,22 @@ country_event = { # 1948 election
 
 	immediate = {
 		hidden_effect = {
+		}
+	}
+
+	option = { # Progressive
+		name = ustates.213.a
+		trigger = {
+			has_country_flag = USA_progressives_exist
+			NOT  = {
+				has_country_flag = USA_deadlock_garner
+			}
+		}
+		set_country_flag = USA_had_1948_election
+		hidden_effect = {
+			set_country_flag = USA_1948_election_progressive
+		}
+		hidden_effect = {
 			if = { # Philip La Follette
 				limit = {
 					has_country_flag = USA_1948_progressive_primary_folette
@@ -15542,150 +16354,6 @@ country_event = { # 1948 election
 					traits = { educator }
 				}
 			}
-			if = { # Thomas Dewey
-				limit = {
-					has_country_flag = USA_1948_republican_primary_dewey
-				}
-				create_country_leader = {
-					name = "Thomas Dewey"
-					desc = "POLITICS_THOMAS_DEWEY_DESC"
-					picture = "gfx/leaders/NEE/Portrait_NEE_Thomas_Dewey.png"
-					expire = "1965.1.1"
-					ideology = centrist_subtype
-					traits = { great_survivor }
-				}
-			}
-			if = {
-				limit = {
-					has_country_flag = USA_1948_republican_primary_rooseveltII
-				}
-				create_country_leader = {
-					name = "Quentin Roosevelt II"
-					picture = "gfx/leaders/USA/Portrait_USA_quentin_roosevelt_II.png"
-					expire = "1965.1.1"
-					ideology = centrist_subtype
-					traits = { tenacious_negotiator }
-				}
-			}
-			if = { # Earl Warren
-				limit = {
-					has_country_flag = USA_1948_republican_primary_warren
-				}
-				create_country_leader = {
-					name = "Earl Warren"
-					desc = "POLITICS_EARL_WARREN_DESC"
-					picture = "gfx/leaders/USA/Portrait_USA_Earl_Warren.png"
-					expire = "1965.1.1"
-					ideology = centrist_subtype
-					traits = { divided_interests }
-				}
-			}
-			if = { # Charles L. McNary
-				limit = {
-					has_country_flag = USA_1948_republican_primary_mcnary
-				}
-				create_country_leader = {
-					name = "Charles L. McNary"
-					desc = "POLITICS_CHARLES_MCNARY_DESC"
-					picture = "gfx/leaders/USA/Portrait_USA_Charles_L_McNary.png"
-					expire = "1965.1.1"
-					ideology = centrist_subtype
-					traits = { reluctant_interventionist }
-				}
-			}
-			if = { # Harry Truman
-				limit = {
-					has_country_flag = USA_1948_liberal_democrat_primary_truman
-				}
-				create_country_leader = {
-					name = "Harry S. Truman"
-					desc = "POLITICS_HARRY_TRUMAN_DESC"
-					picture = "gfx/leaders/USA/Portrait_USA_Harry_Truman_KR.png"
-					expire = "1965.1.1"
-					ideology = liberal_conservative_subtype
-					traits = { quartermaster_general }
-				}
-			}
-			if = { # William Averell Harriman
-				limit = {
-					has_country_flag = USA_1948_liberal_democrat_primary_harriman
-				}
-				create_country_leader = {
-					name = "William Averell Harriman"
-					desc = "POLITICS_WILLIAM_HARRIMAN_DESC"
-					picture = "gfx/leaders/USA/Portrait_USA_Averell_Harriman.png"
-					expire = "1965.1.1"
-					ideology = liberal_conservative_subtype
-					traits = { financial_expert }
-				}
-			}
-			if = { # Jimmy Stewart
-				limit = {
-					has_country_flag = USA_1948_liberal_democratic_primary_stewart
-				}
-				create_country_leader = {
-					name = "James Stewart"
-					desc = "POLITICS_JIMMY_STEWART_DESC"
-					picture = "gfx/leaders/USA/Portrait_USA_Jimmy_Stewart_Suit.png"
-					expire = "1965.1.1"
-					ideology = liberal_conservative_subtype
-					traits = { USA_great_american_bachelor }
-				}
-			}
-			if = { # Strom Thurmond
-				limit = {
-					has_country_flag = USA_1948_conservative_democratic_primary_thurmond
-					has_country_flag = USA_civil_war_avoided_flag
-				}
-				create_country_leader = {
-					name = "Strom Thurmond"
-					desc = "POLITICS_STROM_THURMOND_DESC"
-					picture = "gfx/leaders/USA/Portrait_USA_Strom_Thurmond.png"
-					expire = "1965.1.1"
-					ideology = dixiecrat_subtype
-					traits = { USA_jim_crows_champion }
-				}
-			}
-			if = { # Happy Chandler
-				limit = {
-					has_country_flag = USA_1948_conservative_democratic_primary_chandler
-				}
-				create_country_leader = {
-					name = "Happy Chandler"
-					desc = "POLITICS_HAPPY_CHANDLER_DESC"
-					picture = "gfx/leaders/USA/Portrait_USA_Happy_Chandler.png"
-					expire = "1965.1.1"
-					ideology = social_conservative_subtype
-					traits = { USA_crossing_the_colour_line }
-				}
-			}
-			if = { # Sam Rayburn
-				limit = {
-					has_country_flag = USA_1948_conservative_democratic_primary_rayburn
-				}
-				create_country_leader = {
-					name = "Sam Rayburn"
-					desc = "POLITICS_SAM_RAYBURN_DESC"
-					picture = "gfx/leaders/USA/Portrait_sam_rayburn.png"
-					expire = "1965.1.1"
-					ideology = social_conservative_subtype
-					traits = { staunch_constitutionalist }
-				}
-			}
-		}
-	}
-
-	option = { # Progressive
-		name = ustates.213.a
-		trigger = {
-			has_country_flag = USA_progressives_exist
-			NOT  = {
-				has_country_flag = USA_deadlock_garner
-			}
-		}
-		set_country_flag = USA_had_1948_election
-		hidden_effect = {
-			set_country_flag = USA_1948_election_progressive
 		}
 		if = {
 			limit = {
@@ -15813,6 +16481,59 @@ country_event = { # 1948 election
 		hidden_effect = {
 			set_country_flag = USA_1948_election_republican
 		}
+		hidden_effect = {
+			if = { # Thomas Dewey
+				limit = {
+					has_country_flag = USA_1948_republican_primary_dewey
+				}
+				create_country_leader = {
+					name = "Thomas Dewey"
+					desc = "POLITICS_THOMAS_DEWEY_DESC"
+					picture = "gfx/leaders/NEE/Portrait_NEE_Thomas_Dewey.png"
+					expire = "1965.1.1"
+					ideology = centrist_subtype
+					traits = { great_survivor }
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = USA_1948_republican_primary_rooseveltII
+				}
+				create_country_leader = {
+					name = "Quentin Roosevelt II"
+					picture = "gfx/leaders/USA/Portrait_USA_quentin_roosevelt_II.png"
+					expire = "1965.1.1"
+					ideology = centrist_subtype
+					traits = { tenacious_negotiator }
+				}
+			}
+			if = { # Earl Warren
+				limit = {
+					has_country_flag = USA_1948_republican_primary_warren
+				}
+				create_country_leader = {
+					name = "Earl Warren"
+					desc = "POLITICS_EARL_WARREN_DESC"
+					picture = "gfx/leaders/USA/Portrait_USA_Earl_Warren.png"
+					expire = "1965.1.1"
+					ideology = centrist_subtype
+					traits = { divided_interests }
+				}
+			}
+			if = { # Charles L. McNary
+				limit = {
+					has_country_flag = USA_1948_republican_primary_mcnary
+				}
+				create_country_leader = {
+					name = "Charles L. McNary"
+					desc = "POLITICS_CHARLES_MCNARY_DESC"
+					picture = "gfx/leaders/USA/Portrait_USA_Charles_L_McNary.png"
+					expire = "1965.1.1"
+					ideology = centrist_subtype
+					traits = { reluctant_interventionist }
+				}
+			}
+		}
 		if = {
 			limit = {
 				NOT = {
@@ -15900,6 +16621,47 @@ country_event = { # 1948 election
 				has_country_flag = USA_deadlock_norris
 			}
 		}
+		hidden_effect= {
+			if = { # Harry Truman
+				limit = {
+					has_country_flag = USA_1948_liberal_democrat_primary_truman
+				}
+				create_country_leader = {
+					name = "Harry S. Truman"
+					desc = "POLITICS_HARRY_TRUMAN_DESC"
+					picture = "gfx/leaders/USA/Portrait_USA_Harry_Truman_KR.png"
+					expire = "1965.1.1"
+					ideology = liberal_conservative_subtype
+					traits = { quartermaster_general }
+				}
+			}
+			if = { # William Averell Harriman
+				limit = {
+					has_country_flag = USA_1948_liberal_democrat_primary_harriman
+				}
+				create_country_leader = {
+					name = "William Averell Harriman"
+					desc = "POLITICS_WILLIAM_HARRIMAN_DESC"
+					picture = "gfx/leaders/USA/Portrait_USA_Averell_Harriman.png"
+					expire = "1965.1.1"
+					ideology = liberal_conservative_subtype
+					traits = { financial_expert }
+				}
+			}
+			if = { # Jimmy Stewart
+				limit = {
+					has_country_flag = USA_1948_liberal_democratic_primary_stewart
+				}
+				create_country_leader = {
+					name = "James Stewart"
+					desc = "POLITICS_JIMMY_STEWART_DESC"
+					picture = "gfx/leaders/USA/Portrait_USA_Jimmy_Stewart_Suit.png"
+					expire = "1965.1.1"
+					ideology = liberal_conservative_subtype
+					traits = { USA_great_american_bachelor }
+				}
+			}
+		}
 		set_country_flag = USA_had_1948_election
 		hidden_effect = {
 			set_country_flag = USA_1948_election_liberal
@@ -15982,6 +16744,48 @@ country_event = { # 1948 election
 		set_country_flag = USA_had_1948_election
 		hidden_effect = {
 			set_country_flag = USA_1948_election_conservative
+		}
+		hidden_effect = {
+			if = { # Strom Thurmond
+				limit = {
+					has_country_flag = USA_1948_conservative_democratic_primary_thurmond
+					has_country_flag = USA_civil_war_avoided_flag
+				}
+				create_country_leader = {
+					name = "Strom Thurmond"
+					desc = "POLITICS_STROM_THURMOND_DESC"
+					picture = "gfx/leaders/USA/Portrait_USA_Strom_Thurmond.png"
+					expire = "1965.1.1"
+					ideology = dixiecrat_subtype
+					traits = { USA_jim_crows_champion }
+				}
+			}
+			if = { # Happy Chandler
+				limit = {
+					has_country_flag = USA_1948_conservative_democratic_primary_chandler
+				}
+				create_country_leader = {
+					name = "Happy Chandler"
+					desc = "POLITICS_HAPPY_CHANDLER_DESC"
+					picture = "gfx/leaders/USA/Portrait_USA_Happy_Chandler.png"
+					expire = "1965.1.1"
+					ideology = social_conservative_subtype
+					traits = { USA_crossing_the_colour_line }
+				}
+			}
+			if = { # Sam Rayburn
+				limit = {
+					has_country_flag = USA_1948_conservative_democratic_primary_rayburn
+				}
+				create_country_leader = {
+					name = "Sam Rayburn"
+					desc = "POLITICS_SAM_RAYBURN_DESC"
+					picture = "gfx/leaders/USA/Portrait_sam_rayburn.png"
+					expire = "1965.1.1"
+					ideology = social_conservative_subtype
+					traits = { staunch_constitutionalist }
+				}
+			}
 		}
 		set_politics = {
 			ruling_party = social_conservative
@@ -17380,6 +18184,19 @@ country_event = { # 1952 election
 
 	immediate = {
 		hidden_effect = {
+		}
+	}
+
+	option = { # Progressive
+		name = ustates.218.a
+		trigger = {
+			has_country_flag = USA_progressives_exist
+		}
+		set_country_flag = USA_had_1952_election
+		hidden_effect = {
+			set_country_flag = USA_1952_election_progressive
+		}
+		hidden_effect = {
 			if = { # Philip La Follette
 				limit = {
 					has_country_flag = USA_1952_progressive_primary_folette
@@ -17445,108 +18262,6 @@ country_event = { # 1952 election
 					traits = { radio_star }
 				}
 			}
-			if = { # John W. Bricker
-				limit = {
-					has_country_flag = USA_1952_republican_primary_bricker
-				}
-				create_country_leader = {
-					name = "John W. Bricker"
-					desc = "POLITICS_JOHN_BRICKER_DESC"
-					picture = "gfx/leaders/USA/Portrait_USA_John_W_Bricker.png"
-					expire = "1965.1.1"
-					ideology = centrist_subtype
-					traits = { strict_austerity_adherent }
-				}
-			}
-			if = { # Harold Stassen
-				limit = {
-					has_country_flag = USA_1952_republican_primary_stassen
-				}
-				create_country_leader = {
-					name = "Harold Stassen"
-					desc = "POLITICS_HAROLD_STASSEN_DESC"
-					picture = "gfx/leaders/USA/Portrait_USA_Harold_Stassen.png"
-					expire = "1965.1.1"
-					ideology = centrist_subtype
-					traits = { reluctant_interventionist }
-				}
-			}
-			if = { # Ronald Reagan
-				limit = {
-					has_country_flag = USA_1952_republican_primary_reagan
-				}
-				create_country_leader = {
-					name = "Ronald Reagan"
-					desc = "POLITICS_RONALD_REAGAN_DESC"
-					picture = "gfx/leaders/USA/Portrait_USA_Ronald_Reagan.png"
-					expire = "1965.1.1"
-					ideology = social_liberal_subtype
-					traits = { radio_star }
-				}
-			}
-			if = { # Dwight D. Eisenhower
-				limit = {
-					has_country_flag = USA_1952_liberal_primary_eisenhower
-				}
-				create_country_leader = {
-					name = "Dwight D. Eisenhower"
-					desc = "POLITICS_DWIGHT_EISENHOWER_DESC"
-					picture = "gfx/leaders/USA/Portrait_USA_Dwight_Eisenhower.png"
-					expire = "1965.1.1"
-					ideology = liberal_conservative_subtype
-					traits = { great_war_hero }
-				}
-			}
-			if = { # Adlai Stevenson
-				limit = {
-					has_country_flag = USA_1952_liberal_primary_stevenson
-				}
-				create_country_leader = {
-					name = " Adlai Stevenson"
-					desc = "POLITICS_ADLAI_STEVENSON_DESC"
-					picture = "gfx/leaders/USA/Portrait_USA_Adlai_Stevenson.png"
-					expire = "1965.1.1"
-					ideology = centrist_subtype
-					traits = { USA_thoughtful_ambassador }
-				}
-			}
-			if = { # John Sparkman
-				limit = {
-					has_country_flag = USA_1952_conservative_primary_sparkman
-				}
-				create_country_leader = {
-					name = "John Sparkman"
-					desc = "POLITICS_JOHN_SPARKMAN_DESC"
-					picture = "gfx/leaders/USA/Portrait_USA_John_Sparkman.png"
-					expire = "1965.1.1"
-					ideology = dixiecrat_subtype
-					traits = { USA_engineering_americas_future }
-				}
-			}
-			if = { # James Eastland
-				limit = {
-					has_country_flag = USA_1952_conservative_primary_eastland
-				}
-				create_country_leader = {
-					name = "James Eastland"
-					desc = "POLITICS_JAMES_EASTLAND_DESC"
-					picture = "gfx/leaders/USA/Portrait_USA_James_Eastland.png"
-					expire = "1965.1.1"
-					ideology = dixiecrat_subtype
-					traits = { divided_interests }
-				}
-			}
-		}
-	}
-
-	option = { # Progressive
-		name = ustates.218.a
-		trigger = {
-			has_country_flag = USA_progressives_exist
-		}
-		set_country_flag = USA_had_1952_election
-		hidden_effect = {
-			set_country_flag = USA_1952_election_progressive
 		}
 		if = {
 			limit = {
@@ -17638,6 +18353,47 @@ country_event = { # 1952 election
 		hidden_effect = {
 			set_country_flag = USA_1952_election_republican
 		}
+		hidden_effect = {
+			if = { # John W. Bricker
+				limit = {
+					has_country_flag = USA_1952_republican_primary_bricker
+				}
+				create_country_leader = {
+					name = "John W. Bricker"
+					desc = "POLITICS_JOHN_BRICKER_DESC"
+					picture = "gfx/leaders/USA/Portrait_USA_John_W_Bricker.png"
+					expire = "1965.1.1"
+					ideology = centrist_subtype
+					traits = { strict_austerity_adherent }
+				}
+			}
+			if = { # Harold Stassen
+				limit = {
+					has_country_flag = USA_1952_republican_primary_stassen
+				}
+				create_country_leader = {
+					name = "Harold Stassen"
+					desc = "POLITICS_HAROLD_STASSEN_DESC"
+					picture = "gfx/leaders/USA/Portrait_USA_Harold_Stassen.png"
+					expire = "1965.1.1"
+					ideology = centrist_subtype
+					traits = { reluctant_interventionist }
+				}
+			}
+			if = { # Ronald Reagan
+				limit = {
+					has_country_flag = USA_1952_republican_primary_reagan
+				}
+				create_country_leader = {
+					name = "Ronald Reagan"
+					desc = "POLITICS_RONALD_REAGAN_DESC"
+					picture = "gfx/leaders/USA/Portrait_USA_Ronald_Reagan.png"
+					expire = "1965.1.1"
+					ideology = social_liberal_subtype
+					traits = { radio_star }
+				}
+			}
+		}
 		if = {
 			limit = {	
 				NOT = {
@@ -17690,6 +18446,34 @@ country_event = { # 1952 election
 		hidden_effect = {
 			set_country_flag = USA_1952_election_liberal
 		}
+		hidden_effect = {	
+			if = { # Dwight D. Eisenhower
+				limit = {
+					has_country_flag = USA_1952_liberal_primary_eisenhower
+				}
+				create_country_leader = {
+					name = "Dwight D. Eisenhower"
+					desc = "POLITICS_DWIGHT_EISENHOWER_DESC"
+					picture = "gfx/leaders/USA/Portrait_USA_Dwight_Eisenhower.png"
+					expire = "1965.1.1"
+					ideology = liberal_conservative_subtype
+					traits = { great_war_hero }
+				}
+			}
+			if = { # Adlai Stevenson
+				limit = {
+					has_country_flag = USA_1952_liberal_primary_stevenson
+				}
+				create_country_leader = {
+					name = " Adlai Stevenson"
+					desc = "POLITICS_ADLAI_STEVENSON_DESC"
+					picture = "gfx/leaders/USA/Portrait_USA_Adlai_Stevenson.png"
+					expire = "1965.1.1"
+					ideology = centrist_subtype
+					traits = { USA_thoughtful_ambassador }
+				}
+			}
+		}
 		set_politics = {
 			ruling_party = market_liberal
 			election_frequency = 48
@@ -17725,6 +18509,34 @@ country_event = { # 1952 election
 		set_country_flag = USA_had_1952_election
 		hidden_effect = {
 			set_country_flag = USA_1952_election_conservative
+		}
+		hidden_effect = {
+			if = { # John Sparkman
+				limit = {
+					has_country_flag = USA_1952_conservative_primary_sparkman
+				}
+				create_country_leader = {
+					name = "John Sparkman"
+					desc = "POLITICS_JOHN_SPARKMAN_DESC"
+					picture = "gfx/leaders/USA/Portrait_USA_John_Sparkman.png"
+					expire = "1965.1.1"
+					ideology = dixiecrat_subtype
+					traits = { USA_engineering_americas_future }
+				}
+			}
+			if = { # James Eastland
+				limit = {
+					has_country_flag = USA_1952_conservative_primary_eastland
+				}
+				create_country_leader = {
+					name = "James Eastland"
+					desc = "POLITICS_JAMES_EASTLAND_DESC"
+					picture = "gfx/leaders/USA/Portrait_USA_James_Eastland.png"
+					expire = "1965.1.1"
+					ideology = dixiecrat_subtype
+					traits = { divided_interests }
+				}
+			}
 		}
 		set_politics = {
 			ruling_party = social_conservative
@@ -19951,10 +20763,12 @@ country_event = { #The Patriot Party
 	option = { # Found the Party
 		name = ustates.312.a
 		add_political_power = -50
-		set_party_name = {
-				ideology = authoritarian_democrat
-				long_name = USA_authoritarian_democrat_patriots_party_long
-				name = USA_authoritarian_democrat_patriots_party
+		if = {
+			limit = {
+				has_country_leader = {
+					name = "Douglas MacArthur"
+					ruling_only = yes
+				}
 			}
 			create_country_leader = {
 				name = "Douglas MacArthur"
@@ -19964,11 +20778,6 @@ country_event = { #The Patriot Party
 				ideology = authdem_junta_subtype
 				traits = { american_caesar }
 			}
-		set_party_name = {
-				ideology = paternal_autocrat
-				long_name = USA_paternal_autocrat_patriots_party_long
-				name = USA_paternal_autocrat_patriots_party
-			}
 			create_country_leader = {
 				name = "Douglas MacArthur"
 				desc = "POLITICS_DOUGLAS_MACARTHUR_DESC"
@@ -19976,11 +20785,6 @@ country_event = { #The Patriot Party
 				expire = "1965.1.1"
 				ideology = junta_subtype
 				traits = { american_caesar }
-			}
-		set_party_name = {
-				ideology = national_populist
-				long_name = USA_national_populist_patriots_party_long
-				name = USA_national_populist_patriots_party
 			}
 			create_country_leader = {
 				name = "Douglas MacArthur"
@@ -19990,6 +20794,62 @@ country_event = { #The Patriot Party
 				ideology = militarism_subtype
 				traits = { american_caesar }
 			}
+		}
+		if = {
+			limit = {
+				has_country_leader = {
+					name = "Dwight David Eisenhower"
+					ruling_only = yes
+				}
+			}
+			create_country_leader = {
+				name = "Dwight David Eisenhower"
+				desc = "EISENHOWER_DESC"
+				picture = "gfx/leaders/USA/Portrait_USA_gen_Dwight_Eisenhower.png"
+				expire = "1965.1.1"
+				ideology = authdem_junta_subtype
+				traits = { great_war_hero }
+			}
+			create_country_leader = {
+				name = "Dwight David Eisenhower"
+				desc = "EISENHOWER_DESC"
+				picture = "gfx/leaders/USA/Portrait_USA_gen_Dwight_Eisenhower.png"
+				expire = "1965.1.1"
+				ideology = junta_subtype
+				traits = { great_war_hero }
+			}
+			create_country_leader = {
+				name = "Dwight David Eisenhower"
+				desc = "EISENHOWER_DESC"
+				picture = "gfx/leaders/USA/Portrait_USA_gen_Dwight_Eisenhower.png"
+				expire = "1965.1.1"
+				ideology = militarism_subtype
+				traits = { great_war_hero }
+			}
+		}
+		set_party_name = {
+				ideology = authoritarian_democrat
+				long_name = USA_authoritarian_democrat_patriots_party_long
+				name = USA_authoritarian_democrat_patriots_party
+		}
+		set_party_name = {
+				ideology = paternal_autocrat
+				long_name = USA_paternal_autocrat_patriots_party_long
+				name = USA_paternal_autocrat_patriots_party
+		}
+		set_party_name = {
+				ideology = national_populist
+				long_name = USA_national_populist_patriots_party_long
+				name = USA_national_populist_patriots_party
+		}
+		hidden_effect = { 
+			set_temp_variable = { coalition_partner_var = token:authoritarian_democrat }
+				add_to_coalition = yes 
+			set_temp_variable = { coalition_partner_var = token:national_populist }
+				add_to_coalition = yes 
+		}
+		custom_effect_tooltip = authdem_will_join_coalition_tt
+		custom_effect_tooltip = natpop_will_join_coalition_tt
 	}
 	option = { # A Party is not needed
 		name = ustates.312.b
@@ -24974,6 +25834,7 @@ country_event = {
 	option = {
 		name = ustates.502.a #Pledge support to Wagner and the establishment
 		set_country_flag = USA_establishment_supported
+		custom_effect_tooltip = USA_gw_pass_no_tooltip
 		hidden_effect = {
 			country_event = { id = ustates.503 days = 5 }
 			set_global_flag = USA_the_bill_failed
@@ -24982,6 +25843,7 @@ country_event = {
 	option = {
 		name = ustates.502.b #Force a compromise with the Longists
 		set_country_flag = USA_longists_supported
+		custom_effect_tooltip = USA_gw_pass_yes_tooltip
 		hidden_effect = {
 			country_event = { id = ustates.504 days = 5 }
 			set_global_flag = USA_the_bill_passed
@@ -24990,6 +25852,7 @@ country_event = {
 	option = {
 		name = ustates.502.c #Force a compromise with the Socialists
 		set_country_flag = USA_socialists_supported
+		custom_effect_tooltip = USA_gw_pass_yes_tooltip
 		hidden_effect = {
 			country_event = { id = ustates.505 days = 5 }
 			set_global_flag = USA_the_bill_passed
@@ -28044,7 +28907,7 @@ country_event = {#Germany Accepts
 	option = {# Of Course
 		name = ustates.674.b
 		add_political_power = -60
-		GER = { add_to_faction = FROM }
+		GER = { add_to_faction = ROOT }
 		annex_country = {
 		target = GEA
 		transfer_troops = no
@@ -28115,6 +28978,142 @@ country_event = {#MAF investigation
 	}
 }
 
+country_event = {#annexing more mexican lands
+	id = ustates.678
+	immediate = {log = "[GetDateText]: [Root.GetName]: event ustates.678"}
+	title = ustates.678.t
+	desc = ustates.678.d
+	picture = GFX_report_event_USA_polk_mexico
+
+    trigger = {
+	OR = {
+	tag = USA
+	tag = CAL
+	tag = WCC
+	tag = TEX
+	tag = NEE
+	tag = COR
+	tag = NYC
+	tag = TXS
+	}
+	OR = {
+		owns_state = 484
+		owns_state = 483
+		owns_state = 482
+		owns_state = 481
+		owns_state = 480
+		owns_state = 479
+		owns_state = 474
+		owns_state = 315
+		owns_state = 1254
+		owns_state = 1254
+	}
+    } 
+	fire_only_once = yes
+
+	option = {#
+		name = ustates.678.a
+		ai_chance = { factor = 100 }
+		add_political_power = 25
+		add_stability = 0.025
+		hidden_effect = {
+			country_event = {
+				id = ustates.679
+				days = 7
+			}
+		}	
+	}
+	option = {#
+		name = ustates.678.b
+		ai_chance = { factor = 0 }
+		add_political_power = -75
+		add_stability = -0.075
+		add_state_core = 484
+		add_state_core = 483
+		add_state_core = 482
+		add_state_core = 481
+		add_state_core = 480
+		add_state_core = 479
+		add_state_core = 474
+		add_state_core = 1254
+		add_state_core = 1255
+		hidden_effect = {
+			country_event = {
+				id = ustates.679
+				days = 7
+				}
+			}
+		}
+	option = {#
+		name = ustates.678.c
+		ai_chance = { factor = 0 }
+		add_political_power = -80
+		add_stability = -0.075
+		add_state_core = 484
+		add_state_core = 483
+		add_state_core = 482
+		add_state_core = 481
+		add_state_core = 480
+		add_state_core = 479
+		add_state_core = 477
+		add_state_core = 474
+		add_state_core = 1254
+		add_state_core = 1255
+		hidden_effect = {
+			country_event = {
+				id = ustates.679
+				days = 7
+				}
+			}
+		}
+	option = {#
+		name = ustates.678.e
+		ai_chance = { factor = 0 }
+		add_political_power = -30
+		add_stability = -0.030
+		add_state_core = 484
+		add_state_core = 483
+		hidden_effect = {
+			country_event = {
+				id = ustates.679
+				days = 7
+				}
+			}
+		}
+}
+
+country_event = {#annexing more mexican lands
+	id = ustates.679
+	immediate = {log = "[GetDateText]: [Root.GetName]: event ustates.679"}
+	title = ustates.679.t
+	desc = ustates.679.d
+	picture = GFX_report_event_USA_polk_mexico
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = ustates.679.a
+		ai_chance = { factor = 100 }
+		add_political_power = 25
+	}
+	option = {
+		name = ustates.679.b
+		ai_chance = { factor = 0 }
+		add_political_power = -25
+		create_wargoal = {
+			type = annex_everything
+			target = CUB
+		}
+		every_state = {
+				limit = {
+					is_core_of = CUB
+				}
+				add_core_of = USA
+		}
+	}
+}
 
 country_event = {
 	id = ustates.997
@@ -28178,14 +29177,6 @@ country_event = {
 		}
 
 		set_politics = { ruling_party = paternal_autocrat elections_allowed = no }
-		add_popularity = {
-			ideology = paternal_autocrat
-			popularity = 0.05
-		}
-		add_popularity = {
-			ideology = authoritarian_democrat
-			popularity = -0.25
-		}
 		create_country_leader = {
 			name = "Dwight David Eisenhower"
 			desc = "EISENHOWER_DESC"
@@ -28208,13 +29199,15 @@ country_event = {
 		hidden_effect = { remove_ideas_with_trait = head_of_government }
 
 		add_ideas = {
-			USA_Dwight_D_Eisenhower_hog_ade
+			WCC_Dwight_D_Eisenhower_hog_ade
 		}
 
 		add_stability = -0.35
 		set_country_flag = ustates_998
 		set_country_flag = macarthur_keeps_power_flag
 		set_country_flag = Douglas_MacArthur_dead
+		
+		country_event = { id = nimatron.16 days = 1}
 	}
 
 	option = {
@@ -28228,6 +29221,7 @@ country_event = {
 		country_event = { id = ustates.999 }
 		set_country_flag = ustates_998
 		set_country_flag = Douglas_MacArthur_dead
+		clr_country_flag = USA_mac_caesar
 	}
 
 	option = {
@@ -28240,6 +29234,7 @@ country_event = {
 		add_stability = -0.25
 
 		clr_country_flag = macarthur_keeps_power_caesar_flag
+		clr_country_flag = USA_mac_caesar
 		hidden_effect = { set_country_flag = USA_democracy_triumphs_flag }
 
 		add_popularity = { ideology = paternal_autocrat popularity = -0.3 }
@@ -28279,10 +29274,11 @@ country_event = {
 		remove_ideas_with_trait = foreign_minister
 		remove_ideas_with_trait = economy_minister
 		remove_ideas_with_trait = security_minister
+		set_country_flag = USA_spqa_flag
 		}
 
 		add_ideas = {
-			USA_Alf_Landon_hog_sli
+			USA_Alf_Landon_veep_sli
 			USA_Patrick_Jay_Hurley_for_sli
 			USA_Daniel_Calhoun_Roper_eco_sco
 			USA_Fannie_Coralie_Perkins_sec_sli
@@ -28697,15 +29693,15 @@ country_event = { #Hoover Raids
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = USA_civil_war
-						option = USA_CIVIL_WAR_AVOIDED_CURDON
-					}
-					has_game_rule = {
-						rule = USA_civil_war
-						option = USA_CIVIL_WAR_AVOIDED_HOOVER_HARDLINE
-					}
+				has_game_rule = {
+					rule = USA_civil_war
+					option = USA_CIVIL_WAR_1937
 				}
+				has_game_rule = {
+					rule = USA_civil_war
+					option = USA_CIVIL_WAR_1937_ESTABLISHMENT
+				}
+			    }
 			}
 		}
 		add_stability = -0.15
@@ -28720,13 +29716,15 @@ country_event = { #Hoover Raids
 			factor = 50
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = USA_civil_war
-					option = USA_CIVIL_WAR_1937
-				}
-				has_game_rule = {
-					rule = USA_civil_war
-					option = USA_CIVIL_WAR_1937_ESTABLISHMENT
+				OR = {
+					has_game_rule = {
+						rule = USA_civil_war
+						option = USA_CIVIL_WAR_AVOIDED_CURDON
+					}
+					has_game_rule = {
+						rule = USA_civil_war
+						option = USA_CIVIL_WAR_AVOIDED_HOOVER_HARDLINE
+					}
 				}
 			}
 		}
@@ -30151,6 +31149,7 @@ country_event = { #Hoovers Death by Military for being a Jackass
 		name = ustates.4090.a
 		hidden_effect = {
 			set_country_flag = Hoover_death
+			set_global_flag = USA_Hoover_ded
 			create_country_leader = {
 				name = "Frank Knox"
 				desc = "POLITICS_FRANK_KNOX_DESC"
@@ -30230,6 +31229,7 @@ country_event = { #Hoovers Death by Military for being a Jackass
 			}
 		}
 		hidden_effect = {
+			set_global_flag = USA_Hoover_ded
 			set_country_flag = Hoover_death
 			create_country_leader = {
 				name = "Frank Knox"
@@ -30304,6 +31304,7 @@ country_event = { #Hoovers Assassination by Military
 		name = ustates.4096.a
 		hidden_effect = {
 			set_country_flag = Hoover_death
+			set_global_flag = USA_Hoover_ded
 			create_country_leader = {
 				name = "Frank Knox"
 				desc = "POLITICS_FRANK_KNOX_DESC"
@@ -30398,6 +31399,7 @@ country_event = { #Hoovers Death by ODP
 			}
 		hidden_effect = {
 			set_country_flag = Hoover_death
+			set_global_flag = USA_Hoover_ded
 			add_stability = -0.30
 			create_country_leader = {
 				name = "Frank Knox"
@@ -30476,6 +31478,7 @@ country_event = { #Hoovers Death 2 by SPA
 		name = ustates.4098.a
 		hidden_effect = {
 			set_country_flag = Hoover_death
+			set_global_flag = USA_Hoover_ded
 			create_country_leader = {
 				name = "Frank Knox"
 				desc = "POLITICS_FRANK_KNOX_DESC"
@@ -33161,7 +34164,57 @@ country_event = { # Ola Mildred Rexroat
 		}
 	}
 
-	country_event = { # kfc bros
+country_event = { # KFC Trigger
+	id = nimatron.1100
+	immediate = {log = "[GetDateText]: [Root.GetName]: event nimatron.11"}
+	title = nimatron.11.t
+	desc = nimatron.11.d
+	picture = GFX_event_USA_kfc
+
+	fire_only_once = yes
+	hidden = yes
+	is_triggered_only = yes
+	
+	option = { 
+		name = nimatron.11.a 
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 40
+				USA = {
+					exists = yes
+				}
+			}
+		}
+		var:361.owner = {
+			country_event = {
+				id = nimatron.11
+				days = 33
+			}
+		}
+	}
+	
+	option = { 
+		name = nimatron.11.a 
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 40
+				CSA = {
+					exists = yes
+				}
+			}
+		}
+		CAN = {
+			country_event = {
+				id = canada.455
+				days = 33
+			}
+		}
+	}
+}
+
+country_event = { # kfc bros
 	id = nimatron.11
 	immediate = {log = "[GetDateText]: [Root.GetName]: event nimatron.11"}
 	title = nimatron.11.t
@@ -33170,37 +34223,35 @@ country_event = { # Ola Mildred Rexroat
 
 	fire_only_once = yes
 	
-	trigger = {
-                OR = {
-			tag = USA
-			tag = CSA
-			tag = WCC 
-			tag = TEX 
-			tag = COR 
-			tag = CAL
-			tag = NEE
-			tag = TXS
-                        tag = NYC
-                        tag = ALA
-                        tag = BBR
-                        tag = HAW
-                        tag = ARZ 
-                        tag = NVN
-		}
-		OR = {
-			has_global_flag = USA_civil_war_avoided_flag
-			has_global_flag = USA_civil_war_over_flag
-		}
-		owns_state = 369
-		date > 1945.12.20
-	}
+	is_triggered_only = yes
 	
 	option = { 
 		name = nimatron.11.a 
 		add_political_power = 20
-		}
 	}
-	country_event = { # funny ptsd treatmnet
+}
+
+country_event = { # kfc bros (Avoided CW)
+	id = nimatron.1101
+	immediate = {log = "[GetDateText]: [Root.GetName]: event nimatron.11"}
+	title = nimatron.11.t
+	desc = nimatron.11.d
+	picture = GFX_event_USA_kfc
+	
+	trigger = {
+		has_global_flag = USA_civil_war_avoided_flag
+	}
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = nimatron.11.a 
+		add_political_power = 20
+	}
+}
+country_event = { # funny ptsd treatmnet
 	id = nimatron.12
 	immediate = {log = "[GetDateText]: [Root.GetName]: event nimatron.11"}
 	title = nimatron.12.t
@@ -33240,6 +34291,9 @@ country_event = { # Ola Mildred Rexroat
 	is_triggered_only = yes
 	
 	option = { 
+		trigger = {
+			NOT = { has_country_flag = Douglas_MacArthur_dead }
+		}
 		name = nimatron.13.a 
 		add_political_power = 50
 	}
@@ -33266,3 +34320,139 @@ country_event = { # Ola Mildred Rexroat
 			}
 		}
 	}
+country_event = { # A Meeting in Derby Line
+	id = nimatron.14
+	immediate = {log = "[GetDateText]: [Root.GetName]: event nimatron.11"}
+	title = nimatron.14.t
+	desc = nimatron.14.d
+	picture = GFX_event_USA_Haskill
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = nimatron.14.a 
+		add_political_power = -15
+		}
+	}	
+country_event = { # A Meeting in Rock Island
+	id = nimatron.15
+	immediate = {log = "[GetDateText]: [Root.GetName]: event nimatron.11"}
+	title = nimatron.15.t
+	desc = nimatron.15.d
+	picture = GFX_event_USA_Haskill
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = nimatron.15.a 
+		add_political_power = 15
+		}
+	}		
+	
+country_event = { #Einsenhower choice after Mac dead
+	id = nimatron.16
+	immediate = {log = "[GetDateText]: [Root.GetName]: event nimatron.16"}
+	title = nimatron.16.t
+	desc = nimatron.16.d
+	picture = GFX_event_USA_einsenhower_mark_anthony
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = { # continue Caesar (American Augustus)
+		name = nimatron.16.a 
+			add_political_power = -15
+			add_stability = 0.02
+			add_popularity = {
+				ideology = paternal_autocrat
+				popularity = 0.06
+			}
+	}
+	
+	option = { # Junta with Brad (American Mark Anthony)
+		name = nimatron.16.b 
+			add_political_power = 5
+			add_stability = 0.02
+			clr_country_flag = USA_mac_caesar
+			set_country_flag = USA_mac_shared_power
+			complete_national_focus = USA_restore_democracy 
+			set_politics = {
+				ruling_party = authoritarian_democrat
+			}
+			set_party_name = {
+				ideology = authoritarian_democrat
+				long_name = USA_paternal_autocrat_military_junta_long
+				name = USA_paternal_autocrat_military_junta
+			}
+			add_popularity = {
+				ideology = paternal_autocrat
+				popularity = -0.10
+			}
+			add_popularity = {
+				ideology = authoritarian_democrat
+				popularity = 0.25
+			}
+	}
+	
+	option = { # Restore Democracy (American Cincinnatus)
+		name = nimatron.16.c
+			add_political_power = 15
+			add_stability = -0.03
+			clr_country_flag = USA_mac_caesar
+			set_country_flag = USA_cincinnatus_flag
+			complete_national_focus = USA_classical_liberal_mandate 
+			add_popularity = {
+				ideology = paternal_autocrat
+				popularity = -0.20
+			}
+			add_popularity = {
+				ideology = social_democrat
+				popularity = 0.07
+			}
+			add_popularity = {
+				ideology = social_liberal
+				popularity = 0.10
+			}
+			add_popularity = {
+				ideology = market_liberal
+				popularity = 0.10
+			}
+			add_popularity = {
+				ideology = social_conservative
+				popularity = 0.10
+			}
+	}
+}
+
+country_event = { # Captain America
+	id = nimatron.17
+	immediate = {log = "[GetDateText]: [Root.GetName]: event nimatron.17"}
+	title = nimatron.17.t
+	desc = nimatron.17.d
+	picture = GFX_event_USA_captain_america
+
+	fire_only_once = yes
+	
+	trigger = {
+		OR = {
+			tag = NEE
+			tag = USA
+			tag = CAL
+			tag = CSA
+			tag = COR
+			tag = WCC
+			tag = TEX
+		}
+		has_war_with = GER
+	}
+	
+	option = { 
+		name = nimatron.17.a 
+		add_war_support = 0.03
+	}
+}

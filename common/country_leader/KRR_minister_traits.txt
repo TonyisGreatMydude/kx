@@ -86,7 +86,6 @@ leader_traits = {
 		production_speed_buildings_factor = -0.05
 		industry_repair_factor = -0.05
 	}
-	water_supplies = { random = no }
 	hog_lenins_reincarnation = {
 		surrender_limit = -0.05
 		conscription_factor = 0.1
@@ -111,10 +110,16 @@ leader_traits = {
 		research_speed_factor = 0.04
 		social_liberal_acceptance = 50
 	}
-	hog_valkrye_of_revolution = {
+	hog_hetman = {
 		party_popularity_stability_factor = 0.05
 		war_support_factor = 0.03
-		political_power_gain = -0.02
+		political_power_gain = 0.02		
+	}
+	hog_totalist_chairwoman = {
+		political_power_gain = -0.15
+		production_speed_arms_factory_factor = 0.15
+		industrial_capacity_factory = 0.05
+		local_resources_factor = 0.05	
 	}
 	RUS_patriarch_of_moscow_and_all_russias = {
 		stability_factor = 0.1
@@ -177,6 +182,10 @@ leader_traits = {
 		cavalry_attack_factor = 0.05
 		cavalry_defence_factor = 0.05
 		acclimatization_cold_climate_gain_factor = 0.1
+	}
+	carm_old_guard = {
+		experience_gain_army = 0.05
+		max_dig_in_factor = 0.25
 	}
 	carm_natural_commander = {
 		army_morale_factor = 0.15
@@ -300,5 +309,364 @@ leader_traits = {
 		experience_gain_army = 0.05
 		land_doctrine_cost_factor = -0.05
 		political_power_gain = -0.05
+	}
+	UKR_irreconcilable_samostiinyk = {
+		army_attack_against_major_factor = 0.05
+		army_defence_against_major_factor = 0.05
+		army_core_attack_factor = 0.1
+		army_core_defence_factor = 0.1
+	}
+	UKR_gentleman_usher = {
+		modifier_army_sub_unit_irregular_cavalry_attack_factor = 0.02
+		modifier_army_sub_unit_irregular_cavalry_defence_factor = 0.03
+		modifier_army_sub_unit_irregular_cavalry_speed_factor = 0.01
+		drift_defence_factor = 0.05
+	}
+	UKR_russian_way_school = {
+		conscription = 0.02
+		conscription_factor = 0.15
+		mobilization_speed = 0.15
+				
+		random = no
+	}
+	UKR_youth_military_schools = {
+		conscription = 0.01
+		training_time_army_factor = -0.05
+		mobilization_speed = 0.05
+		army_org_factor = 0.03
+				
+		random = no
+	}
+	UKR_school_of_cossack = {
+		modifier_army_sub_unit_irregular_cavalry_attack_factor = 0.1
+		modifier_army_sub_unit_irregular_cavalry_defence_factor = 0.1
+		modifier_army_sub_unit_irregular_cavalry_speed_factor = 0.05
+				
+		random = no
+	}
+	UKR_cavalry_inspector = {
+		cavalry_attack_factor = 0.05
+		cavalry_defence_factor = 0.05
+		experience_gain_cavalry_combat_factor = 0.35
+						
+		random = no
+	}
+	UKR_machiavellian_careerist = {
+		command_power_gain = 0.15
+		initiative_factor = 0.3
+				
+		random = no
+	}
+	UKR_red_haydamak = {
+		conscription = 0.02
+		conscription_factor = 0.15
+		experience_gain_infantry_combat_factor = 0.3
+				
+		random = no
+	}
+	UKR_elite_infantry_school = {
+		experience_gain_army = 0.02
+		modifier_army_sub_unit_elite_infantry_attack_factor = 0.05
+		modifier_army_sub_unit_elite_infantry_defence_factor = 0.05
+		modifier_army_sub_unit_elite_infantry_speed_factor = 0.05
+		
+		random = no
+	}
+	UKR_striltsi_organiser = {
+		experience_gain_army = 0.15
+		breakthrough_factor = 0.04
+		special_forces_cap = 0.1
+		special_forces_no_supply_grace = 24
+		
+		random = no
+	}
+	UKR_crimea_operation = {
+		experience_gain_army = 0.15
+		breakthrough_factor = 0.07
+		initiative_factor = 0.06
+		planning_speed = 0.1
+		
+		random = no
+	}
+	UKR_shadow_commander = {
+		experience_gain_army = 0.15
+		pocket_penalty = -0.2
+		max_planning_factor = 0.15
+		army_org_regain = 0.1
+		
+		random = no
+	}
+	UKR_chief_otoman = {
+		experience_gain_army = 0.15
+		max_planning_factor = 0.2
+		army_org_factor = 0.15
+		
+		random = no
+	}
+	UKR_haydamak_commander = {
+		experience_gain_army = 0.1
+		army_morale_factor = 0.15
+		conscription = 0.02
+		
+		random = no
+	}
+	UKR_recon_force = {
+		experience_gain_army = 0.13
+		recon_factor = 0.2
+		recon_factor_while_entrenched = 0.15
+		
+		random = no
+	}
+	UKR_patriotic_general = {
+		experience_gain_army = 0.2
+		army_org_factor = 0.1
+		army_morale_factor = 0.1
+		
+		random = no
+	}
+	UKR_undulating_terrain_expert = {
+		experience_gain_army = 0.15
+		terrain_penalty_reduction = 0.2
+		land_reinforce_rate = 0.15
+		command_abilities_cost_factor = -0.5
+		
+		random = no
+	}
+	UKR_infantry_starshyna = {
+		experience_gain_army = 0.05
+		army_infantry_attack_factor = 0.1
+		army_infantry_defence_factor = 0.1
+		
+		random = no
+	}
+	UKR_antitank_specialist = {
+		experience_gain_army = 0.08
+		
+		unit_anti_tank_brigade_design_cost_factor = -0.5
+		experience_gain_anti_tank_brigade_combat_factor = 0.3
+		army_artillery_attack_factor = 0.05		
+		army_artillery_defence_factor = 0.05		
+		
+		random = no
+	}
+	UKR_paganist = {
+		army_strength_factor = 0.05
+		breakthrough_factor = 0.05
+		surrender_limit = 0.05
+		resistance_target = 0.05
+		
+		random = no
+	}
+	
+	CHI_pen_of_the_chairman_1 = { #Zeng Zhongming Trait
+		random = no
+		political_power_factor = 0.05
+		stability_factor = 0.05
+		compliance_gain = 0.01
+	}
+	CHI_pen_of_the_chairman_2 = {
+		random = no
+		political_power_factor = 0.1
+		stability_factor = 0.1
+		compliance_gain = 0.01
+	}
+	CHI_pen_of_the_chairman_3 = {
+		random = no
+		political_power_factor = 0.15
+		stability_factor = 0.1
+		compliance_gain = 0.05
+	}
+	CHI_eyes_and_ears_of_the_chairman = { #Zeng Zhongming Final Trait
+		random = no
+		political_power_factor = 0.2
+		stability_factor = 0.1
+		intel_from_operatives_factor = 0.1
+		decryption_factor = 0.25
+		encryption_factor = 0.25
+	}
+	CHI_mouthpiece_of_rca = { #Chen Gongbo initial trait
+		random = no
+		political_power_gain = 0.05
+		research_speed_factor = 0.05
+	}
+	CHI_mouthpiece_of_rca_2 = {
+		random = no
+		political_power_gain = 0.1
+		research_speed_factor = 0.05
+	}
+	CHI_mouthpiece_of_rca_3 = {
+		random = no
+		political_power_gain = 0.15
+		research_speed_factor = 0.05
+	}
+	CHI_mouthpiece_of_rca_4 = {
+		random = no
+		political_power_gain = 0.2
+		research_speed_factor = 0.05
+		production_speed_buildings_factor = 0.1
+	}
+	CHI_kuomintang_crown_prince = {
+		random = no
+		political_power_factor = -0.10
+		resistance_target = -0.10
+		stability_weekly = 0.003
+		production_speed_industrial_complex_factor = 0.05
+	}
+	CHI_kuomintang_crown_prince_2 = {
+		random = no
+		political_power_factor = -0.10
+		resistance_target = -0.10
+		stability_weekly = 0.0025
+	}
+	CHI_proponent_of_the_united_front = {
+		random = no
+		research_speed_factor = 0.05
+		political_power_factor = 0.1
+	}
+	CHI_proponent_of_the_united_front_2 = {
+		random = no
+		research_speed_factor = 0.1
+		political_power_factor = 0.15
+	}
+	CHI_moderate_reorganisation = {
+		random = no
+		political_power_factor = 0.05
+		resistance_growth = -0.05
+	}
+	CHI_moderate_reorganisation_2 = {
+		random = no
+		political_power_factor = 0.1
+		resistance_growth = -0.1
+	}
+	CHI_democracy_with_chinese_characterstics = {
+		random = no
+		resistance_growth = -0.15
+		political_power_factor = 0.15
+		trade_laws_cost_factor = -0.5
+	}
+	CHI_the_pursuit_of_datong = { #Four Elders
+		random = no
+		research_speed_factor = 0.05
+		industrial_capacity_factory = 0.025
+		stability_factor = -0.1
+	}
+	CHI_the_pursuit_of_datong_2 = {
+		random = no
+		research_speed_factor = 0.1
+		industrial_capacity_factory = 0.05
+		stability_factor = -0.05
+	}
+	CHI_the_pursuit_of_datong_3 = {
+		random = no
+		research_speed_factor = 0.1
+		industrial_capacity_factory = 0.1
+		stability_factor = -0.1
+	}
+	CHI_realising_datong = { #Final version of Four Elders
+		random = no
+		custom_modifier_tooltip = CHI_realising_datong_tt
+	}
+	CHI_kuomintang_stalwart = {
+		random = no
+		party_popularity_stability_factor = 0.15
+		war_support_factor = 0.05
+	}
+	CHI_hero_of_the_chinese_revolution = { #Deng Yanda starting trait
+		random = no
+		experience_gain_army_factor = 0.05
+		army_defence_factor = 0.025
+		political_power_gain = 0.05
+	}
+	CHI_hero_of_the_chinese_revolution_2 = {
+		random = no
+		experience_gain_army_factor = 0.05
+		army_defence_factor = 0.025
+		army_attack_factor = 0.025
+		political_power_gain = 0.05
+	}
+	CHI_hero_of_the_chinese_revolution_3 = {
+		random = no
+		experience_gain_army_factor = 0.1
+		army_defence_factor = 0.05
+		army_attack_factor = 0.05
+		political_power_gain = 0.1
+	}
+	CHI_hero_of_the_chinese_revolution_4 = {
+		random = no
+		experience_gain_army_factor = 0.1
+		army_defence_factor = 0.1
+		army_attack_factor = 0.1
+		political_power_gain = 0.15
+	}
+	CHI_the_red_napoleon = {
+		random = no
+		custom_modifier_tooltip = CHI_the_red_napoleon_tt
+	}
+	CHI_blueshirt_harbinger = { #He Zhonghan's Trait
+		random = no
+		custom_modifier_tooltip = CHI_blueshirt_harbinger_tt
+	}
+	CHI_shadowy_junta = {
+		random = no
+		political_power_factor = -0.25
+		war_stability_factor = 0.30
+		foreign_subversive_activites = -0.20
+	}
+	CHI_shadowy_junta_lar = {
+		random = no
+		political_power_factor = -0.25
+		operative_slot = 2
+		war_stability_factor = 0.20
+		foreign_subversive_activites = -0.10
+	}
+	CHI_madame_wang = {
+		random = no
+		stability_factor = -0.1
+		resistance_growth = -0.1
+		root_out_resistance_effectiveness_factor = 0.1
+	}
+	CHI_chinese_feminist = {
+		random = no
+		compliance_gain = 0.01
+		stability_factor = 0.15
+	}
+	CHI_shadowy_laoban = {
+		random = no
+		resistance_damage_to_garrison = -0.20
+		foreign_subversive_activites = -0.20
+		resistance_target = -0.10
+	}
+	CHI_shadowy_laoban_lar = {
+		random = no
+		operative_slot = 2
+		agency_upgrade_time = -0.10
+		resistance_damage_to_garrison = -0.10
+		foreign_subversive_activites = -0.10
+		resistance_target = -0.05
+	}
+	CHI_heir_to_the_revolution = {
+		random = no
+		political_power_gain = 0.2
+		stability_factor = -0.10
+		opinion_gain_monthly_factor = 0.1
+		max_command_power = 15
+	}
+	CHI_dynamic_materialist = {
+		random = no
+		political_power_gain = 0.2
+		research_speed_factor = 0.1
+		production_speed_buildings_factor = 0.15
+		industrial_capacity_factory = 0.15
+	}
+	CHI_iron_necked_liberal = {
+		random = no
+		custom_modifier_tooltip = KR_iron_necked_liberal_tt
+	}
+	eco_state_capitalist = {
+		random = no
+		production_factory_efficiency_gain_factor = 0.15
+		local_resources_factor = 0.1
+		stability_factor = -0.1
+		war_support_factor = -0.1
 	}
 }

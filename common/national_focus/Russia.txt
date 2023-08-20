@@ -1615,12 +1615,10 @@ shared_focus = {
 		log = "[GetDateText]: [Root.GetName]: Focus RUS_russian_army"
 		add_stability = 0.075
 		army_experience = 50
-		country_event = {
-			id = russia.54
-			days = 0
-		}
-		}
+		country_event = russia.54
 	}
+		
+}
 shared_focus = {
 	id = RUS_Reintroduce_Okhranka
 	icon = GFX_goal_secret_agents
@@ -2514,7 +2512,7 @@ shared_focus = {
 
 shared_focus = {
 	id = RUS_Create_The_VDV
-	icon = GFX_focus_generic_paratrooper
+	icon = GFX_goal_generic_paratroopers
 	relative_position_id = RUS_russian_army
 	x = 3
 	y = 5
@@ -2656,7 +2654,7 @@ shared_focus = {
 
 shared_focus = {
 	id = RUS_Extensive_Planning
-	icon = GFX_goal_generic_army_grand_battleplan
+	icon = GFX_RUS_Wrangel_Plan
 	prerequisite = {
 		focus = RUS_russian_army
 	}
@@ -2983,7 +2981,7 @@ shared_focus = {
 
 shared_focus = {
 	id = RUS_Overwhelming_Firepower
-	icon = GFX_goal_generic_army_superior_firepower
+	icon = GFX_RUS_Shatilov_Plan
 	prerequisite = {
 		focus = RUS_russian_army
 	}
@@ -3173,7 +3171,7 @@ shared_focus = {
 
 shared_focus = {
 	id = RUS_Spearhead_Doctrine
-	icon = GFX_goal_generic_army_mobile_warfare
+	icon = GFX_RUS_Markov_Plan
 	prerequisite = {
 		focus = RUS_russian_army
 	}
@@ -3462,7 +3460,7 @@ shared_focus = {
 
 shared_focus = {
 	id = RUS_War_Of_Numbers
-	icon = GFX_goal_generic_army_mass_assault
+	icon = GFX_RUS_Denikin_Plan
 	prerequisite = {
 		focus = RUS_russian_army
 	}
@@ -3897,7 +3895,7 @@ shared_focus = {
 
 shared_focus = {
 	id = RUS_Floating_Fortresses
-	icon = GFX_goal_generic_naval_fleet_in_being
+	icon = GFX_RUS_Kolomeitsev_Plan
 	relative_position_id = RUS_Navy_Modernisation
 	x = -5
 	y = 1
@@ -3933,7 +3931,7 @@ shared_focus = {
 
 shared_focus = {
 	id = RUS_Death_From_Above
-	icon = GFX_goal_generic_air_fighter2
+	icon = GFX_RUS_Berens_Plan
 	relative_position_id = RUS_Navy_Modernisation
 	x = -3
 	y = 1
@@ -3969,7 +3967,7 @@ shared_focus = {
 
 shared_focus = {
 	id = RUS_War_Under_The_Sea
-	icon = GFX_goal_generic_navy_anti_submarine
+	icon = GFX_RUS_Monastyriov_Plan
 	relative_position_id = RUS_Navy_Modernisation
 	x = -1
 	y = 1
@@ -4045,7 +4043,7 @@ shared_focus = {
 
 shared_focus = {
 	id = RUS_Coastal_Defences
-	icon = GFX_goal_nested_fortifications
+	icon = GFX_goal_generic_coastal_navy2
 	relative_position_id = RUS_Navy_Modernisation
 	allow_branch = { has_dlc = "Man the Guns" }
 	x = -6
@@ -4975,24 +4973,23 @@ shared_focus = {
 		}
 	}
 	completion_reward = {
-		country_event = {
-			id = rusfor.1
-			days = 0
-		}
+		country_event = rusfor.1
+		custom_effect_tooltip = RUS_Expansionism_tooltip		
+		add_stability = 0.1
 		hidden_effect = {
-				random_other_country = {
-					news_event = {
-						id = worldnews.8
-						days = 1
-					}
-				}
-				country_event = {
-					id = worldtension.9
+			random_other_country = {
+				news_event = {
+					id = worldnews.8
 					days = 1
 				}
 			}
-			add_stability = 0.1
-			custom_effect_tooltip = RUS_Expansionism_tooltip		
+			country_event = {
+				id = worldtension.9
+				days = 1
+			}
+			MIE_form_intermarium = yes
+			UKR_setup_eastern_threat_decisions = yes
+		}
 	}
 }
 shared_focus = {
@@ -5018,12 +5015,12 @@ shared_focus = {
 		country_event = russia.55
 		if = {
 			limit = { has_idea = rus_brest_litovsk }
-		remove_ideas = rus_brest_litovsk
-		add_named_threat = { 
-			threat = 7
-			name = "Russia Repudiated Minsk Treaty!"
+			remove_ideas = rus_brest_litovsk
+			add_named_threat = { 
+				threat = 7
+				name = "Russia Repudiated Minsk Treaty!"
+			}
 		}
-	}
 		else = {
 			remove_ideas = rus_brest_litovsk_1
 			add_named_threat = { 
@@ -5103,16 +5100,17 @@ shared_focus = {
 		}
 	}
 	completion_reward = {
-		country_event = {
-			id = rusfor.1
-			days = 0
-		}
+		country_event = rusfor.1
 		add_stability = 0.1
+		hidden_effect = {
+			MIE_form_intermarium = yes
+			UKR_setup_eastern_threat_decisions = yes
+		}
 	}
 }
 shared_focus = {
 	id = RUS_Seek_Allies
-		icon = GFX_goal_generic_join_faction
+		icon = GFX_goal_generic_world_diplomacy
 		relative_position_id = RUS_Realpolitik
 		x = -7
 		y = 1
@@ -5463,6 +5461,7 @@ shared_focus = {
 			activate_targeted_decision = { target = AZE decision = RUS_Attack_Caucasus }
 			activate_targeted_decision = { target = GEO decision = RUS_Attack_Caucasus }
 			activate_targeted_decision = { target = MTR decision = RUS_Attack_Caucasus }			
+			activate_targeted_decision = { target = ARM decision = RUS_Attack_Caucasus }			
 			if = {
 				limit = { country_exists = ABK }
 				activate_targeted_decision = { target = ABK decision = RUS_Attack_Caucasus }			
@@ -5748,7 +5747,7 @@ shared_focus = {
 	id = RUS_Demand_West_Karelia
 	icon = GFX_focus_rus_finland
 	relative_position_id = RUS_Enemy_In_The_West
-	x = -3
+	x = -1
 	y = 1
 	cost = 2
 	available = {
@@ -5803,17 +5802,7 @@ shared_focus = {
 	}
 	completion_reward = {
 	add_political_power = 25
-		if = {
-			limit = {
-				FIN = {
-					NOT = { is_in_faction_with = GER }
-				}
-			}
-			unlock_decision_tooltip = RUS_Demand_Karelia
-		}
-		else = {
-			unlock_decision_tooltip = RUS_Plebiscite_In_Karelia
-		}
+	unlock_decision_tooltip = RUS_Demand_Karelia
 	}
 	search_filters = { FOCUS_FILTER_POLITICAL }
 }
@@ -5822,7 +5811,7 @@ shared_focus = {
 	id = RUS_Buy_State_Bonds_In_White_Ruthenia
 	icon = GFX_focus_rus_belarus
 	relative_position_id = RUS_Enemy_In_The_West
-	x = -1
+	x = 1
 	y = 1
 	cost = 2
 	available = {
@@ -5875,68 +5864,6 @@ shared_focus = {
 	search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 }
 		
-shared_focus = {
-	id = RUS_Resolve_Ukranian_Problem
-	icon = GFX_focus_rus_ukraine
-	relative_position_id = RUS_Enemy_In_The_West
-	x = 1
-	y = 1
-	cost = 2
-	available = {
-		is_subject = no
-		UKR = {
-			NOT = { is_in_faction_with = GER }
-		}
-		if = {
-			limit = {
-				custom_trigger_tooltip = {
-					tooltip = nsp_in_power
-					has_idea = RUS_Nikolay_I_Bukharin_hog_syn
-				}
-			}
-			OR = {
-				has_completed_focus = RUS_Future_Of_The_Republic_2
-				has_country_flag = RUS_decided_to_stay_democratic
-			}
-		}
-		if = {
-			limit = {
-				has_country_flag = RUS_vi_congress_internationalists
-				rsdrp_in_power = yes	
-			}
-			OR = {
-				has_completed_focus = RUS_Future_Of_The_Republic_mensh_2
-				has_country_flag = RUS_decided_to_stay_democratic
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = lpsr_not_in_power
-			NOT = { has_idea = RUS_Vladimir_K_Volsky_hog_rso }
-		}
-		custom_trigger_tooltip = {
-			tooltip = plsr_not_in_power
-			NOT = { has_idea = RUS_Maria_A_Spiridonova_hog_rso }
-		}
-	}
-	bypass = {
-		hidden_trigger = { 
-			OR = {
-				has_war_with = UKR
-				is_in_faction_with = UKR
-			}
-		}
-	}
-	prerequisite = {
-		focus = RUS_Enemy_In_The_West
-	}
-	ai_will_do = { factor = 80 }
-	completion_reward = {
-		add_political_power = 50
-		army_experience = 15
-		unlock_decision_tooltip = RUS_Intervene_In_Ukraine
-	}
-	search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
-}
 shared_focus = {
 	id = RUS_Demand_North_Iran
 	icon = GFX_focus_rus_persia
@@ -6017,74 +5944,12 @@ shared_focus = {
 	}
 	search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_POLITICAL }
 }
+
 shared_focus = {
-	id = RUS_Referendum_In_Vladivostok
-	icon = GFX_focus_rus_transamur
-	relative_position_id = RUS_Enemy_In_The_East
-	x = -1
-	y = 1
-	cost = 2
-	available = {
-		is_subject = no
-		TRM = { same_government_type_as_ROOT = yes }
-		if = {
-			limit = {
-				custom_trigger_tooltip = {
-					tooltip = nsp_in_power
-					has_idea = RUS_Nikolay_I_Bukharin_hog_syn
-				}
-			}
-			OR = {
-				has_completed_focus = RUS_Future_Of_The_Republic_2
-				has_country_flag = RUS_decided_to_stay_democratic
-			}
-		}
-		if = {
-			limit = {
-				has_country_flag = RUS_vi_congress_internationalists
-				rsdrp_in_power = yes	
-			}
-			OR = {
-				has_completed_focus = RUS_Future_Of_The_Republic_mensh_2
-				has_country_flag = RUS_decided_to_stay_democratic
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = lpsr_not_in_power
-			NOT = { has_idea = RUS_Vladimir_K_Volsky_hog_rso }
-		}
-		custom_trigger_tooltip = {
-			tooltip = plsr_not_in_power
-			NOT = { has_idea = RUS_Maria_A_Spiridonova_hog_rso }
-		}
-		NOT = { has_country_flag = RUS_allies_JAP_flag }
-	}
-	bypass = {
-		hidden_trigger = { NOT = { country_exists = TRM } }
-	}
-	prerequisite = {
-		focus = RUS_Enemy_In_The_East
-	}
-	mutually_exclusive = {
-		focus = RUS_Another_Amur_Incident
-		focus = RUS_Negotiate_For_Vladivostok
-	}
-	ai_will_do = {
-		factor = 90
-		}
-	completion_reward = {
-		add_political_power = 25
-		add_war_support = 0.025
-		unlock_decision_tooltip = RUS_Referendum_In_Vladivostok 
-				
-	}
-	search_filters = { FOCUS_FILTER_POLITICAL }
-}
-shared_focus = {
-	id = RUS_Another_Amur_Incident
+	id = RUS_Reclaim_Far_East
 	icon = GFX_focus_rus_transamur_war
 	relative_position_id = RUS_Enemy_In_The_East
-	x = 1
+	x = -1
 	y = 1
 	cost = 2
 	available = {
@@ -6124,16 +5989,16 @@ shared_focus = {
 	bypass = { hidden_trigger = { has_war_with = TRM } }
 	prerequisite = { focus = RUS_Enemy_In_The_East }
 	mutually_exclusive = { 
-		focus = RUS_Referendum_In_Vladivostok
 		focus = RUS_Negotiate_For_Vladivostok
 	}
 	ai_will_do = {
 		factor = 90
 	}
 	completion_reward = {
-		add_political_power = 100
-		add_stability = 0.025
-		unlock_decision_tooltip = RUS_Start_The_Offensive
+		log = "[GetDateText]: [Root.GetName]: Focus RUS_Reclaim_Far_East"
+		add_war_support = 0.05
+		unlock_decision_tooltip = RUS_Start_The_Offensive	
+		activate_targeted_decision = { target = TRM decision = RUS_Propose_Peaceful_Reunification }
 	}
 	search_filters = { FOCUS_FILTER_POLITICAL }
 }
@@ -6142,16 +6007,12 @@ shared_focus = {
 	id = RUS_Negotiate_For_Vladivostok
 	icon = GFX_TRM_Japan_Relations
 	relative_position_id = RUS_Enemy_In_The_East
-	x = 3
+	x = 1
 	y = 1
 	cost = 2
 	available = {
 		is_subject = no
 		has_completed_focus = RUS_Realpolitik
-		NOT = {
-			has_completed_focus = RUS_Referendum_In_Vladivostok
-			has_completed_focus = RUS_Another_Amur_Incident
-		}
 		OR = {
 			TRM = {
 				NOT = {
@@ -6179,8 +6040,7 @@ shared_focus = {
 	}
 	prerequisite = { focus = RUS_Enemy_In_The_East }
 	mutually_exclusive = {
-		focus = RUS_Another_Amur_Incident
-		focus = RUS_Referendum_In_Vladivostok
+		focus = RUS_Reclaim_Far_East
 	}
 	ai_will_do = {
 		factor = 3
@@ -6218,7 +6078,7 @@ shared_focus = {
 
 shared_focus = {
 	id = RUS_The_Final_Battle
-	icon = GFX_goal_attack_germany
+	icon = GFX_goal_MLT_fuck_germany
 	relative_position_id = RUS_Enemy_In_The_West
 	x = 0
 	y = 2
@@ -6533,7 +6393,7 @@ shared_focus = {
 	id = RUS_Assert_Our_Influence_Far_East
 	icon = GFX_focus_rus_far_east
 	relative_position_id = RUS_Enemy_In_The_East
-	x = 0
+	x = -1
 	y = 2
 	cost = 5
 	available = {
@@ -6573,10 +6433,7 @@ shared_focus = {
 	}
 	bypass = { hidden_trigger = { has_war_with = JAP } }
 	mutually_exclusive = { focus = RUS_join_the_co_prosperity_sphere }
-	prerequisite = {
-		focus = RUS_Referendum_In_Vladivostok
-		focus = RUS_Another_Amur_Incident
-	}
+	prerequisite = { focus = RUS_Reclaim_Far_East }
 	ai_will_do = {
 		factor = 10
 		modifier = {
@@ -6598,7 +6455,7 @@ shared_focus = {
 	id = RUS_join_the_co_prosperity_sphere
 	icon = GFX_goal_JAP_tokyo_conf
 	relative_position_id = RUS_Enemy_In_The_East
-	x = 2
+	x = 1
 	y = 2
 	cost = 5
 	available = {
@@ -6624,9 +6481,8 @@ shared_focus = {
 			is_subject = no
 		}
 	}
-	prerequisite = {
-		focus = RUS_Referendum_In_Vladivostok
-		focus = RUS_Another_Amur_Incident
+	prerequisite = { 
+		focus = RUS_Reclaim_Far_East
 		focus = RUS_Negotiate_For_Vladivostok
 	}
 	mutually_exclusive = { focus = RUS_Assert_Our_Influence_Far_East }
@@ -6956,11 +6812,14 @@ shared_focus = {
 		NOT = {
 			country_exists = GER
 			ENT = { is_in_faction_with = GEX }
-			AND = {
-				has_country_flag = RUS_allies_JAP_flag
-				is_in_faction_with = JAP
-			}
 		}
+		OR = {
+		JAP = { is_subject_of = RUS }
+		NOT = {
+			has_country_flag = RUS_allies_JAP_flag
+			is_in_faction_with = JAP
+	    }
+	    }
 	}
 	bypass = {
 		is_in_faction_with = ENT
@@ -6984,17 +6843,13 @@ shared_focus = {
 	id = RUS_Protect_Ukranians_In_Galicia 
 	icon = GFX_focus_rus_galicia
 	relative_position_id = RUS_Enemy_In_The_West
-	x = -4
-	y = 2
+	x = -3
+	y = 1
 	cost = 3
 	available = {
 		has_completed_focus = RUS_Expansionism
 		is_subject = no
 		has_war = no
-		96 = { is_owned_by_ROOT_or_ally = yes } #Vilnius
-		202 = { is_owned_by_ROOT_or_ally = yes } #Kiev
-		206 = { is_owned_by_ROOT_or_ally = yes } #Minsk
-		1091 = { is_owned_by_ROOT_or_ally = yes } #Riga
 		if = {
 			limit = {
 				custom_trigger_tooltip = {
@@ -7344,7 +7199,7 @@ focus_tree = {
 	### Democratic Focus Tree ###
 	focus = {
 		id = RUS_communists
-		icon = GFX_goal_goal_commies_elected
+		icon = GFX_goal_commies_elected
 		x = 15
 		y = 7
 		cost = 0
@@ -7831,17 +7686,7 @@ focus_tree = {
 			}
 			has_idea = RUS_army_mutiny
 		}
-		bypass = {
-			NOT = { has_idea = RUS_army_mutiny }
-		}
-		select_effect = {
-			hidden_effect = {
-				country_event = {
-					id = rusdem.329
-					days = 3
-				}
-			}
-		}
+		
 		ai_will_do = {
 			factor = 100
 		}
@@ -7851,6 +7696,7 @@ focus_tree = {
 		
 		completion_reward = {
 			custom_effect_tooltip = RUS_Combat_Army_Mutiny_tt
+			country_event = rusdem.329
 		}
 	}
 
@@ -7984,6 +7830,7 @@ focus_tree = {
 				tooltip = plsr_in_power
 				has_idea = RUS_Maria_A_Spiridonova_hog_rso
 			}
+			NOT = { has_idea = RUS_army_mutiny }
 		}
 		prerequisite = {
 			focus = RUS_Fate_Of_Duma_and_Senate_plsr
@@ -7997,58 +7844,7 @@ focus_tree = {
 		
 		completion_reward = {
 			custom_effect_tooltip = russia_soviet
-			if = {
-				limit = {
-					has_idea = RUS_army_mutiny
-				}
-				custom_effect_tooltip = RUS_Future_Of_The_Republic_civil_war
-				hidden_effect = {
-					if = {
-						limit = {
-							NOT = { has_country_flag = Lavr_G_Kornilov_dead }
-						}
-						country_event = rcw.4
-					}
-					else = {
-						country_event = rcw.14
-					}
-				}
-			}
-			else_if = {
-				custom_effect_tooltip = RUS_Future_Of_The_Republic_civil_war
-				limit = {
-					has_country_flag = RCW_kornilov_ready_for_uprising
-					NOT = { has_country_flag = Lavr_G_Kornilov_dead_forever }
-				}
-				country_event = rcw.4
-			}
-			else_if = {
-				custom_effect_tooltip = RUS_Future_Of_The_Republic_civil_war
-				limit = {
-					has_country_flag = RCW_denikin_ready_for_uprising
-					NOT = { has_country_flag = Anton_I_Denikin_dead_forever }
-				}
-				country_event = rcw.14
-			}
-			else_if = {
-				custom_effect_tooltip = RUS_Future_Of_The_Republic_civil_war
-				limit = {
-					has_country_flag = RCW_wrangel_ready_for_uprising
-					NOT = { has_country_flag = Pyetr_N_Vrangel_dead_forever }
-				}
-				country_event = rcw.11
-			}
-			else_if = {
-				limit = {
-					NOT = { has_country_flag = RCW_kornilov_ready_for_uprising }
-					NOT = { has_country_flag = RCW_denikin_ready_for_uprising }
-					NOT = { has_country_flag = RCW_wrangel_ready_for_uprising }
-				}
-				country_event = rusd.29
-			}
-			else = {
-				country_event = rusd.29
-			}
+			country_event = rusd.29
 		}
 	}
 	focus = {
@@ -8642,6 +8438,7 @@ focus_tree = {
 				has_idea = RUS_Nikolay_I_Bukharin_hog_syn
 			}
 			NOT = { has_country_flag = RUS_decided_to_stay_democratic }
+			NOT = { has_idea = RUS_army_mutiny }
 		}
 		mutually_exclusive = {
 			focus = RUS_Future_Of_The_Republic_2
@@ -8662,58 +8459,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			custom_effect_tooltip = russia_soviet
-			if = {
-				limit = {
-					has_idea = RUS_army_mutiny
-				}
-				custom_effect_tooltip = RUS_Future_Of_The_Republic_civil_war
-				hidden_effect = {
-					if = {
-						limit = {
-							NOT = { has_country_flag = Lavr_G_Kornilov_dead }
-						}
-						country_event = rcw.4
-					}
-					else = {
-						country_event = rcw.14
-					}
-				}
-			}
-			else_if = {
-				custom_effect_tooltip = RUS_Future_Of_The_Republic_civil_war
-				limit = {
-					has_country_flag = RCW_kornilov_ready_for_uprising
-					NOT = { has_country_flag = Lavr_G_Kornilov_dead_forever }
-				}
-				country_event = rcw.4
-			}
-			else_if = {
-				custom_effect_tooltip = RUS_Future_Of_The_Republic_civil_war
-				limit = {
-					has_country_flag = RCW_denikin_ready_for_uprising
-					NOT = { has_country_flag = Anton_I_Denikin_dead_forever }
-				}
-				country_event = rcw.14
-			}
-			else_if = {
-				custom_effect_tooltip = RUS_Future_Of_The_Republic_civil_war
-				limit = {
-					has_country_flag = RCW_wrangel_ready_for_uprising
-					NOT = { has_country_flag = Pyetr_N_Vrangel_dead_forever }
-				}
-				country_event = rcw.11
-			}
-			else_if = {
-				limit = {
-					NOT = { has_country_flag = RCW_kornilov_ready_for_uprising }
-					NOT = { has_country_flag = RCW_denikin_ready_for_uprising }
-					NOT = { has_country_flag = RCW_wrangel_ready_for_uprising }
-				}
-				country_event = rusd.29
-			}
-			else = {
-				country_event = rusd.29
-			}
+			country_event = rusd.29
 		}
 	}
 	focus = {
@@ -9429,6 +9175,7 @@ focus_tree = {
 			has_country_flag = RUS_vi_congress_internationalists
 			rsdrp_in_power = yes
 			NOT = { has_country_flag = RUS_decided_to_stay_democratic }
+			NOT = { has_idea = RUS_army_mutiny }
 		}
 		ai_will_do = {
 			factor = 100
@@ -9443,58 +9190,7 @@ focus_tree = {
 		
 		completion_reward = {
 			custom_effect_tooltip = russia_soviet
-			if = {
-				limit = {
-					has_idea = RUS_army_mutiny
-				}
-				custom_effect_tooltip = RUS_Future_Of_The_Republic_civil_war
-				hidden_effect = {
-					if = {
-						limit = {
-							NOT = { has_country_flag = Lavr_G_Kornilov_dead }
-						}
-						country_event = rcw.4
-					}
-					else = {
-						country_event = rcw.14
-					}
-				}
-			}
-			else_if = {
-				custom_effect_tooltip = RUS_Future_Of_The_Republic_civil_war
-				limit = {
-					has_country_flag = RCW_kornilov_ready_for_uprising
-					NOT = { has_country_flag = Lavr_G_Kornilov_dead_forever }
-				}
-				country_event = rcw.4
-			}
-			else_if = {
-				custom_effect_tooltip = RUS_Future_Of_The_Republic_civil_war
-				limit = {
-					has_country_flag = RCW_denikin_ready_for_uprising
-					NOT = { has_country_flag = Anton_I_Denikin_dead_forever }
-				}
-				country_event = rcw.14
-			}
-			else_if = {
-				custom_effect_tooltip = RUS_Future_Of_The_Republic_civil_war
-				limit = {
-					has_country_flag = RCW_wrangel_ready_for_uprising
-					NOT = { has_country_flag = Pyetr_N_Vrangel_dead_forever }
-				}
-				country_event = rcw.11
-			}
-			else_if = {
-				limit = {
-					NOT = { has_country_flag = RCW_kornilov_ready_for_uprising }
-					NOT = { has_country_flag = RCW_denikin_ready_for_uprising }
-					NOT = { has_country_flag = RCW_wrangel_ready_for_uprising }
-				}
-				country_event = rusd.29
-			}
-			else = {
-				country_event = rusd.29
-			}
+			country_event = rusd.29
 		}
 	}
 	focus = {
@@ -9972,14 +9668,7 @@ focus_tree = {
 		x = -4
 		y = 7
 		cost = 6
-		select_effect = {
-			hidden_effect = {
-				country_event = {
-					id = rusdem.330
-					days = 4
-				}
-			}
-		}
+		
 		prerequisite = {
 			focus = RUS_Compromise_With_Left_SR
 		}
@@ -9991,12 +9680,14 @@ focus_tree = {
 				tooltip = lpsr_in_power
 				has_idea = RUS_Vladimir_K_Volsky_hog_rso
 			}
+			has_idea = RUS_army_mutiny
 		}
 		ai_will_do = {
 			factor = 100
 		}
 		completion_reward = {
 			custom_effect_tooltip = RUS_Combat_Army_Mutiny_tt
+			country_event = rusdem.329
 		}
 	}
 	focus = {
@@ -10107,58 +9798,7 @@ focus_tree = {
 		cancelable = no
 		completion_reward = {
 			custom_effect_tooltip = russia_soviet
-			if = {
-				limit = {
-					has_idea = RUS_army_mutiny
-				}
-				custom_effect_tooltip = RUS_Future_Of_The_Republic_civil_war
-				hidden_effect = {
-					if = {
-						limit = {
-							NOT = { has_country_flag = Lavr_G_Kornilov_dead }
-						}
-						country_event = rcw.4
-					}
-					else = {
-						country_event = rcw.14
-					}
-				}
-			}
-			else_if = {
-				custom_effect_tooltip = RUS_Future_Of_The_Republic_civil_war
-				limit = {
-					has_country_flag = RCW_kornilov_ready_for_uprising
-					NOT = { has_country_flag = Lavr_G_Kornilov_dead_forever }
-				}
-				country_event = rcw.4
-			}
-			else_if = {
-				custom_effect_tooltip = RUS_Future_Of_The_Republic_civil_war
-				limit = {
-					has_country_flag = RCW_denikin_ready_for_uprising
-					NOT = { has_country_flag = Anton_I_Denikin_dead_forever }
-				}
-				country_event = rcw.14
-			}
-			else_if = {
-				custom_effect_tooltip = RUS_Future_Of_The_Republic_civil_war
-				limit = {
-					has_country_flag = RCW_wrangel_ready_for_uprising
-					NOT = { has_country_flag = Pyetr_N_Vrangel_dead_forever }
-				}
-				country_event = rcw.11
-			}
-			else_if = {
-				limit = {
-					NOT = { has_country_flag = RCW_kornilov_ready_for_uprising }
-					NOT = { has_country_flag = RCW_denikin_ready_for_uprising }
-					NOT = { has_country_flag = RCW_wrangel_ready_for_uprising }
-				}
-				country_event = rusdem.424
-			}
-			else = {
-				country_event = rusdem.424
-			}
+			country_event = rusdem.424
 		}
 	}
 	focus = {
@@ -11607,9 +11247,10 @@ focus_tree = {
 				ideology = social_democrat
 				popularity = 0.03
 			}
-			custom_effect_tooltip = RUS_The_New_Oprichnina_tooltip
-			multiply_variable = { rus_core_integration_cost_compliance = 0.8 }
-			multiply_variable = { rus_core_integration_time_to_remove = 0.8 }		
+			every_owned_state = {
+				limit = { has_resistance = yes }
+				add_compliance = 10
+			}
 		}
 	}
 	focus = {
@@ -17833,7 +17474,7 @@ focus_tree = {
 	}
 	focus = {
 		id = RUS_General_Education_Act
-		icon = GFX_goal_KTG_Educate_natives
+		icon = GFX_goal_CZE_rural_education
 		cost = 5
 		available = {
 			rsdrp_in_power = yes
@@ -17886,7 +17527,7 @@ focus_tree = {
 	}
 	focus = {
 		id = RUS_Expand_The_Public_Sector
-		icon = GFX_goal_CSA_welfare_state
+		icon = GFX_goal_KIV_urban
 		cost = 5
 		available = {
 			rsdrp_in_power = yes
@@ -17986,9 +17627,10 @@ focus_tree = {
 				ideology = social_democrat
 				popularity = 0.07
 			}
-			custom_effect_tooltip = RUS_The_New_Oprichnina_tooltip
-			multiply_variable = { rus_core_integration_cost_compliance = 0.8 }
-			multiply_variable = { rus_core_integration_time_to_remove = 0.8 }
+			every_owned_state = {
+				limit = { has_resistance = yes }
+				add_compliance = 10
+			}
 		}
 	}
 	focus = {
@@ -18064,17 +17706,11 @@ focus_tree = {
 		icon = GFX_RUS_Bukharin_Plan
 		cost = 5
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = nsp_in_power
-				has_idea = RUS_Nikolay_I_Bukharin_hog_syn
-			}
+			has_idea = RUS_Nikolay_I_Bukharin_hog_syn
 			has_country_flag = rus_elections_1941_over
 		}
 		bypass = {
-			custom_trigger_tooltip = {
-				tooltip = nsp_in_power
-				has_idea = RUS_Nikolay_I_Bukharin_hog_syn
-			}
+			has_idea = RUS_Nikolay_I_Bukharin_hog_syn
 		}
 		prerequisite = {
 			focus = RUS_Establishing_A_Big_Tent_Party
@@ -18094,10 +17730,7 @@ focus_tree = {
 		icon = GFX_RUS_Control_Trade_Unions_nsp
 		cost = 5
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = nsp_in_power
-				has_idea = RUS_Nikolay_I_Bukharin_hog_syn
-			}
+			has_idea = RUS_Nikolay_I_Bukharin_hog_syn
 			has_country_flag = rus_elections_1941_over
 		}
 		prerequisite = {
@@ -18121,7 +17754,10 @@ focus_tree = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = nsp_in_power
-				has_idea = RUS_Nikolay_I_Bukharin_hog_syn
+				OR = {
+					has_idea = RUS_Nikolay_I_Bukharin_hog_syn
+					has_idea = RUS_Sergey_M_Kirov_hog_syn
+				}
 			}
 			has_country_flag = rus_elections_1941_over
 		}
@@ -18146,10 +17782,7 @@ focus_tree = {
 		icon = GFX_RUS_The_New_Leninism
 		cost = 5
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = nsp_in_power
-				has_idea = RUS_Nikolay_I_Bukharin_hog_syn
-			}
+			has_idea = RUS_Nikolay_I_Bukharin_hog_syn
 			has_country_flag = rus_elections_1941_over
 		}
 		prerequisite = {
@@ -18173,10 +17806,7 @@ focus_tree = {
 		icon = GFX_RUS_Rusmultfilm
 		cost = 5
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = nsp_in_power
-				has_idea = RUS_Nikolay_I_Bukharin_hog_syn
-			}
+			has_idea = RUS_Nikolay_I_Bukharin_hog_syn
 			has_country_flag = rus_elections_1941_over
 		}
 		prerequisite = {
@@ -18200,13 +17830,10 @@ focus_tree = {
 		icon = GFX_RUS_Introduce_NEP
 		cost = 2
 		available = {
-			OR = {
-				custom_trigger_tooltip = {
-					tooltip = nsp_in_power
+			custom_trigger_tooltip = {
+				tooltip = nsp_in_power
+				OR = {
 					has_idea = RUS_Nikolay_I_Bukharin_hog_syn
-				}
-				custom_trigger_tooltip = {
-					tooltip = nsp_in_power
 					has_idea = RUS_Sergey_M_Kirov_hog_syn
 				}
 			}
@@ -18232,13 +17859,10 @@ focus_tree = {
 		icon = GFX_RUS_Cut_Red_Tape
 		cost = 5
 		available = {
-			OR = {
-				custom_trigger_tooltip = {
-					tooltip = nsp_in_power
+			custom_trigger_tooltip = {
+				tooltip = nsp_in_power
+				OR = {
 					has_idea = RUS_Nikolay_I_Bukharin_hog_syn
-				}
-				custom_trigger_tooltip = {
-					tooltip = nsp_in_power
 					has_idea = RUS_Sergey_M_Kirov_hog_syn
 				}
 			}
@@ -18262,13 +17886,10 @@ focus_tree = {
 		icon = GFX_RUS_Fight_Urban_Rural
 		cost = 5
 		available = {
-			OR = {
-				custom_trigger_tooltip = {
-					tooltip = nsp_in_power
+			custom_trigger_tooltip = {
+				tooltip = nsp_in_power
+				OR = {
 					has_idea = RUS_Nikolay_I_Bukharin_hog_syn
-				}
-				custom_trigger_tooltip = {
-					tooltip = nsp_in_power
 					has_idea = RUS_Sergey_M_Kirov_hog_syn
 				}
 			}
@@ -18295,17 +17916,11 @@ focus_tree = {
 		icon = GFX_RUS_Kirov_Plan
 		cost = 5
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = nsp_in_power
-				has_idea = RUS_Sergey_M_Kirov_hog_syn
-			}
+			has_idea = RUS_Sergey_M_Kirov_hog_syn
 			has_country_flag = rus_elections_1941_over
 		}
 		bypass = {
-			custom_trigger_tooltip = {
-				tooltip = nsp_in_power
-				has_idea = RUS_Sergey_M_Kirov_hog_syn
-			}
+			has_idea = RUS_Sergey_M_Kirov_hog_syn
 		}
 		prerequisite = {
 			focus = RUS_Establishing_A_Big_Tent_Party
@@ -18325,10 +17940,7 @@ focus_tree = {
 		icon = GFX_RUS_New_Proletarian_Generation
 		cost = 5
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = nsp_in_power
-				has_idea = RUS_Sergey_M_Kirov_hog_syn
-			}
+			has_idea = RUS_Sergey_M_Kirov_hog_syn
 			has_country_flag = rus_elections_1941_over
 		}
 		prerequisite = {
@@ -18349,10 +17961,7 @@ focus_tree = {
 		icon = GFX_RUS_Cautious_Industrialization
 		cost = 5
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = nsp_in_power
-				has_idea = RUS_Sergey_M_Kirov_hog_syn
-			}
+			has_idea = RUS_Sergey_M_Kirov_hog_syn
 			has_country_flag = rus_elections_1941_over
 		}
 		prerequisite = {
@@ -18388,10 +17997,7 @@ focus_tree = {
 		icon = GFX_RUS_Democratic_Centralism
 		cost = 5
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = nsp_in_power
-				has_idea = RUS_Sergey_M_Kirov_hog_syn
-			}
+			has_idea = RUS_Sergey_M_Kirov_hog_syn
 			has_country_flag = rus_elections_1941_over
 		}
 		prerequisite = {
@@ -18415,10 +18021,7 @@ focus_tree = {
 		icon = GFX_RUS_Peoples_Premier
 		cost = 5
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = nsp_in_power
-				has_idea = RUS_Sergey_M_Kirov_hog_syn
-			}
+			has_idea = RUS_Sergey_M_Kirov_hog_syn
 			has_country_flag = rus_elections_1941_over
 		}
 		prerequisite = {
@@ -21104,6 +20707,12 @@ focus_tree = {
 				}
 			}
 			custom_effect_tooltip = rus_cossack_forces_tt
+			custom_effect_tooltip = cossack_corps_tech_effect
+			hidden_effect= {
+				set_technology = {
+					cossack_corps_tech = 1
+				}
+			}
 			hidden_effect = { load_oob = RUS_Cossacks }
 		}
 	}
@@ -21723,14 +21332,14 @@ focus_tree = {
 			factor = 100
 		}
 		completion_reward = {
-				log = "[GetDateText]: [Root.GetName]: Focus RUS_That_Which_Was_Lost"
-				if = { 
-					limit = { check_variable = { BlackHundredsStrenght = 3} }
-					country_event = rusd.19
-				}
-				else = { 
-					country_event = rusdroz.64
-				}
+			log = "[GetDateText]: [Root.GetName]: Focus RUS_That_Which_Was_Lost"
+			if = { 
+				limit = { check_variable = { BlackHundredsStrenght = 3} }
+				country_event = rusd.19
+			}
+			else = { 
+				country_event = rusdroz.64
+			}
 		}
 	}
 
@@ -22532,8 +22141,8 @@ focus_tree = {
 			cost = 5
 		
 		completion_reward = {
-                           add_war_support = 0.10
-			   add_manpower = 30000
+						add_war_support = 0.10
+			add_manpower = 30000
 		}
 	}
 
@@ -23398,6 +23007,12 @@ focus_tree = {
 		completion_reward = {
 			add_stability = 0.025
 			custom_effect_tooltip = rus_cossack_forces_tt
+			custom_effect_tooltip = cossack_corps_tech_effect
+			hidden_effect= {
+				set_technology = {
+					cossack_corps_tech = 1
+				}
+			}
 			hidden_effect = { load_oob = RUS_Cossacks }
 		}
 	}
@@ -23859,10 +23474,7 @@ focus_tree = {
 		x = -4
 		y = 5
 		completion_reward = {
-			country_event = {
-				id = rusd.139
-				days = 0
-			}
+			country_event = rusd.139
 		}
 	}
 

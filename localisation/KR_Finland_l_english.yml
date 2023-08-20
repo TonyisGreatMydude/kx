@@ -620,7 +620,7 @@ finland.53.d:0 "The [SWE.GetAdjective] government have seen fit to lodge a diplo
 finland.53.a:0 "What a laughable proposition."
 
 finland.54.t:0 "The National Coalition"
-finland.54.d:0 "Despite having been dominated by the ethnically [GER.GetAdjective] King Fredrik I and the more conservative wing of the National Coalition for most of [Root.GetName]’s history, the National Coalition has also had within it members who belong to a more moderately conservative ilk.\n\nLed by Pehr Evind Svinhufvud, who himself is not unwilling to take advantage of the republican atmosphere within [Root.GetName], despite having pleaded with the [GER.GetAdjective]s for aid during the [Root.GetAdjective] Civil War. Svinhufvud, who himself is an ardent supporter of the White Guard, yet also resists the radical Lapua Movement and [Root.GetAdjective] Delegation, has promised to restore peace and order within [Root.GetName], while also ensuring that sovereignty is maintained.\n\nUnder Svinhufvud’s directive, the National Coalition wishes to empower the office of presidency while also preserving the systems put in place."
+finland.54.d:0 "Despite having been dominated by the ethnically [GER.GetAdjective] King Fredrik I and the more conservative wing of the National Coalition for most of [Root.GetName]’s history, the National Coalition has also had within it members who belong to a more moderately conservative ilk.\n\nLed by Juho Kusti Paasikivi, who himself is not unwilling to take advantage of the republican atmosphere within [Root.GetName], despite having pleaded with the [GER.GetAdjective]s for aid during the [Root.GetAdjective] Civil War. Svinhufvud, who himself is an ardent supporter of the White Guard, yet also resists the radical Lapua Movement and [Root.GetAdjective] Delegation, has promised to restore peace and order within [Root.GetName], while also ensuring that sovereignty is maintained.\n\nUnder Svinhufvud’s directive, the National Coalition wishes to empower the office of presidency while also preserving the systems put in place."
 finland.54.a:0 "We cannot abandon our traditions!"
 
 finland.55.t:0 "Monolingualism"
@@ -1148,8 +1148,6 @@ FIN_did_not_recognise_our_independence:0 "Did not recognise our independence"
 FIN_economic_ties_reichspakt:0 "Economic ties"
 
 ### Decisions ###
-FIN_reinforce_the_mannerheim_line:0 "Reinforce the Mannerheim Line"
-FIN_reinforce_the_mannerheim_line_desc:0 "A defensive fortification line built during the Russian Civil War, the Mannerheim Line has been key with regards to acting as a deterrent for the Russians to the east. However it has not been upgraded in some time, and its age is beginning to show. We should look towards upgrading it."
 fin_join_sdu:0 "Join the Scandinavian Defence Union"
 fin_join_sdu_desc:0 "The Scandinavian Defence Union was founded by the democracies of Denmark, Norway and Sweden to deter outside powers from invading the region. Since we share a desire to keep foreign actors like Russia outside of the Scandinavian region, should we apply to join the alliance?"
 fin_join_nordic_federation:0 "Apply to join the Nordic Federation"

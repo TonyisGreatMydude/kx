@@ -49,6 +49,12 @@ UPC = {
 	global_event_target = UPC_leader
 }
 
+### Right Kuomintang Leader (GXC/YUN)
+#For now for CHI side content, hopefully later will be used for RKMT stuff as well
+RKT = {
+	global_event_target = RKMT_leader
+}
+
 ### "China" target
 CHN = {
 	global_event_target = current_china_leader
@@ -142,6 +148,9 @@ BRG = {
 MIE = {
 	global_event_target = MIE_leader
 }
+MIZ = {
+	global_event_target = MIZ_leader
+}
 
 ### Christero Mexico
 MCS = {
@@ -169,6 +178,11 @@ OXA = {
 	has_cosmetic_tag = OXA
 }
 
+### Moskito
+MKT = {
+	global_event_target = Miskitu_Coast
+}
+
 ### Oaxaca
 AOG = {
 	original_tag = LEP
@@ -178,6 +192,19 @@ AOG = {
 SOV = {
 	global_event_target = soviet_russia
 }
+
+### Ukraine
+UPR = {
+	global_event_target = UKR_dyrektoria_headquarters
+}
+USR = {
+	global_event_target = UKR_soviet_republic
+}
+CRD = {
+	global_event_target = CRM_crimea_uprising
+}
+
+
 # operative operation target
 # only set for majors who has agency
 # set on on_weekly

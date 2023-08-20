@@ -2436,7 +2436,7 @@ focus_tree = {
 	
 	focus = {
 		id = NFA_support_native_elites
-		icon = GFX_goal_goal_NGR_native_rights
+		icon = GFX_goal_NGR_native_rights
 		prerequisite = { focus = NFA_work_with_abbas }
 		prerequisite = { focus = NFA_cultural_revivals_among_exiles }
 		x = -2
@@ -4540,6 +4540,18 @@ focus_tree = {
 						transfer_state = PREV
 					}
 				}
+				every_state = {
+					limit = {
+						is_on_continent = africa
+						NOT = {
+							state = 459
+							state = 460
+							state = 805
+						}	
+					}
+					remove_core_of = NFA
+				    remove_claim_by = NFA
+				}
 				NFA = {
 					puppet = FAR
 				}
@@ -4614,6 +4626,18 @@ focus_tree = {
 					FAR = {
 						transfer_state = PREV
 					}
+				}
+				every_state = {
+					limit = {
+						is_on_continent = africa
+						NOT = {
+							state = 459
+							state = 460
+							state = 805
+						}
+					}
+					remove_core_of = NFA
+				    remove_claim_by = NFA
 				}
 				NFA = {
 					puppet = FAR
@@ -4690,6 +4714,18 @@ focus_tree = {
 					FAR = {
 						transfer_state = PREV
 					}
+				}
+				every_state = {
+					limit = {
+						is_on_continent = africa
+						NOT = {
+							state = 459
+							state = 460
+							state = 805
+						}
+					}
+					remove_core_of = NFA
+				    remove_claim_by = NFA
 				}
 				NFA = {
 					puppet = FAR
@@ -7030,6 +7066,7 @@ focus_tree = {
 			GER = {
 				country_event = { id = natfra.189 days = 1 }
 			}
+			set_global_flag = CAN_german_tension
 		}		
 	}
 
@@ -7195,6 +7232,7 @@ focus_tree = {
 		completion_reward = {
 			country_event = { id = natfra.149 days = 1 }
 			add_war_support = 0.02
+			set_global_flag = CAN_german_tension
 		}		
 	}
 
@@ -15040,7 +15078,7 @@ focus_tree = {
 				create_country_leader = {
 					name = "Louis Situwuka Shotridge"
 					desc = "POLITICS_TLINGITMAN_DESC"
-					picture = "gfx/leaders/AIF/AIF_Tlingit_Man.png"
+					picture = "gfx/leaders/AIF/Portrait_AIF_Louis_Shotridge.png"
 					expire = "1965.1.1"
 					ideology = natpop_tribal_chiefdom_subtype
 					traits = {}
@@ -15282,7 +15320,7 @@ focus_tree = {
 			add_state_core = 35
 			add_state_core = 978
 			add_state_core = 165
-                        add_state_core = 29
+						add_state_core = 29
 		}		
 	}
 	focus = {
@@ -15786,13 +15824,13 @@ focus_tree = {
 							country_exists = RUS
 						}
 						NOT = {
-							SOV = {
+							RUS = {
 								is_puppet_of = NFA
 								is_in_faction_with = NFA
 							}
 						}
 					}
-					SOV = {
+					RUS = {
 						country_event = {
 							id = nfe.2
 							days = 10

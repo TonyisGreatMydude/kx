@@ -26,19 +26,11 @@ focus_tree = {
 
 		available = {
 			has_elected_government = yes
-			has_country_flag = USA_start_economic_timer
-		}
-
-		select_effect = {
-			country_event = ustates.500
 		}
 
 		available_if_capitulated = yes
 		cancel_if_invalid = no
-
-		bypass = {
-			has_country_flag = USA_had_1936_election
-		}
+		cancelable = no
 
 		completion_reward = {
 			custom_effect_tooltip = USA_gwbill_vote_occurs
@@ -3826,10 +3818,6 @@ focus_tree = {
 				has_government = market_liberal
 				has_government = social_liberal
 			}
-			OR = {
-			has_global_flag = USA_civil_war_avoided_flag
-			has_idea = USA_economic_recovery_idea
-			}
 		}
 		ai_will_do = {
 			factor = 5
@@ -5892,7 +5880,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus USA_unite_federal_americans"
-			custom_effect_tooltip = unlock_focuses
 			remove_ideas = USA_great_depression_4
 			remove_ideas = USA_black_monday2
 			remove_ideas = USA_klan_activity_idea_2
@@ -7007,6 +6994,9 @@ focus_tree = {
 			remove_ideas = USA_army_navy_tensions_idea
 			}
 			add_popularity = { ideology = paternal_autocrat popularity = 0.05 }
+			hidden_effect = {
+				country_event = { id = ustates.1298 days = 30 }
+			}
 		}
 	}
 
@@ -7817,7 +7807,12 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus USA_trial_of_the_federalists"
 			country_event = { id = ustates.3145 days = 3 }
-			country_event = { id = ustates.3146 days = 5 }
+			if = {
+				limit = {
+					NOT = { has_country_flag = Douglas_MacArthur_dead }
+				}
+				country_event = { id = ustates.3146 days = 5 }
+			}
 			add_manpower = -3000
 			add_war_support = -0.05
 			add_popularity = { ideology = paternal_autocrat popularity = -0.08 }
@@ -8920,9 +8915,6 @@ focus_tree = {
 		available = {
 			has_country_flag = USA_mac_shared_power
 		}
-		bypass = {
-			has_country_flag = USA_mac_shared_power
-		}
 		x = 43
 		y = 14
 		ai_will_do = {
@@ -9181,7 +9173,6 @@ focus_tree = {
 		icon = GFX_USA_american_caesar
 		cost = 1.00
 		available = { has_country_flag = USA_mac_caesar }
-		bypass = { has_country_flag = USA_mac_caesar }
 		mutually_exclusive = { focus = USA_restore_democracy }
 		prerequisite = {
 			focus = USA_national_rehabilition
@@ -9220,6 +9211,7 @@ focus_tree = {
 		id = USA_fbi_cointelpro
 		icon = GFX_goal_USA_2nd_American_Protective_League
 		cost = 1.00
+		available = { has_country_flag = USA_mac_caesar }
 		prerequisite = {
 			focus = USA_american_caeser
 		}
@@ -9242,6 +9234,7 @@ focus_tree = {
 		id = USA_office_of_war_information
 		icon = GFX_USA_SIS
 		cost = 1.00
+		available = { has_country_flag = USA_mac_caesar }
 		prerequisite = {
 			focus = USA_american_caeser
 		}
@@ -9265,6 +9258,7 @@ focus_tree = {
 		id = USA_control_congress
 		icon = GFX_focus_generic_authoritarian_government
 		cost = 1.00
+		available = { has_country_flag = USA_mac_caesar }
 		prerequisite = {
 			focus = USA_fbi_cointelpro
 		}
@@ -9300,6 +9294,7 @@ focus_tree = {
 		id = USA_nationalize_boy_scouts
 		icon = GFX_USA_national_youth_administration
 		cost = 5.00
+		available = { has_country_flag = USA_mac_caesar }
 		prerequisite = {
 			focus = USA_control_congress
 		}
@@ -9323,6 +9318,7 @@ focus_tree = {
 		id = USA_army_education
 		icon = GFX_CAL_citizen_education
 		cost = 5.00
+		available = { has_country_flag = USA_mac_caesar }
 		prerequisite = {
 			focus = USA_nationalize_boy_scouts
 		}
@@ -9353,6 +9349,7 @@ focus_tree = {
 		id = USA_loyalty_to_macarthur
 		icon = GFX_goal_USA_police_state
 		cost = 5.00
+		available = { has_country_flag = USA_mac_caesar }
 		prerequisite = {
 			focus = USA_control_congress
 		}
@@ -9386,6 +9383,7 @@ focus_tree = {
 		id = USA_constitutional_amending
 		icon = GFX_goal_constitutional_guarantees
 		cost = 5.00
+		available = { has_country_flag = USA_mac_caesar }
 		prerequisite = {
 			focus = USA_loyalty_to_macarthur
 		}
@@ -9412,6 +9410,7 @@ focus_tree = {
 		id = USA_allien_sedition_acts
 		icon = GFX_goal_HOL_crackdown_radsoc
 		cost = 5.00
+		available = { has_country_flag = USA_mac_caesar }
 		prerequisite = {
 			focus = USA_control_congress
 		}
@@ -9436,6 +9435,7 @@ focus_tree = {
 		id = USA_empower_the_army
 		icon = GFX_goal_USA_army
 		cost = 5.00
+		available = { has_country_flag = USA_mac_caesar }
 		prerequisite = {
 			focus = USA_allien_sedition_acts
 		}
@@ -9467,6 +9467,7 @@ focus_tree = {
 		id = USA_american_stratocracy
 		icon = GFX_goal_USA_macarthur_military
 		cost = 5.00
+		available = { has_country_flag = USA_mac_caesar }
 		prerequisite = {
 			focus = USA_empower_the_army
 		}
@@ -9505,6 +9506,7 @@ focus_tree = {
 		id = USA_all_american_legion
 		icon = GFX_goal_LEC_armsUSA
 		cost = 5.00
+		available = { has_country_flag = USA_mac_caesar }
 		prerequisite = {
 			focus = USA_american_stratocracy
 		}
@@ -9531,6 +9533,7 @@ focus_tree = {
 		id = USA_mandatory_service
 		icon = GFX_goal_CAL_aggressive_conscription
 		cost = 5.00
+		available = { has_country_flag = USA_mac_caesar }
 		prerequisite = {
 			focus = USA_all_american_legion
 		}
@@ -9554,6 +9557,7 @@ focus_tree = {
 		id = USA_little_troopers
 		icon = GFX_USA_young_troopers
 		cost = 5.00
+		available = { has_country_flag = USA_mac_caesar }
 		prerequisite = {
 			focus = USA_american_stratocracy
 		}
@@ -9578,6 +9582,7 @@ focus_tree = {
 		id = USA_baracks_capitalism
 		icon = GFX_USA_barrack_capitalism
 		cost = 5.00
+		available = { has_country_flag = USA_mac_caesar }
 		prerequisite = {
 			focus = USA_little_troopers
 		}
@@ -9599,6 +9604,7 @@ focus_tree = {
 		id = USA_salute_the_chief
 		icon = GFX_USA_salute_the_chief
 		cost = 5.00
+		available = { has_country_flag = USA_mac_caesar }
 		prerequisite = {
 			focus = USA_mandatory_service
 		}
@@ -9622,6 +9628,12 @@ focus_tree = {
 			add_war_support = 0.1
 			add_political_power = 200
 			add_command_power = 60
+			if = {	
+			limit = { has_country_leader = { name = "Douglas MacArthur" ruling_only = yes } }
+				country_event = {
+					id = wcc.101
+				}
+			}
 		}
 	}
 	
@@ -10334,6 +10346,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus USA_military_research"
+			add_research_slot = 1
 			country_event = {
 				id = ustates.300
 				days = 1
@@ -11762,9 +11775,9 @@ focus_tree = {
 			add_idea = USA_subordinated_mechanization_2
 			}
 			air_experience = 5
-			add_tech_bonus = {
-				name = doctrine_bonus
-				bonus = 0.5
+			add_doctrine_cost_reduction = {
+				name = air_doc_bonus
+				cost_reduction = 0.5
 				uses = 1
 				category = air_doctrine
 			}
@@ -11839,9 +11852,9 @@ focus_tree = {
 			remove_idea = MacArthur_plan_idea_3
 			add_idea = MacArthur_plan_idea_4
 			}
-			add_tech_bonus = {
-				name = doctrine_bonus
-				bonus = 0.75
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
 				uses = 1
 				category = land_doctrine
 			}
@@ -12032,6 +12045,7 @@ focus_tree = {
 		relative_position_id = USA_macarthur_army_plan
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus USA_honor_academies"
+			add_research_slot = 1
 			add_ideas = USA_honor_academies
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
@@ -12485,8 +12499,8 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus USA_grand_navy"
 			add_doctrine_cost_reduction = {
-				cost_reduction = 1
-				uses = 2
+				cost_reduction = 0.5
+				uses = 1
 				category = cat_fleet_in_being
 			}
 		}
@@ -12538,10 +12552,10 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus USA_defend_our_trade"
 			add_doctrine_cost_reduction = {
-	name = naval_doc_bonus
-	cost_reduction = 0.5
-	uses = 2
-	category = cat_trade_interdiction
+				name = naval_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = cat_trade_interdiction
 			}
 		}
 	}
@@ -12591,9 +12605,9 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus USA_carriers"
-			add_tech_bonus = {
-				bonus = 1
-				uses = 2
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 1
 				category = cat_base_strike
 			}
 		}
@@ -13825,7 +13839,7 @@ focus_tree = {
 	
 	focus = {
 		id = USA_new_moralism
-		icon = GFX_goal_goal_CAN_negotiate_american_peace
+		icon = GFX_goal_CAN_negotiate_american_peace
 		cost = 5.00
 		prerequisite = {
 			focus = USA_back_in_business
@@ -13905,8 +13919,6 @@ focus_tree = {
 			increase_ruling_party_popularity_by_5 = yes
 			add_political_power = 50
 			add_war_support = 0.05
-			add_popularity = { ideology = paternal_autocrat popularity = -0.05 }
-			add_popularity = { ideology = authoritarian_democrat popularity = -0.03 }
 		}
 	}
 	
@@ -14173,7 +14185,6 @@ focus_tree = {
 		}
 		available = {
 			is_subject = no
-			is_in_faction = no
 		}
 		relative_position_id = USA_fortress_america
 		x = -1
@@ -14185,10 +14196,6 @@ focus_tree = {
 
 		available_if_capitulated = no
 		cancel_if_invalid = yes
-
-		bypass = {
-			is_in_faction = yes
-		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus USA_business_of_neutrality"
@@ -14395,7 +14402,7 @@ focus_tree = {
 	
 	focus = {
 		id = USA_warn_japan
-		icon = GFX_goal_goal_CAN_stop_japanese_imperialism
+		icon = GFX_goal_CAN_stop_japanese_imperialism
 		cost = 1
 		prerequisite = {
 			focus = USA_league_of_anti_imperialism
@@ -14814,15 +14821,6 @@ focus_tree = {
 		}
 		available = {
 			is_subject = no
-			NOT = {
-			CAN = {
-			is_puppet_of = USA
-			}
-			CAN = {
-			has_war_with = USA
-			}
-			has_country_flag = USA_1940_election_PP_victory
-			}
 		}
 		relative_position_id = USA_back_in_business
 		x = 0
@@ -15991,16 +15989,6 @@ focus_tree = {
 		available = {
 			is_subject = no
 			is_in_faction = no
-			OR = {
-			has_government = authoritarian_democrat
-			has_government = paternal_autocrat
-			has_government = national_populist
-			has_country_leader = { ruling_only = yes name = "Harry F. Byrd" }
-			has_country_leader = { ruling_only = yes name = "James E. Murray" }
-			has_country_leader = { ruling_only = yes name = "William Averell Harriman" }
-			has_country_leader = { ruling_only = yes name = "Strom Thurmond" }
-			has_country_leader = { ruling_only = yes name = "Douglas MacArthur" }
-			}
 		}
 		relative_position_id = USA_back_in_business
 		x = 7
@@ -16766,7 +16754,12 @@ focus_tree = {
 			type = annex_everything
 			target = LEC
 			}
+			add_state_claim = 728
+			add_state_claim = 729
 			add_state_claim = 592
+			add_state_claim = 326
+			add_state_claim = 801
+			add_state_claim = 802
 		}
 	}
 	focus = {

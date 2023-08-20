@@ -217,14 +217,31 @@ spriteTypes = {
 	}
 
 	### CHI - Left Kuomintang ###
-	spriteType  = {
+	spriteType = {
 		name = "GFX_news_event_CHI_northern_expedition"
 		texturefile = "gfx/event_news_pictures/Asia/news_event_CHI_northern_expedition.png"
 	}
-	spriteType  = {
+	spriteType = {
 		name = "GFX_news_event_CHI_kmt_victor"
 		texturefile = "gfx/event_news_pictures/Asia/news_event_CHI_kmt_victor.png"
 	}
+	spriteType = {
+		name = "GFX_news_event_CHI_wang_victory"
+		texturefile = "gfx/event_news_pictures/Asia/news_event_CHI_wang_victory.png"
+	}
+	spriteType = {
+		name = "GFX_news_event_CHI_chen_gongbo_victory"
+		texturefile = "gfx/event_news_pictures/Asia/news_event_CHI_chen_gongbo_victory.png"
+	}
+	spriteType = {
+		name = "GFX_news_event_CHI_pac_victory"
+		texturefile = "gfx/event_news_pictures/Asia/news_event_CHI_pac_victory.png"
+	}
+	spriteType = {
+		name = "GFX_news_event_CHI_hu_victory"
+		texturefile = "gfx/event_news_pictures/Asia/news_event_CHI_hu_zongnan_victory.png"
+	}
+
 
 	### CSA - Combined Syndicates ###
 	spriteType = {
@@ -288,6 +305,10 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_news_event_ENG_workers_palace"
 		texturefile = "gfx/event_news_pictures/Europe/news_event_ENG_workers_palace.png"
+	}
+	spriteType = {
+		name = "GFX_news_event_ENG_no_majority"
+		texturefile = "gfx/event_news_pictures/Europe/news_event_ENG_no_majority.png"
 	}
 
 	### ECU - Ecuador ###
@@ -662,6 +683,10 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_news_event_MON_gada_meiren"
 		texturefile = "gfx/event_news_pictures/Asia/news_event_MON_gada_meiren.png"
+	}
+	spriteType = {
+		name = "GFX_news_event_MON_socialist"
+		texturefile = "gfx/event_news_pictures/Asia/news_event_MON_socialist.png"
 	}
 
 	### NFA - National France ###
@@ -1672,6 +1697,10 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_event_NFA_pope_law_reform"
 		texturefile = "gfx/event_pictures/Africa/National_France/GFX_event_NFA_pope_law_reform.png"
+	}
+	spriteType = {
+		name = "GFX_event_NFA_cardinal_cat"
+		texturefile = "gfx/event_pictures/Africa/National_France/GFX_event_NFA_cardinal_cat.png"
 	}
 	spriteType = {
 		name = "GFX_event_NFA_pope_writing"

@@ -161,6 +161,13 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus KIV_we_have_numbers_on_our_side"
 			add_manpower = 2000
 			add_war_support = 0.1
+			hidden_effect = {
+				country_event = {
+					id = kivu.75
+					days = 10
+					random = 4
+				}
+			}
 		}
 	}
 	
@@ -855,7 +862,6 @@ focus_tree = {
 					KIV_Joseph_Kasa_Vubu_sec_npo
 				}
 			}
-			add_country_leader_trait = father_of_nzere
 			hidden_effect = {	
 				remove_ideas_with_trait = economy_minister
 				remove_ideas_with_trait = security_minister
@@ -1272,7 +1278,6 @@ focus_tree = {
 				remove_idea = KIV_elder_statesman
 				add_idea = KIV_solid_government
 			}
-			remove_ideas = KIV_inexperience2
 			COG_increase_recovery = yes
 			KIV_decrease_inexperience = yes
 		}
@@ -1468,7 +1473,7 @@ focus_tree = {
 			}
 			KIV_decrease_inexperience = yes
 			hidden_effect = {
-                                country_event = {
+								country_event = {
 					id = kivu.74
 					days = 10
 				}

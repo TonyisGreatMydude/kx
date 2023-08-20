@@ -13,49 +13,46 @@ ideas = {
 		#Starting Idea
 		ANQ_righteous_cause = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_righteous_cause"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = chi_chinese_support
 			modifier = {
 				unit_limit_bonus = 15
 				war_support_factor = 0.15
 				political_power_factor = 0.05
 				army_morale_factor = 0.1
-				surrender_limit = 0.15
 			}
 		}
 
 		ANQ_victory_league_idea = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_victory_league_idea"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = chi_chinese_support
 			modifier = {
 				army_attack_factor = 0.15
 				war_support_factor = 0.15
 				army_morale_factor = 0.1
-				surrender_limit = 0.15
 			}
 		}
 
 		ANQ_peace_idea = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_peace_idea"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = chi_chinese_support
 			modifier = {
 				stability_factor = 0.15
 				army_morale_factor = 0.1
-				surrender_limit = 0.1
 			}
 		}
 
 		ANQ_credibility_idea = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_credibility_idea"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = ANQ_credibility
 		}
 
 		ANQ_international_embargo = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_international_embargo"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = generic_trade
 			modifier = {
 				trade_opinion_factor = -0.6
@@ -65,7 +62,7 @@ ideas = {
 		#Nippon related ideas		
 		ANQ_anti_concessionist_militias = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_anti_concessionist_militias"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = chi_army_corruption2
 			modifier = {
 				training_time_army_factor = -0.15
@@ -75,7 +72,7 @@ ideas = {
 
 		ANQ_japanese_troop_training = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_japanese_troop_training"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = warrior_traditions_idea
 			modifier = {
 				training_time_army_factor = -0.35
@@ -85,7 +82,7 @@ ideas = {
 
 		ANQ_new_xinhai_idea = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_new_xinhai_idea"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = FNG_xinhai_order
 			targeted_modifier = {
 				tag = QIE
@@ -96,7 +93,7 @@ ideas = {
 
 		ANQ_new_xinhai_idea1 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_new_xinhai_idea1"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = FNG_xinhai_order
 			modifier = {
 				war_support_factor = 0.05
@@ -112,7 +109,7 @@ ideas = {
 
 		ANQ_okura_bank_loans = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_okura_bank_loans"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = JAP_yen
 			targeted_modifier = {
 				tag = JAP
@@ -122,7 +119,7 @@ ideas = {
 
 		ANQ_zaibatsu_contracts = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_zaibatsu_contracts"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = jap_zaibatsu_ally
 			targeted_modifier = {
 				tag = JAP
@@ -132,7 +129,7 @@ ideas = {
 
 		ANQ_dare_to_die_corps = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_dare_to_die_corps"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = death_men
 			modifier = {
 				army_core_defence_factor = 0.10
@@ -143,7 +140,7 @@ ideas = {
 
 		ANQ_qing_army_cooperation = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_qing_army_cooperation"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = army_cooperation
 			modifier = {
 				army_org_factor = 0.03
@@ -153,7 +150,7 @@ ideas = {
 
 		ANQ_qing_army_cooperation1 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_qing_army_cooperation1"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = army_cooperation
 			modifier = {
 				army_org_factor = 0.07
@@ -164,7 +161,7 @@ ideas = {
 
 		ANQ_qing_army_cooperation2 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_qing_army_cooperation2"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = army_cooperation
 			modifier = {
 				army_org_factor = 0.07
@@ -177,7 +174,7 @@ ideas = {
 
 		ANQ_qing_army_cooperation3 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_qing_army_cooperation3"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = army_cooperation
 			modifier = {
 				army_org_factor = 0.07
@@ -195,7 +192,7 @@ ideas = {
 
 		ANQ_dalu_yinhang_loans_idea = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_dalu_yinhang_loans_idea"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = NOR_syndicalist_industry_idea
 			modifier = {
 				production_speed_buildings_factor = 0.30
@@ -204,7 +201,7 @@ ideas = {
 		}
 		ANQ_dalu_yinhang_loans_idea1 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_dalu_yinhang_loans_idea1"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = NOR_syndicalist_industry_idea
 			modifier = {
 				production_speed_buildings_factor = 0.30
@@ -212,7 +209,7 @@ ideas = {
 		}
 		ANQ_northern_bank_loans = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_northern_bank_loans"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = NOR_syndicalist_industry_idea
 			modifier = {
 				production_speed_buildings_factor = 0.40
@@ -232,7 +229,7 @@ ideas = {
 
 		ANQ_derelict_industry = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_derelict_industry"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = generic_crippled_industry
 			modifier = {
 				production_factory_max_efficiency_factor = -0.15
@@ -242,7 +239,7 @@ ideas = {
 		}
 		ANQ_derelict_industry1 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_derelict_industry1"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = generic_crippled_industry
 			modifier = {
 				production_factory_max_efficiency_factor = -0.1
@@ -252,7 +249,7 @@ ideas = {
 		}
 		ANQ_derelict_industry2 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_derelict_industry2"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = generic_crippled_industry
 			modifier = {
 				production_factory_max_efficiency_factor = -0.05
@@ -262,7 +259,7 @@ ideas = {
 		}
 		ANQ_derelict_industry3 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_derelict_industry3"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = generic_crippled_industry
 			modifier = {
 				industrial_capacity_factory = -0.1
@@ -272,7 +269,7 @@ ideas = {
 
 		ANQ_widespread_destruction = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_widespread_destruction"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = generic_destruction
 			modifier = {
 				consumer_goods_factor = 0.15
@@ -282,7 +279,7 @@ ideas = {
 
 		ANQ_widespread_destruction1 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_widespread_destruction1"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = generic_destruction
 			modifier = {
 				consumer_goods_factor = 0.1
@@ -292,7 +289,7 @@ ideas = {
 
 		ANQ_widespread_destruction2 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_widespread_destruction2"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = generic_destruction
 			modifier = {
 				consumer_goods_factor = 0.05
@@ -302,7 +299,7 @@ ideas = {
 
 		ANQ_yiguandao = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_yiguandao"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = chi_war_of_resistance2
 			modifier = {
 				resistance_damage_to_garrison = 0.25
@@ -314,7 +311,7 @@ ideas = {
 
 		ANQ_kuomintang = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_kuomintang"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = chi_warlord_integration
 			modifier = {
 				resistance_damage_to_garrison = 0.25
@@ -327,7 +324,7 @@ ideas = {
 
 		ANQ_dike_and_levee_authority_idea = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_dike_and_levee_authority_idea"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = generic_agrarian_society
 			modifier = {
 				global_building_slots_factor = 0.10
@@ -337,7 +334,7 @@ ideas = {
 
 		ANQ_subei_canal_idea = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_subei_canal_idea"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = hol_shell_shocked_spectator
 			modifier = {
 				global_building_slots_factor = 0.05
@@ -347,7 +344,7 @@ ideas = {
 
 		ANQ_dike_and_levee_authority_idea1 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_dike_and_levee_authority_idea1"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = generic_agrarian_society
 			modifier = {
 				global_building_slots_factor = 0.15
@@ -358,7 +355,7 @@ ideas = {
 
 		ANQ_canal_dike_cooperation = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_canal_dike_cooperation"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = hol_shell_shocked_spectator
 			modifier = {
 				global_building_slots_factor = 0.05
@@ -368,7 +365,7 @@ ideas = {
 
 		ANQ_dike_and_levee_authority_idea2 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_dike_and_levee_authority_idea2"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = generic_agrarian_society
 			modifier = {
 				global_building_slots_factor = 0.2
@@ -379,7 +376,7 @@ ideas = {
 
 		ANQ_modern_schooling_system_idea = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_modern_schooling_system_idea"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = jap_duplicate_research
 			modifier = {
 				research_speed_factor = 0.03
@@ -388,7 +385,7 @@ ideas = {
 
 		ANQ_developing_nation = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_developing_nation"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = generic_agrarian_society
 			modifier = {
 				global_building_slots_factor = 0.10
@@ -398,7 +395,7 @@ ideas = {
 		}
 		ANQ_developing_nation1 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_developing_nation1"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = generic_agrarian_society
 			modifier = {
 				global_building_slots_factor = 0.15
@@ -409,7 +406,7 @@ ideas = {
 		}
 		ANQ_developing_nation2 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_developing_nation2"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = generic_agrarian_society
 			modifier = {
 				global_building_slots_factor = 0.20
@@ -421,7 +418,7 @@ ideas = {
 
 		ANQ_purged_military = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_purged_military"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = generic_purge_idea
 			modifier = {
 				army_org_Factor = -0.05
@@ -433,7 +430,7 @@ ideas = {
 
 		ANQ_purged_bureaucracy = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_purged_bureaucracy"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = prc_low_popular_support
 			modifier = {
 				stability_weekly = -0.001
@@ -443,7 +440,7 @@ ideas = {
 
 		ANQ_purged_both = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_purged_both"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = generic_purge_idea
 			modifier = {
 				army_org_Factor = -0.05
@@ -458,7 +455,7 @@ ideas = {
 		# Bejing Influence
 		ANQ_beijing_cooperation = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_beijing_cooperation"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			available = {
 				QIE = {
 					exists = yes
@@ -476,7 +473,7 @@ ideas = {
 		}
 		ANQ_beijing_cooperation1 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_beijing_cooperation1"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			available = {
 				QIE = {
 					exists = yes
@@ -498,7 +495,7 @@ ideas = {
 		}
 		ANQ_beijing_cooperation2 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_beijing_cooperation2"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			available = {
 				QIE = {
 					exists = yes
@@ -520,7 +517,7 @@ ideas = {
 		}
 		ANQ_beijing_cooperation3 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_beijing_cooperation3"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			available = {
 				QIE = {
 					exists = yes
@@ -542,7 +539,7 @@ ideas = {
 		}
 		ANQ_beijing_cooperation4 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_beijing_cooperation4"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			available = {
 				QIE = {
 					exists = yes
@@ -565,7 +562,7 @@ ideas = {
 		}
 		ANQ_beijing_cooperation5 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_beijing_cooperation5"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			available = {
 				QIE = {
 					exists = yes
@@ -588,7 +585,7 @@ ideas = {
 		}
 		ANQ_beijing_cooperation6 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_beijing_cooperation6"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			available = {
 				QIE = {
 					exists = yes
@@ -611,7 +608,7 @@ ideas = {
 		}
 		ANQ_beijing_cooperation7 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_beijing_cooperation7"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			available = {
 				QIE = {
 					exists = yes
@@ -634,7 +631,7 @@ ideas = {
 		}
 		ANQ_beijing_cooperation8 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_beijing_cooperation8"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			available = {
 				QIE = {
 					exists = yes
@@ -658,7 +655,7 @@ ideas = {
 		}
 		ANQ_beijing_cooperation9 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_beijing_cooperation9"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			available = {
 				QIE = {
 					exists = yes
@@ -683,7 +680,7 @@ ideas = {
 		}
 		ANQ_beijing_cooperation10 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_beijing_cooperation10"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			available = {
 				QIE = {
 					exists = yes
@@ -708,7 +705,7 @@ ideas = {
 		}
 		ANQ_beijing_cooperation11 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_beijing_cooperation11"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			available = {
 				QIE = {
 					exists = yes
@@ -733,7 +730,7 @@ ideas = {
 		}
 		ANQ_beijing_cooperation12 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_beijing_cooperation12"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			available = {
 				QIE = {
 					exists = yes
@@ -759,7 +756,7 @@ ideas = {
 
 		ANQ_beijing_angry1 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_beijing_angry1"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			available = {
 				QIE = {
 					exists = yes
@@ -781,7 +778,7 @@ ideas = {
 		}
 		ANQ_beijing_angry2 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_beijing_angry2"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			available = {
 				QIE = {
 					exists = yes
@@ -803,7 +800,7 @@ ideas = {
 		}
 		ANQ_beijing_angry3 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_beijing_angry3"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			available = {
 				QIE = {
 					exists = yes
@@ -825,7 +822,7 @@ ideas = {
 		}
 		ANQ_beijing_angry4 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_beijing_angry4"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			available = {
 				QIE = {
 					exists = yes
@@ -849,7 +846,7 @@ ideas = {
 		#Fengtian/JAP influence
 		ANQ_fengtian_cooperation = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_fengtian_cooperation"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			available = {
 				country_exists = FNG
 				NOT = { has_war_with = FNG }
@@ -862,7 +859,7 @@ ideas = {
 		}
 		ANQ_fengtian_cooperation1 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_fengtian_cooperation1"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			available = {
 				country_exists = FNG
 				NOT = { has_war_with = FNG }
@@ -876,7 +873,7 @@ ideas = {
 		}
 		ANQ_fengtian_cooperation2 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_fengtian_cooperation2"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			available = {
 				country_exists = FNG
 				NOT = { has_war_with = FNG }
@@ -898,7 +895,7 @@ ideas = {
 		}
 		ANQ_fengtian_cooperation3 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_fengtian_cooperation3"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			available = {
 				country_exists = FNG
 				NOT = { has_war_with = FNG }
@@ -920,7 +917,7 @@ ideas = {
 		}
 		ANQ_fengtian_cooperation4 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_fengtian_cooperation4"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			available = {
 				country_exists = FNG
 				NOT = { has_war_with = FNG }
@@ -942,7 +939,7 @@ ideas = {
 		}
 		ANQ_fengtian_cooperation5 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_fengtian_cooperation5"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			available = {
 				country_exists = FNG
 				NOT = { has_war_with = FNG }
@@ -964,7 +961,7 @@ ideas = {
 		}
 		ANQ_fengtian_cooperation6 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_fengtian_cooperation6"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			available = {
 				country_exists = FNG
 				NOT = { has_war_with = FNG }
@@ -986,7 +983,7 @@ ideas = {
 		}
 		ANQ_fengtian_cooperation7 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_fengtian_cooperation7"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			available = {
 				country_exists = FNG
 				NOT = { has_war_with = FNG }
@@ -1010,7 +1007,7 @@ ideas = {
 		}
 		ANQ_fengtian_cooperation8 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_fengtian_cooperation8"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			available = {
 				country_exists = FNG
 				NOT = { has_war_with = FNG }
@@ -1036,7 +1033,7 @@ ideas = {
 		}
 		ANQ_fengtian_cooperation9 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_fengtian_cooperation9"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			available = {
 				country_exists = FNG
 				NOT = { has_war_with = FNG }
@@ -1062,7 +1059,7 @@ ideas = {
 		}
 		ANQ_fengtian_cooperation10 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_fengtian_cooperation10"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			available = {
 				country_exists = FNG
 				NOT = { has_war_with = FNG }
@@ -1090,7 +1087,7 @@ ideas = {
 
 		ANQ_fengtian_cooperationNOJAP = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_fengtian_cooperationNOJAP"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			available = {
 				country_exists = FNG
 				NOT = { has_war_with = FNG }
@@ -1100,7 +1097,7 @@ ideas = {
 		}
 		ANQ_fengtian_cooperationNOJAP1 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_fengtian_cooperationNOJAP1"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			available = {
 				country_exists = FNG
 				NOT = { has_war_with = FNG }
@@ -1113,7 +1110,7 @@ ideas = {
 		}
 		ANQ_fengtian_cooperationNOJAP2 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_fengtian_cooperationNOJAP2"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			available = {
 				country_exists = FNG
 				NOT = { has_war_with = FNG }
@@ -1131,7 +1128,7 @@ ideas = {
 		}
 		ANQ_fengtian_cooperationNOJAP3 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_fengtian_cooperationNOJAP3"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			available = {
 				country_exists = FNG
 				NOT = { has_war_with = FNG }
@@ -1149,7 +1146,7 @@ ideas = {
 		}
 		ANQ_fengtian_cooperationNOJAP4 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_fengtian_cooperationNOJAP4"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			available = {
 				country_exists = FNG
 				NOT = { has_war_with = FNG }
@@ -1167,7 +1164,7 @@ ideas = {
 		}
 		ANQ_fengtian_cooperationNOJAP5 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_fengtian_cooperationNOJAP5"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			available = {
 				country_exists = FNG
 				NOT = { has_war_with = FNG }
@@ -1185,7 +1182,7 @@ ideas = {
 		}
 		ANQ_fengtian_cooperationNOJAP6 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_fengtian_cooperationNOJAP6"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			available = {
 				country_exists = FNG
 				NOT = { has_war_with = FNG }
@@ -1203,7 +1200,7 @@ ideas = {
 		}
 		ANQ_fengtian_cooperationNOJAP7 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_fengtian_cooperationNOJAP7"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			available = {
 				country_exists = FNG
 				NOT = { has_war_with = FNG }
@@ -1222,7 +1219,7 @@ ideas = {
 		}
 		ANQ_fengtian_cooperationNOJAP8 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_fengtian_cooperationNOJAP8"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			available = {
 				country_exists = FNG
 				NOT = { has_war_with = FNG }
@@ -1242,7 +1239,7 @@ ideas = {
 		}
 		ANQ_fengtian_cooperationNOJAP9 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_fengtian_cooperationNOJAP9"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			available = {
 				country_exists = FNG
 				NOT = { has_war_with = FNG }
@@ -1262,7 +1259,7 @@ ideas = {
 		}
 		ANQ_fengtian_cooperationNOJAP10 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_fengtian_cooperationNOJAP10"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			available = {
 				country_exists = FNG
 				NOT = { has_war_with = FNG }
@@ -1284,7 +1281,7 @@ ideas = {
 
 		ANQ_black_dragon_society = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_black_dragon_society"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = ANQ_black_dragon_society
 			modifier = {
 				army_org_factor = 0.05
@@ -1294,7 +1291,7 @@ ideas = {
 
 		ANQ_nationalist_spirit_idea = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_nationalist_spirit_idea"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = FRA_matignon_agreements
 			modifier = {
 				army_org_factor = 0.05
@@ -1304,7 +1301,7 @@ ideas = {
 
 		ANQ_chen_yi = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_chen_yi"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = ANQ_Chen_Yi_hog_ade
 			modifier = {
 				political_power_gain = 0.05
@@ -1313,7 +1310,7 @@ ideas = {
 
 		ANQ_shangguan = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_shangguan"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = ANQ_shangguan_yunxiang
 			modifier = {
 				political_power_gain = 0.02
@@ -1322,7 +1319,7 @@ ideas = {
 
 		ANQ_harsh_desertion_policy = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_harsh_desertion_policy"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = MEX_revolutionary_army
 			modifier = {
 				experience_loss_factor = -0.10
@@ -1333,7 +1330,7 @@ ideas = {
 
 		ANQ_ruined_interior = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_ruined_interior"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = prc_low_popular_support2
 			modifier = {
 				consumer_goods_factor = 0.10
@@ -1344,7 +1341,7 @@ ideas = {
 		}
 		ANQ_ruined_interior1 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_ruined_interior1"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = prc_low_popular_support2
 			modifier = {
 				consumer_goods_factor = 0.10
@@ -1354,7 +1351,7 @@ ideas = {
 		}
 		ANQ_ruined_interior2 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_ruined_interior2"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = prc_low_popular_support2
 			modifier = {
 				consumer_goods_factor = 0.05
@@ -1364,7 +1361,7 @@ ideas = {
 		}
 		ANQ_overstretched_administration = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_overstretched_administration"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = generic_disjointed_gov
 			modifier = {
 				political_power_factor = -0.4
@@ -1372,7 +1369,7 @@ ideas = {
 		}
 		ANQ_idea_institutional_chaos = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_idea_institutional_chaos"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = generic_disjointed_gov
 			modifier = {
 				stability_factor = -0.3
@@ -1381,7 +1378,7 @@ ideas = {
 		}
 		ANQ_idea_institutional_chaos1 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_idea_institutional_chaos1"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = generic_disjointed_gov
 			modifier = {
 				stability_factor = -0.2
@@ -1390,7 +1387,7 @@ ideas = {
 		}
 		ANQ_idea_institutional_chaos2 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_idea_institutional_chaos2"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = generic_disjointed_gov
 			modifier = {
 				stability_factor = -0.1
@@ -1399,7 +1396,7 @@ ideas = {
 		}
 		ANQ_supportive_movement = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_supportive_movement"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = generic_volunteer_expedition_bonus
 			modifier = {
 				war_support_factor = 0.1
@@ -1409,7 +1406,7 @@ ideas = {
 		}
 		ANQ_managed_movementa = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_managed_movementa"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = generic_volunteer_expedition_bonus
 			modifier = {
 				political_power_factor = 0.1
@@ -1417,7 +1414,7 @@ ideas = {
 		}
 		ANQ_managed_movementb = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_managed_movementb"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = generic_volunteer_expedition_bonus
 			modifier = {
 				war_support_factor = 0.1
@@ -1425,7 +1422,7 @@ ideas = {
 		}
 		ANQ_managed_movement1 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_managed_movement1"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = generic_volunteer_expedition_bonus
 			modifier = {
 				political_power_factor = 0.1
@@ -1434,7 +1431,7 @@ ideas = {
 		}
 		ANQ_managed_movement2 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_managed_movement2"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = generic_volunteer_expedition_bonus
 			modifier = {
 				war_support_factor = 0.15
@@ -1444,7 +1441,7 @@ ideas = {
 		}
 		ANQ_patriotic_nation = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_patriotic_nation"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = big_entente_idea
 			modifier = {
 				stability_factor = 0.03
@@ -1453,7 +1450,7 @@ ideas = {
 		}
 		ANQ_patriotic_nation1 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_patriotic_nation1"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = big_entente_idea
 			modifier = {
 				stability_factor = 0.05
@@ -1463,7 +1460,7 @@ ideas = {
 		}
 		ANQ_patriotic_nation2 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_patriotic_nation2"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = big_entente_idea
 			modifier = {
 				stability_factor = 0.05
@@ -1474,7 +1471,7 @@ ideas = {
 		}
 		ANQ_clique_control = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_clique_control"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = chi_wargaming_division
 			modifier = {
 				stability_factor = 0.1
@@ -1482,7 +1479,7 @@ ideas = {
 		}
 		ANQ_clique_control1 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_clique_control1"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = chi_wargaming_division
 			modifier = {
 				stability_factor = 0.1
@@ -1491,7 +1488,7 @@ ideas = {
 		}
 		ANQ_clique_control2 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_clique_control2"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = chi_wargaming_division
 			modifier = {
 				stability_factor = 0.15
@@ -1500,7 +1497,7 @@ ideas = {
 		}
 		ANQ_industrial_backing = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_industrial_backing"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = economic_control_icon
 			modifier = {
 				industrial_capacity_factory = 0.075
@@ -1509,7 +1506,7 @@ ideas = {
 
 		ANQ_industrial_backing1 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_industrial_backing1"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = economic_control_icon
 			modifier = {
 				industrial_capacity_factory = 0.075
@@ -1519,7 +1516,7 @@ ideas = {
 
 		ANQ_qing_enterprises = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_qing_enterprises"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = generic_foreign_capital
 			modifier = {
 				production_speed_industrial_complex_factor = 0.2
@@ -1529,7 +1526,7 @@ ideas = {
 
 		ANQ_temporary_sanctions_qie = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_temporary_sanctions_qie"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = PER_Corruption
 			modifier = {
 				production_speed_industrial_complex_factor = -0.2
@@ -1539,7 +1536,7 @@ ideas = {
 
 		ANQ_palace_construction = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_palace_construction"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = generic_exploit_mines
 			modifier = {
 				civilian_factory_use = 1
@@ -1548,7 +1545,7 @@ ideas = {
 
 		ANQ_reconstruction_plan = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_reconstruction_plan"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = generic_exploit_mines
 			modifier = {
 				political_power_gain = 0.1
@@ -1557,7 +1554,7 @@ ideas = {
 		}
 		ANQ_reconstruction_plan1 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_reconstruction_plan1"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = generic_exploit_mines
 			modifier = {
 				political_power_gain = 0.2
@@ -1567,7 +1564,7 @@ ideas = {
 
 		ANQ_reconstruction_strategy = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_reconstruction_strategy"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			picture = generic_exploit_mines
 			modifier = {
 				political_power_gain = 0.3
@@ -1582,7 +1579,7 @@ ideas = {
 	hidden_ideas = {
 		ANQ_backed_currency_idea = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ANQ_backed_currency_idea"}
-                        allowed = { always = no }
+			allowed = { always = no }
 			modifier = {
 				consumer_goods_factor = -0.02
 			}

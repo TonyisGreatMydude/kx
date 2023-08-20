@@ -1045,6 +1045,10 @@ country_event = { # Victory
 				id = worldnews.92
 				days = 2
 			}
+			if = {
+				limit = { has_idea = GEA_vietcong_killer_idea }
+				remove_ideas = GEA_vietcong_killer_idea
+			}
 			INC = {
 				if = {
 					limit = {
@@ -2262,7 +2266,7 @@ country_event = { # A New Leader
 			desc = "POLITICS_FELIX_VON_LUCKNER_DESC"
 			picture = "gfx/leaders/GEA/Portrait_GEA_Felix_Von_Luckner.png"
 			expire = "1966.4.13"
-			ideology = autocratic_colonial_govt_subtype
+			ideology = pirate_republic_subtype 
 			traits = {	
 				hog_old_admiral
 			}
@@ -2274,9 +2278,9 @@ country_event = { # A New Leader
 		}
 		remove_all_ministers = yes
 		add_ideas = {
-			GEA_Felix_von_Luckner_hog_pau
+			GEA_Max_hog_pau
 			GEA_Felix_von_Luckner_for_pau
-			GEA_Arno_Spindler_eco_pau
+			GEA_Moritz_eco_pau
 			GEA_Felix_von_Luckner_sec_pau
 		}
 		hidden_effect = {
@@ -2300,8 +2304,29 @@ country_event = { # A New Leader
 	
 	option = {
 		name = Ostasien.5112.a # Excellent!
+        hidden_effect = {
+			country_event = {
+				id = Ostasien.5113
+				days = 12
+			}
+		}
+	}
+}
 
-		
+country_event = { # Good Boys
+	id = Ostasien.5113
+	immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.5113" }
+	title = Ostasien.5113.t
+	desc = Ostasien.5113.d
+	
+	picture = GFX_report_event_GEA_dogs
+
+	is_triggered_only = yes
+	
+	option = {
+		name = Ostasien.5113.a # Excellent!
+		add_political_power = 20
+		add_stability = 0.02
 	}
 }
 
@@ -3182,6 +3207,19 @@ country_event = { #new gg man
 		name = Ostasien.301.a
 		ai_chance = {
 			factor = 34
+			modifier = {
+				factor = 0 
+				OR = {
+					has_game_rule = {
+						rule = GEA_future
+						option = GEA_FUTURE_FISCAL_AUSTERITY_REVOLT_NO
+					}
+					has_game_rule = {
+						rule = GEA_future
+						option = GEA_FUTURE_FISCAL_AUSTERITY_REVOLT_YES
+					}
+				}
+			}
 		}
 		create_country_leader = {
 			name = "Josias zu Waldeck und Pyrmont"
@@ -3212,7 +3250,7 @@ country_event = { #new gg man
 			GEA_Josias_zu_Waldeck_und_Pyrmont_sec_pau
 		}
 		custom_effect_tooltip = GEA_decrease_uprising_by_1
-		set_country_flag = GEA_Pyrmont_Appointed
+		set_country_flag = GEA_Mucke_Appointed
 		hidden_effect = {
 			country_event = {
 				id = Ostasien.305
@@ -3228,6 +3266,23 @@ country_event = { #new gg man
 		name = Ostasien.301.b
 		ai_chance = {
 			factor = 32
+			modifier = {
+				factor = 0 
+				OR = {
+					has_game_rule = {
+						rule = GEA_future
+						option = GEA_FUTURE_FISCAL_AUSTERITY_REVOLT_NO
+					}
+					has_game_rule = {
+						rule = GEA_future
+						option = GEA_FUTURE_FISCAL_AUSTERITY_REVOLT_YES
+					}
+					has_game_rule = {
+						rule = GEA_future
+						option = GEA_FUTURE_COLLABORATION_REVOLT_YES_VIETNAM
+					}
+				}
+			}
 		}
 		create_country_leader = {
 			name = "Josias zu Waldeck und Pyrmont"
@@ -3264,6 +3319,23 @@ country_event = { #new gg man
 		name = Ostasien.301.c
 		ai_chance = {
 			factor = 33
+			modifier = {
+				factor = 0 
+				OR = {
+					has_game_rule = {
+						rule = GEA_future
+						option = GEA_FUTURE_COLLABORATION_REVOLT_NO
+					}
+					has_game_rule = {
+						rule = GEA_future
+						option = GEA_FUTURE_COLLABORATION_REVOLT_YES
+					}
+					has_game_rule = {
+						rule = GEA_future
+						option = GEA_FUTURE_COLLABORATION_REVOLT_YES_VIETNAM
+					}
+				}
+			}
 		}
 		create_country_leader = {
 			name = "Josias zu Waldeck und Pyrmont"

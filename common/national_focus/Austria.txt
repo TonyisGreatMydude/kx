@@ -2483,6 +2483,7 @@ focus_tree = {
 			add_state_claim = 108
 			add_state_claim = 107
 			add_state_claim = 765
+			add_state_claim = 1269
 			if = {
 				limit = {
 					NOT = { is_ally_with = BUL }
@@ -2557,6 +2558,7 @@ focus_tree = {
 			add_state_claim = 79
 			add_state_claim = 78
 			add_state_claim = 1222
+			add_state_claim = 1320
 			if = {
 				limit = {
 					NOT = { is_ally_with = BUL }
@@ -2930,17 +2932,17 @@ focus_tree = {
 				owns_state = 109
 				HUN = { owns_state = 109 }
 			}
-                        OR = {
-                          AND = {
-                             SLO = { exists = yes }
-                             has_subject = SLO
-                          }
-                          AND = {
-                             SLO = { exists = no }
-                             NOT = { has_subject = SLO }
-                          }
-                        }
-                             
+						OR = {
+						AND = {
+							SLO = { exists = yes }
+							has_subject = SLO
+						}
+						AND = {
+							SLO = { exists = no }
+							NOT = { has_subject = SLO }
+						}
+						}
+							
 			has_war = no
 		}
 
@@ -3930,7 +3932,29 @@ focus_tree = {
 			hidden_effect = {
 				every_country = {
 					limit = {
-						has_idea = AUS_part_of_the_Empire
+						OR = {
+							has_idea = AUS_part_of_the_Empire
+							AND = {
+								OR = {
+									tag = HUN
+									tag = CRO
+									tag = CZE
+									tag = SVK
+									tag = TRS
+									tag = PGU
+									tag = CPU
+									tag = TRS
+									tag = WSU
+									tag = BAN
+									tag = BUK
+									tag = BOS
+									tag = SKS
+									tag = SLO
+									tag = VNC
+								}
+								is_subject_of = AUS
+							}
+						}
 						NOT = {
 							has_idea = HUN_financial_ties_broken
 						}
@@ -3941,7 +3965,7 @@ focus_tree = {
 			set_cosmetic_tag = DNF
 			add_timed_idea = {
 				idea = AUS_new_administration
-				days = 356
+				days = 365
 			}
 			add_ideas = AUS_DNF_political_instability
 		}
@@ -4143,7 +4167,7 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus AUS_united_states"
 			add_timed_idea = {
 				idea = AUS_new_administration
-				days = 356
+				days = 365
 			}
 			add_political_power = 70
 		}
@@ -4786,7 +4810,7 @@ focus_tree = {
 			threat > 0.1
 			is_subject = no
 			AUS_no_black_monday = yes
-                        is_faction_leader = yes
+						is_faction_leader = yes
 		}
 
 		ai_will_do = {
@@ -4843,8 +4867,8 @@ focus_tree = {
 					any_neighbor_country = { 
 						AND = {
 						is_ally_with = AUS 
-                        NOT = { tag = CRO }
-					    }
+						NOT = { tag = CRO }
+						}
 					}
 				}
 			}
@@ -5750,7 +5774,7 @@ focus_tree = {
 			NOT = {
 				is_subject = yes
 			}
-                        has_war = no
+						has_war = no
 		}
 		
 		prerequisite = { focus = AUS_new_workforce_profits }
@@ -5793,8 +5817,8 @@ focus_tree = {
 				name = "Jörg Lanz von Liebenfels"
 				ruling_only = yes
 			}
-                        has_completed_focus = AUS_one_party_empire
-                        NOT = { is_puppet = yes }
+						has_completed_focus = AUS_one_party_empire
+						NOT = { is_puppet = yes }
 			has_war = no
 		}
 		
@@ -6009,8 +6033,8 @@ focus_tree = {
 				name = "Jörg Lanz von Liebenfels"
 				ruling_only = yes
 			}
-                        has_completed_focus = AUS_one_party_empire
-                        NOT = { is_puppet = yes }
+						has_completed_focus = AUS_one_party_empire
+						NOT = { is_puppet = yes }
 			has_war = no
 		}
 
@@ -6029,6 +6053,7 @@ focus_tree = {
 			add_state_claim = 108
 			add_state_claim = 765
 			add_state_claim = 767
+			add_state_claim = 1269
 			
 			if = {
 				limit = {
@@ -6041,6 +6066,7 @@ focus_tree = {
 					add_state_core = 108
 					add_state_core = 765
 					add_state_core = 767
+					add_state_core = 1269
 				}
 			}
 		}
@@ -6058,7 +6084,7 @@ focus_tree = {
 				name = "Jörg Lanz von Liebenfels"
 				ruling_only = yes
 			}
-                        NOT = { is_puppet = yes }
+						NOT = { is_puppet = yes }
 			has_war = no
 		}
 		
@@ -6394,8 +6420,7 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 150
 			add_stability = 0.2
-			custom_effect_tooltip = disables_collapse
-			set_country_flag = no_more_collapse
+			hidden_effect = { set_country_flag = no_more_collapse }
 		}
 	}
 	

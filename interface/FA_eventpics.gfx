@@ -126,6 +126,10 @@ spriteTypes = {
 		name = "GFX_report_event_KIV_lumumba"
 		texturefile = "gfx/event_pictures/Africa/Congo/report_event_KIV_lumumba.png"
 	}
+	spriteType = {
+		name = "GFX_report_event_KIV_congolese_32"
+		texturefile = "gfx/event_pictures/Africa/Congo/report_event_KIV_congolese_32.png"
+	}
 	##UMHK##
 	spriteType = {
 		name = "GFX_report_event_UMN_mwami_chief"
@@ -213,6 +217,10 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_report_event_COG_rohm"
 		texturefile = "gfx/event_pictures/Africa/Congo/report_event_COG_rohm.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_COG_snake"
+		texturefile = "gfx/event_pictures/Africa/Congo/report_event_COG_snake.png"
 	}
 	
 	##Leopoldville##
@@ -390,6 +398,14 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_report_event_GAB_mokele_mbembe"
 		texturefile = "gfx/event_pictures/Africa/Gabon/report_event_GAB_mokele_mbembe.png"
+	}	
+	spriteType = {
+		name = "GFX_report_event_GAB_sketchy_past_spirituality"
+		texturefile = "gfx/event_pictures/Africa/Gabon/report_event_GAB_sketchy_past_spirituality.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_GAB_epigenesis_allies"
+		texturefile = "gfx/event_pictures/Africa/Gabon/report_event_GAB_epigenesis_allies.png"
 	}	
 	
 	## Central Africa ##

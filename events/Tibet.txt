@@ -1683,10 +1683,10 @@ country_event = { # Election is held, only Tibetan male citizens were allowed to
 			remove_all_ministers = yes
 		}
 		add_ideas = {
-			TIB_Getag_Tulku_hog_rso
-			TIB_Sangye_Yeshi_eco_rso
-			TIB_Thubten_Kunphela_sec_rso
-			TIB_Dogan_Penjor_Rabgye_sec_sli
+			SKM_Nicholas_Roerich_hog_tot
+			TIB_Alexander_Barchenko_eco_tot
+			TIB_Helena_Roerich_for_tot
+			TIB_Gleb_Bokii_sec_tot
 		}
 		add_popularity = {
 			ideology = totalist
@@ -2706,6 +2706,8 @@ country_event = { #
 				limit = { has_id = 21422 }
 				set_nationality = NSW
 			}
+		remove_ideas_with_trait = head_of_government
+		add_ideas = TIB_Helena_Roerich_hog_tot	
 		create_country_leader = {
 			name = "Helena Roerich"
 			desc = ""
@@ -2779,6 +2781,8 @@ country_event = { #
 				limit = { has_id = 21422 }
 				set_nationality = NSW
 		}
+		remove_ideas_with_trait = head_of_government
+		add_ideas = TIB_George_Roerich_hog_tot	
 		create_country_leader = {
 			name = "George de Roerich"
 			desc = ""
@@ -2852,6 +2856,8 @@ country_event = { #
 				limit = { has_id = 21422 }
 				set_nationality = NSW
 			}
+		remove_ideas_with_trait = head_of_government
+		add_ideas = TIB_Svetoslav_Roerich_hog_tot	
 		create_country_leader = {
 			name = "Svetoslav Roerich"
 			desc = ""
@@ -2979,6 +2985,12 @@ country_event = { #
 			ideology = national_populist
 			popularity = 0.03
 		}
+		hidden_effect = {
+			country_event = {
+				id = tib.139
+				days = 33
+			}
+		}
 	}
 }
 
@@ -3004,6 +3016,16 @@ country_event = { #
 			long_name = "Sacred Union Party"
 			name = "Sacred Union Party"
 		}
+		set_party_name = {
+			ideology = paternal_autocrat
+			long_name = "Sacred Union Party"
+			name = "Sacred Union Party"
+		}
+		set_party_name = {
+			ideology = national_populist
+			long_name = "Sacred Union Party"
+			name = "Sacred Union Party"
+		}
 		create_country_leader = {
 			name = "Nicholas Roerich"
 			desc = "POLITICS_NICHOLAS_ROERICH_DESC"
@@ -3014,6 +3036,18 @@ country_event = { #
 				mahatma
 			}
 		}
+		add_popularity = {
+			ideology = authoritarian_democrat
+			popularity = 0.35
+	    }
+		hidden_effect = { 
+			set_temp_variable = { coalition_partner_var = token:paternal_autocrat }
+				add_to_coalition = yes 
+			set_temp_variable = { coalition_partner_var = token:national_populist }
+				add_to_coalition = yes 	
+		}
+		custom_effect_tooltip = pataut_will_join_coalition_tt
+		custom_effect_tooltip = natpop_will_join_coalition_tt
 	}
 	option = { # 
 		name = tib.138.b
@@ -3022,7 +3056,17 @@ country_event = { #
 				elections_allowed = no
 		}
 		set_party_name = {
+			ideology = authoritarian_democrat
+			long_name = "Sacred Union Party"
+			name = "Sacred Union Party"
+		}
+		set_party_name = {
 			ideology = paternal_autocrat
+			long_name = "Sacred Union Party"
+			name = "Sacred Union Party"
+		}
+		set_party_name = {
+			ideology = national_populist
 			long_name = "Sacred Union Party"
 			name = "Sacred Union Party"
 		}
@@ -3036,12 +3080,34 @@ country_event = { #
 				mahatma
 			}
 		}
+		add_popularity = {
+			ideology = paternal_autocrat
+			popularity = 0.35
+	    }
+		hidden_effect = { 
+			set_temp_variable = { coalition_partner_var = token:authoritarian_democrat }
+				add_to_coalition = yes 
+			set_temp_variable = { coalition_partner_var = token:national_populist }
+				add_to_coalition = yes 	
+		}
+		custom_effect_tooltip = authdem_will_join_coalition_tt
+		custom_effect_tooltip = natpop_will_join_coalition_tt
 	}
 	option = { # 
 		name = tib.138.c
 		set_politics = {
 				ruling_party = national_populist
 				elections_allowed = no
+		}
+		set_party_name = {
+			ideology = authoritarian_democrat
+			long_name = "Sacred Union Party"
+			name = "Sacred Union Party"
+		}
+		set_party_name = {
+			ideology = paternal_autocrat
+			long_name = "Sacred Union Party"
+			name = "Sacred Union Party"
 		}
 		set_party_name = {
 			ideology = national_populist
@@ -3058,6 +3124,18 @@ country_event = { #
 				mahatma
 			}
 		}
+		add_popularity = {
+			ideology = national_populist
+			popularity = 0.35
+	    }
+		hidden_effect = { 
+			set_temp_variable = { coalition_partner_var = token:authoritarian_democrat }
+				add_to_coalition = yes 
+			set_temp_variable = { coalition_partner_var = token:paternal_autocrat }
+				add_to_coalition = yes 	
+		}
+		custom_effect_tooltip = authdem_will_join_coalition_tt
+		custom_effect_tooltip = pataut_will_join_coalition_tt
 		hidden_effect = {
 		country_event = {
 			days = 30
@@ -3124,6 +3202,7 @@ country_event = { #
 			name = "Avatar of the Red Mahatma"
 			portrait_path = "gfx/leaders/TIB/Portrait_TIB_Ghost_Lenin.png"
 			traits = {
+				incorporeal
 				politically_connected
 			}
 			skill = 1
@@ -3369,6 +3448,11 @@ country_event = { #
 				elections_allowed = no
 		}
 		set_party_name = {
+			ideology = social_democrat
+			long_name = "Sacred Union Party"
+			name = "Sacred Union Party"
+		}
+		set_party_name = {
 			ideology = radical_socialist
 			long_name = "Sacred Union Party"
 			name = "Sacred Union Party"
@@ -3383,6 +3467,21 @@ country_event = { #
 				mahatma
 			}
 		}
+		add_popularity = {
+			ideology = radical_socialist
+			popularity = 0.35
+	    }
+		hidden_effect = { 
+			set_temp_variable = { coalition_partner_var = token:totalist }
+				add_to_coalition = yes 
+			set_temp_variable = { coalition_partner_var = token:syndicalist }
+				add_to_coalition = yes 
+			set_temp_variable = { coalition_partner_var = token:social_democrat }
+				add_to_coalition = yes	
+		}
+		custom_effect_tooltip = tot_will_join_coalition_tt
+		custom_effect_tooltip = syn_will_join_coalition_tt
+		custom_effect_tooltip = socdem_will_join_coalition_tt
 	}
 	option = { # 
 		name = tib.136.b
@@ -3390,9 +3489,55 @@ country_event = { #
 				ruling_party = syndicalist
 				elections_allowed = no
 		}
+		set_party_name = {
+			ideology = social_democrat
+			long_name = "Sacred Union Party"
+			name = "Sacred Union Party"
+		}
+		set_party_name = {
+			ideology = radical_socialist
+			long_name = "Sacred Union Party"
+			name = "Sacred Union Party"
+		}
+		add_popularity = {
+			ideology = syndicalist
+			popularity = 0.35
+	    }
+		hidden_effect = { 
+			set_temp_variable = { coalition_partner_var = token:totalist }
+				add_to_coalition = yes 
+			set_temp_variable = { coalition_partner_var = token:radical_socialist }
+				add_to_coalition = yes 
+			set_temp_variable = { coalition_partner_var = token:social_democrat }
+				add_to_coalition = yes	
+		}
+		custom_effect_tooltip = tot_will_join_coalition_tt
+		custom_effect_tooltip = radsoc_will_join_coalition_tt
+		custom_effect_tooltip = socdem_will_join_coalition_tt
 	}
 	option = { # 
 		name = tib.136.c
+		set_party_name = {
+			ideology = social_democrat
+			long_name = "Sacred Union Party"
+			name = "Sacred Union Party"
+		}
+		set_party_name = {
+			ideology = radical_socialist
+			long_name = "Sacred Union Party"
+			name = "Sacred Union Party"
+		}
+		hidden_effect = { 
+			set_temp_variable = { coalition_partner_var = token:syndicalist }
+				add_to_coalition = yes 
+			set_temp_variable = { coalition_partner_var = token:radical_socialist }
+				add_to_coalition = yes 
+			set_temp_variable = { coalition_partner_var = token:social_democrat }
+				add_to_coalition = yes	
+		}
+		custom_effect_tooltip = syn_will_join_coalition_tt
+		custom_effect_tooltip = radsoc_will_join_coalition_tt
+		custom_effect_tooltip = socdem_will_join_coalition_tt
 	}
 	option = { # 
 		name = tib.136.e
@@ -3402,6 +3547,11 @@ country_event = { #
 		}
 		set_party_name = {
 			ideology = social_democrat
+			long_name = "Sacred Union Party"
+			name = "Sacred Union Party"
+		}
+		set_party_name = {
+			ideology = radical_socialist
 			long_name = "Sacred Union Party"
 			name = "Sacred Union Party"
 		}
@@ -3415,6 +3565,21 @@ country_event = { #
 				mahatma
 			}
 		}
+		add_popularity = {
+			ideology = social_democrat
+			popularity = 0.35
+	    }
+		hidden_effect = { 
+			set_temp_variable = { coalition_partner_var = token:totalist }
+				add_to_coalition = yes 
+			set_temp_variable = { coalition_partner_var = token:syndicalist }
+				add_to_coalition = yes 
+			set_temp_variable = { coalition_partner_var = token:radical_socialist }
+				add_to_coalition = yes	
+		}
+		custom_effect_tooltip = tot_will_join_coalition_tt
+		custom_effect_tooltip = syn_will_join_coalition_tt
+		custom_effect_tooltip = radsoc_will_join_coalition_tt
 	}
 }
 
@@ -3488,11 +3653,24 @@ country_event = { #
 		backroom_backstabber
 			}
 		}
+	set_party_name = {
+			ideology = national_populist
+			long_name = "Erleuchtete Gruppe für die Offenbarung des Buddha der Neuzeit"
+			name = "Erleuchtete Gruppe für die Offenbarung des Buddha der Neuzeit"
+	}	
 	hidden_effect = {
 			country_event = {
 				id = tib.149
 				days = 7
 			}
+			remove_all_ministers = yes
+			add_ideas = {
+				TIB_Ignaz_Trebitsch_Lincoln_hog_npo
+				TIB_Ernst_Schafer_for_npo
+				TIB_Hans_FK_Gunther_eco_npo
+				TIB_Karl_Maria_Wiligut_sec_npo
+			}
+			end_coalition = yes
 		}
 	}
 	option = { # 
@@ -4029,6 +4207,10 @@ country_event = { #
 				type = annex_everything
 				target = ABK
 		}
+		create_wargoal = {
+			type = annex_everything
+			target = RUS
+	    }
 	}
 }
 
@@ -4516,12 +4698,12 @@ country_event = { #
 	name = tib.150.a
 	if = {
 		limit = {
-		USA = {
+		TIB = {
 			is_faction_leader = yes
 				}
 			}
-			USA = {
-			add_to_faction = TIB
+			TIB = {
+			add_to_faction = USA
 			}
 		}
 		add_political_power = -75
@@ -4768,5 +4950,52 @@ country_event = { #
 				great_survivor
 			}
 		}
+	}
+}
+
+country_event = { #
+	id = tib.156
+	immediate = { log = "[GetDateText]: [Root.GetName]: event tib.150" }
+	title = tib.150.t
+	desc = tib.150.d
+	picture = GFX_report_event_TIB_roerich_america
+
+	fire_only_once = yes
+	
+	trigger = {
+	tag = TIB
+	TIB = {
+	has_completed_focus = TIB_Roerich_Victory
+		}
+	CAL = {
+	has_country_leader = { ruling_only = yes name = "Henry Wallace" }
+		}
+	}
+	option = { # 
+	name = tib.150.a
+	if = {
+		limit = {
+		TIB = {
+			is_faction_leader = yes
+				}
+			}
+			TIB = {
+			add_to_faction = CAL
+			}
+		}
+		add_political_power = -75
+		CAL = {
+		give_guarantee = TIB
+		}
+		CAL = { add_opinion_modifier = { target = TIB modifier = large_increase } }
+		TIB = { add_opinion_modifier = { target = CAL modifier = large_increase } }
+	}
+	option = { # 
+	name = tib.150.b
+	increase_ruling_party_popularity_by_3 = yes
+		add_stability = 0.03
+		add_political_power = 50
+		CAL = { add_opinion_modifier = { target = TIB modifier = medium_increase } }
+		TIB = { add_opinion_modifier = { target = CAL modifier = medium_increase } }
 	}
 }

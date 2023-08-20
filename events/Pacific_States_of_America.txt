@@ -854,6 +854,12 @@ country_event = { # 1937 Election
 				add_ideas = CAL_Ralph_Johnson_Bunche_for_sde
 				add_ideas = CAL_Hjalmar_Petersen_eco_sde
 				add_ideas = CAL_Konrad_Knute_Solberg_sec_sde
+				hidden_effect = {
+					country_event = {
+					id = KX_california.50
+					days = 42
+						}
+				}
 			}
 			if = { # CC Young
 				limit = {
@@ -1970,6 +1976,12 @@ country_event = { # 1940 Progressive Primary
 		tag = CAL
 		date > 1940.1.1
 		has_country_flag = PSA_1937_election_occured
+		NOT = {
+			OR = {
+				has_completed_focus = CAL_pacific_prosperity
+				has_completed_focus = CAL_nation_of_visionaries
+			}
+		}
 	}
 	
 	immediate = {
@@ -2066,6 +2078,12 @@ country_event = { # 1940 Democratic-Republican Primary
 		}	
 		tag = CAL
 		has_country_flag = PSA_1937_election_occured
+		NOT = {
+			OR = {
+				has_completed_focus = CAL_pacific_prosperity
+				has_completed_focus = CAL_nation_of_visionaries
+			}
+		}
 	}
 	
 	immediate = {
@@ -2173,6 +2191,12 @@ country_event = { # 1940 Republican Primary
 		}	
 		tag = CAL
 		has_country_flag = PSA_1937_election_occured
+		NOT = {
+			OR = {
+				has_completed_focus = CAL_pacific_prosperity
+				has_completed_focus = CAL_nation_of_visionaries
+			}
+		}
 	}
 	
 	immediate = {
@@ -2269,6 +2293,12 @@ country_event = { # 1940 Democrat Primary
 		}	
 		tag = CAL
 		has_country_flag = PSA_1937_election_occured
+		NOT = {
+			OR = {
+				has_completed_focus = CAL_pacific_prosperity
+				has_completed_focus = CAL_nation_of_visionaries
+			}
+		}
 	}
 	
 	immediate = {
@@ -2333,6 +2363,12 @@ country_event = { # 1940 Commonwealth Primary
 			has_government = social_liberal
 			has_government = social_conservative
 		}	
+		NOT = {
+			OR = {
+				has_completed_focus = CAL_pacific_prosperity
+				has_completed_focus = CAL_nation_of_visionaries
+			}
+		}
 	}
 
 	fire_only_once = yes
@@ -2399,6 +2435,12 @@ country_event = { # 1940 election
 		NOT = {
 			has_country_flag = PSA_had_1940_election
 			is_supposed_to_fire_for_tag = yes
+		}
+		NOT = {
+			OR = {
+				has_completed_focus = CAL_pacific_prosperity
+				has_completed_focus = CAL_nation_of_visionaries
+			}
 		}
 	}
 
@@ -2680,6 +2722,19 @@ country_event = { # 1940 election
 				add_ideas = CAL_Ralph_Johnson_Bunche_for_sde
 				add_ideas = CAL_Hjalmar_Petersen_eco_sde
 				add_ideas = CAL_Konrad_Knute_Solberg_sec_sde
+				if = {
+					limit = {
+					NOT = {
+					has_country_flag = CAL_Wallace_Spiritualist
+						}
+					}
+					hidden_effect = {
+					country_event = {
+					id = KX_california.50
+					days = 42
+					}
+					}
+				}
 			}
 			if = {
 				limit = {
@@ -3077,6 +3132,12 @@ country_event = { # 1944 Progressive Primary
 			has_government = social_liberal
 			has_government = social_conservative
 		}	
+		NOT = {
+			OR = {
+				has_completed_focus = CAL_pacific_prosperity
+				has_completed_focus = CAL_nation_of_visionaries
+			}
+		}
 	}
 
 	fire_only_once = yes
@@ -3148,6 +3209,12 @@ country_event = { # 1944 Progressive Primary
 			has_government = social_liberal
 			has_government = social_conservative
 		}	
+		NOT = {
+			OR = {
+				has_completed_focus = CAL_pacific_prosperity
+				has_completed_focus = CAL_nation_of_visionaries
+			}
+		}
 	}
 
 	fire_only_once = yes
@@ -3236,6 +3303,12 @@ country_event = { # 1944 Republican Primary
 			has_government = social_liberal
 			has_government = social_conservative
 		}	
+		NOT = {
+			OR = {
+				has_completed_focus = CAL_pacific_prosperity
+				has_completed_focus = CAL_nation_of_visionaries
+			}
+		}
 	}
 
 	fire_only_once = yes
@@ -3341,6 +3414,12 @@ country_event = { # 1944 Commonwealth Primary
 			has_government = social_liberal
 			has_government = social_conservative
 		}	
+		NOT = {
+			OR = {
+				has_completed_focus = CAL_pacific_prosperity
+				has_completed_focus = CAL_nation_of_visionaries
+			}
+		}
 	}
 
 	fire_only_once = yes
@@ -3447,6 +3526,12 @@ country_event = { # 1944 Democrat Primary
 			has_government = social_liberal
 			has_government = social_conservative
 		}	
+		NOT = {
+			OR = {
+				has_completed_focus = CAL_pacific_prosperity
+				has_completed_focus = CAL_nation_of_visionaries
+			}
+		}
 	}
 
 	fire_only_once = yes
@@ -3521,6 +3606,12 @@ country_event = { # 1944 election
 		NOT = {
 			has_country_flag = PSA_had_1944_election
 		}
+		NOT = {
+			OR = {
+				has_completed_focus = CAL_pacific_prosperity
+				has_completed_focus = CAL_nation_of_visionaries
+			}
+		}
 	}
 
 	immediate = {
@@ -3579,20 +3670,6 @@ country_event = { # 1944 election
 					expire = "1965.1.1"
 					ideology = radical_progressivism_subtype
 					traits = {  }
-				}
-			}
-			if = { # Goldwater
-				limit = {
-					has_country_flag = PSA_1944_republican_primary_goldwater
-					NOT = { has_country_flag = CAL_Norton_PSA_flag }
-				}
-				create_country_leader = {
-					name = "Barry Goldwater"
-					desc = ""
-					picture = "gfx/leaders/CAL/Portrait_CAL_Barry_Goldwater.png"
-					expire = "1965.1.1"
-					ideology = liberal_conservative_subtype
-					traits = { ARZ_golden_water }
 				}
 			}
 			if = { # Glen H. Taylor
@@ -3677,6 +3754,20 @@ country_event = { # 1944 election
 					expire = "1965.1.1"
 					ideology = liberal_conservative_subtype
 					traits = { nationalist_symbol }
+				}
+			}
+			if = { # Goldwater
+				limit = {
+					has_country_flag = PSA_1944_republican_primary_goldwater
+					NOT = { has_country_flag = CAL_Norton_PSA_flag }
+				}
+				create_country_leader = {
+					name = "Barry Goldwater"
+					desc = ""
+					picture = "gfx/leaders/CAL/Portrait_CAL_Barry_Goldwater.png"
+					expire = "1965.1.1"
+					ideology = liberal_conservative_subtype
+					traits = { ARZ_golden_water }
 				}
 			}
 			if = { # Daniel I. J. Thornton
@@ -3862,6 +3953,16 @@ country_event = { # 1944 election
 				}
 				remove_all_ministers = yes
 				add_ideas = CAL_Fletcher_Bowron_hog_mli
+				add_ideas = CAL_John_Foster_Dulles_for_mli
+				add_ideas = CAL_Barry_Morris_Goldwater_eco_mli
+				add_ideas = CAL_Ray_Lyman_Wilbur_sec_mli
+			}
+			if = { # Barry Goldwater
+				limit = {
+					has_country_flag = PSA_1944_republican_primary_goldwater
+				}
+				remove_all_ministers = yes
+				add_ideas = CAL_Barry_Goldwater_hog_mli
 				add_ideas = CAL_John_Foster_Dulles_for_mli
 				add_ideas = CAL_Barry_Morris_Goldwater_eco_mli
 				add_ideas = CAL_Ray_Lyman_Wilbur_sec_mli
@@ -4055,6 +4156,12 @@ country_event = { # 1948 Commonwealth Primary
 			has_government = social_liberal
 			has_government = social_conservative
 		}	
+		NOT = {
+			OR = {
+				has_completed_focus = CAL_pacific_prosperity
+				has_completed_focus = CAL_nation_of_visionaries
+			}
+		}
 	}
 
 	fire_only_once = yes
@@ -4162,6 +4269,12 @@ country_event = { # 1948 Progressive Primary
 			has_government = social_liberal
 			has_government = social_conservative
 		}	
+		NOT = {
+			OR = {
+				has_completed_focus = CAL_pacific_prosperity
+				has_completed_focus = CAL_nation_of_visionaries
+			}
+		}
 	}
 
 	fire_only_once = yes
@@ -4183,6 +4296,25 @@ country_event = { # 1948 Progressive Primary
 		}
 		hidden_effect = {
 			set_country_flag = PSA_1948_progressive_primary_taylor
+		}
+	}
+	
+	option = { # Helen Douglas
+		name = pacificstates.17.a
+		trigger = {
+			OR = {
+				NOT = {
+					has_government = social_democrat
+				}
+				AND = {
+					has_government = social_democrat
+					has_country_flag = PSA_1944_election_progressive
+					has_country_flag = PSA_1940_election_progressive
+				}
+			}
+		}
+		hidden_effect = {
+			set_country_flag = PSA_1948_progressive_primary_gahagan_douglas
 		}
 	}
 	option = { # Keep the Presidency
@@ -4239,6 +4371,12 @@ country_event = { # 1948 Progressive Primary
 			has_government = social_liberal
 			has_government = social_conservative
 		}	
+		NOT = {
+			OR = {
+				has_completed_focus = CAL_pacific_prosperity
+				has_completed_focus = CAL_nation_of_visionaries
+			}
+		}
 	}
 
 	fire_only_once = yes
@@ -4353,6 +4491,12 @@ country_event = { # 1948 Republican Primary
 			has_government = social_liberal
 			has_government = social_conservative
 		}	
+		NOT = {
+			OR = {
+				has_completed_focus = CAL_pacific_prosperity
+				has_completed_focus = CAL_nation_of_visionaries
+			}
+		}
 	}
 
 	fire_only_once = yes
@@ -4466,6 +4610,12 @@ country_event = { # 1948 Democrat Primary
 			has_government = social_liberal
 			has_government = social_conservative
 		}	
+		NOT = {
+			OR = {
+				has_completed_focus = CAL_pacific_prosperity
+				has_completed_focus = CAL_nation_of_visionaries
+			}
+		}
 	}
 
 	fire_only_once = yes
@@ -4551,6 +4701,12 @@ country_event = { # 1948 election
 			has_country_flag = PSA_had_1948_election
 			is_supposed_to_fire_for_tag = yes
 		}
+		NOT = {
+			OR = {
+				has_completed_focus = CAL_pacific_prosperity
+				has_completed_focus = CAL_nation_of_visionaries
+			}
+		}
 	}
 
 	immediate = {
@@ -4624,6 +4780,20 @@ country_event = { # 1948 election
 					expire = "1965.1.1"
 					ideology = georgism_subtype
 					traits = { PSA_the_singing_cowboy }
+				}
+			}
+			if = { # Helen Gahagan Douglas
+				limit = {
+					has_country_flag = PSA_1948_progressive_primary_gahagan_douglas
+					NOT = { has_country_flag = CAL_Norton_PSA_flag }
+				}
+				create_country_leader = {
+					name = "Helen Gahagan Douglas"
+					desc = "POLITICS_HELEN_DOUGLAS_DESC"
+					picture = "gfx/leaders/CAL/Portrait_CAL_Helen_Gahagan_Douglas.png"
+					expire = "1965.1.1"
+					ideology = georgism_subtype
+					traits = { PSA_she_who_must_be_obeyed }
 				}
 			}
 			
@@ -4761,10 +4931,20 @@ country_event = { # 1948 election
 		hidden_effect = {
 			if = { # Glen H. Taylor
 				limit = {
-					has_country_flag = PSA_1944_progressive_primary_taylor
+					has_country_flag = PSA_1948_progressive_primary_taylor
 				}
 				remove_all_ministers = yes
 				add_ideas = CAL_Glen_H_Taylor_hog_sde
+				add_ideas = CAL_Alger_Hiss_for_sde
+				add_ideas = CAL_Homer_Truett_Bone_eco_sde
+				add_ideas = CAL_Harold_LeClair_Ickes_sec_sde
+			}
+			if = { # Glen H. Taylor
+				limit = {
+					has_country_flag = PSA_1948_progressive_primary_gahagan_douglas
+				}
+				remove_all_ministers = yes
+				add_ideas = CAL_Helen_Gahagan_Douglas_hog_sde
 				add_ideas = CAL_Alger_Hiss_for_sde
 				add_ideas = CAL_Homer_Truett_Bone_eco_sde
 				add_ideas = CAL_Harold_LeClair_Ickes_sec_sde
@@ -4812,7 +4992,7 @@ country_event = { # 1948 election
 					has_country_flag = PSA_1948_progressive_primary_earhart
 				}
 				remove_all_ministers = yes
-				add_ideas = CAL_Andrew_W_Hockenhull_hog_sli
+				add_ideas = CAL_Amelia_Earhart_hog_sli
 				add_ideas = CAL_Franck_Roberts_Havenner_for_sli
 				add_ideas = CAL_Jesse_Holman_Jones_eco_sli
 				add_ideas = CAL_Francis_Beverley_Biddle_sec_sli
@@ -5020,6 +5200,12 @@ country_event = { # America is reunited
 		}
 		if = {
 		limit = {
+		has_cosmetic_tag = CAL_wallace_shambhala
+		}
+		set_cosmetic_tag = CAL_wallace_shambhala_usa
+		}
+		if = {
+		limit = {
 		NOT = {
 		has_country_flag = CAL_Norton_PSA_flag
 		}
@@ -5029,11 +5215,13 @@ country_event = { # America is reunited
 		}
 		if = {
 		limit = {
-		OR = {
 		NOT = {
+		OR = {
+		has_government = radical_socialist
 		has_country_flag = USA_SPIRITUALIST
 		has_country_flag = CAL_JAP_USA
 		has_country_flag = CAL_Norton_PSA_flag
+		has_country_flag = CAL_Wallace_Shalala
 				}
 			}
 		}
@@ -10702,7 +10890,7 @@ country_event = {# Bodin Addresses Congress
 			desc = "POLITICS_EDWARD_LONGSTREET_BODIN_DESC"
 			picture = "gfx/leaders/CAL/CAL_edward_longstreet_bodin.png"
 			expire = "1965.1.1"
-			ideology = occultism_subtype
+			ideology = spiritualism_subtype
 			traits = { cult_leader }
 		}
 		set_politics = {
@@ -11346,7 +11534,7 @@ country_event = {# Bodin Dead
 			desc = "POLITICS_L_RON_HUBBARD_DESC"
 			picture = "gfx/leaders/CAL/CAL_L_Ron_Hubbard.png"
 			expire = "1965.1.1"
-			ideology = occultism_subtype
+			ideology = scientology_subtype
 			traits = { l_ron_hubbard_was_a_black_man }
 			}
 		remove_all_ministers = yes
@@ -11452,23 +11640,10 @@ country_event = {# The Nation of Islam
 	
 	picture = GFX_CAL_ufo_event_pic
 
-	trigger = {
-	tag = CAL
-	has_completed_focus = CAL_noi_alliance
-	CAL = {
-		controls_state = 1168
-		controls_state = 1169
-		controls_state = 1170
-		controls_state = 1171
-	}
-	}
-	
-	mean_time_to_happen = {
-	days = 100
-	}
+	is_triggered_only = yes
 
 	fire_only_once = yes
-	
+
 	option = {#Only the South
 		name = pacificstates.363.a
 		add_stability = 0.04
@@ -12335,6 +12510,10 @@ country_event = { # The Provisional Government
 				CAL_Harley_Eugene_Knox_eco_sli
 				CAL_Bestor_Robinson_sec_sli
 			}
+			country_event = {
+				id = calpeaceout.22
+				days = 50
+			}
 		}
 		set_politics = {
 			ruling_party = social_liberal
@@ -12448,6 +12627,10 @@ country_event = { # The Provisional Government
 			elections_allowed = yes
 		}
 		hidden_effect = {
+			country_event = {
+				id = calpeaceout.22
+				days = 50
+			}
 			set_country_flag = PSA_had_1937_election
 			set_country_flag = PSA_1937_election_occured
 			set_country_flag = PSA_1937_election_commonwealth
@@ -12533,6 +12716,10 @@ country_event = { # The Provisional Government
 			elections_allowed = yes
 		}
 		hidden_effect = {
+			country_event = {
+				id = calpeaceout.22
+				days = 50
+			}
 			set_country_flag = PSA_had_1937_election
 			set_country_flag = PSA_1937_election_occured
 			set_country_flag = PSA_1937_election_hearst
@@ -12724,6 +12911,12 @@ country_event = { # The Provisional Government
 				}
 			}
 		}
+		hidden_effect = {
+			country_event = {
+				id = calpeaceout.22
+				days = 50
+			}
+		}
 	}	
 	option = { # Arnold Chads wya
 		name = KX_california.1.g
@@ -12753,7 +12946,12 @@ country_event = { # The Provisional Government
 			set_country_flag = CAL_million_sons
 			set_country_flag = LEADER_GUI_VISIBLE
 			set_country_flag = ARNOLD_IN_POWER
+			country_event = {
+				id = calpeaceout.22
+				days = 50
+			}
 		}
+		
 	}
 }
 country_event = {
@@ -13021,7 +13219,12 @@ country_event = {
 
 	option = {
 		name = KX_california.5.a
+		
 		hidden_effect = {
+			country_event = {
+				id = calpeaceout.22
+				days = 50
+			}
 			create_country_leader = {
 				name = "Howard Hughes"
 				desc = "POLITICS_HOWARD_HUGES_DESC"
@@ -13074,6 +13277,10 @@ country_event = {
 	option = {#
 		name = KX_california.6.a
 		hidden_effect = {
+			country_event = {
+				id = calpeaceout.22
+				days = 50
+			}
 			create_country_leader = {
 				name = "Walt Disney"
 				desc = "POLITICS_WALT_DISNEY_AUTOCRAT_DESC"
@@ -13223,6 +13430,10 @@ country_event = {
 			name = "Norton Restoration Society"
 		}
 		hidden_effect = {
+			country_event = {
+				id = calpeaceout.22
+				days = 50
+			}
 			remove_all_ministers = yes
 		}
 		set_country_flag = CAL_Empire
@@ -13257,6 +13468,10 @@ country_event = {
 		}
 		hidden_effect = {
 			remove_all_ministers = yes
+			country_event = {
+				id = calpeaceout.22
+				days = 50
+			}
 		}
 		random_unit_leader = {
 				limit = { has_id = 58 }			
@@ -13301,6 +13516,10 @@ country_event = {
 	option = {
 		name = KX_california.12.a
 		hidden_effect = {
+			country_event = {
+				id = calpeaceout.22
+				days = 50
+			}
 			add_ideas = {
 				CAL_John_Aiso_hog_sli
 				CAL_George_Catlett_Marshall_Jr_for_sli
@@ -13327,6 +13546,10 @@ country_event = {
 			elections_allowed = yes
 		}
 		hidden_effect = {
+			country_event = {
+				id = calpeaceout.22
+				days = 50
+			}
 			set_country_flag = PSA_had_1937_election
 			set_country_flag = PSA_1937_election_occured
 			set_country_flag = PSA_1937_election_commonwealth
@@ -13379,6 +13602,10 @@ country_event = {
 			elections_allowed = yes
 		}
 		hidden_effect = {
+			country_event = {
+				id = calpeaceout.22
+				days = 50
+			}
 			set_country_flag = PSA_had_1937_election
 			set_country_flag = PSA_1937_election_occured
 			set_country_flag = PSA_1937_election_hearst
@@ -13537,10 +13764,20 @@ country_event = {
 				}
 			}
 		}
+		hidden_effect = {
+			country_event = {
+				id = calpeaceout.22
+				days = 50
+			}
+		}
 	}
 	option = {
 		name = KX_california.12.f
 		hidden_effect = {
+			country_event = {
+				id = calpeaceout.22
+				days = 78
+			}
 			set_politics = {
 	ruling_party = social_conservative
 	last_election = "1936.11.08"
@@ -13596,6 +13833,10 @@ country_event = {
 			elections_allowed = no
 		}
 		hidden_effect = {
+			country_event = {
+				id = calpeaceout.22
+				days = 78
+			}
 			set_country_flag = CAL_million_sons
 			set_country_flag = LEADER_GUI_VISIBLE
 			set_country_flag = ARNOLD_IN_POWER
@@ -14024,7 +14265,21 @@ country_event = {
 				level = 2
 				instant_build = yes
 			}
+			add_building_construction = {
+				type = air_base
+				level = 3
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = anti_air_building
+				level = 2
+				instant_build = yes
+			}
 		}
+		add_resource = { type = tungsten amount = 3 state = 379 }
+		add_resource = { type = steel amount = 3 state = 379 }
+		add_resource = { type = chromium amount = 3 state = 379 }
+		add_resource = { type = oil amount = 3 state = 379 }
 	}
 }
 
@@ -14434,6 +14689,779 @@ country_event = { #NCR gang gang
 	}
 }
 
+country_event = { #FEZ
+	id = KX_california.45
+	immediate = { log = "[GetDateText]: [Root.GetName]: event KX_california.45" }
+	title = KX_california.45.t
+	desc = KX_california.45.d
+	picture = GFX_CAL_New_Vegas
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+
+	option = {
+		name = KX_california.45.a
+		ai_chance = {
+			factor = 0
+		}
+		set_cosmetic_tag = CAL_Hughes
+
+        add_state_core = 387
+		add_state_core = 1157
+		add_state_core = 1164
+		add_state_core = 380
+		add_state_core = 1174
+		add_state_core = 382
+		add_state_core = 377
+		add_state_core = 376
+		add_state_core = 1096
+		add_state_core = 1166
+		add_state_core = 381
+		add_state_core = 388
+		add_state_core = 470
+		add_state_core = 473
+		add_state_core = 740
+		add_state_core = 471
+		add_state_core = 463
+		add_state_core = 1273
+		add_state_core = 484
+		add_state_core = 483
+		add_state_core = 482
+		add_state_core = 481
+		add_state_core = 629
+		add_state_core = 726
+		add_state_core = 727
+		add_state_core = 642
+		add_state_core = 630
+		add_state_core = 631
+		add_state_core = 632
+		add_state_core = 638
+		hidden_effect = {
+		create_wargoal = {
+			target = var:382.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = var:388.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = var:629.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = var:463.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = var:1166.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = USA
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = CAN
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = MEX
+		}
+	    }
+	}
+	option = {
+		name = KX_california.45.b 
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = { #Tomorrowland
+	id = KX_california.46
+	immediate = { log = "[GetDateText]: [Root.GetName]: event KX_california.46" }
+	title = KX_california.46.t
+	desc = KX_california.46.d
+	picture = GFX_CAL_Tomorrowland
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+
+	option = {
+		name = KX_california.46.a
+		ai_chance = {
+			factor = 0
+		}
+		set_cosmetic_tag = CAL_Disney
+		every_state = {
+			limit = {
+				is_core_of = WCC
+			}
+			add_core_of = CAL
+		}
+		add_state_core = 387
+		add_state_core = 379
+		add_state_core = 1157
+		add_state_core = 1164
+		add_state_core = 380
+		add_state_core = 1174
+		add_state_core = 382
+		add_state_core = 377
+		add_state_core = 376
+		add_state_core = 1096
+		add_state_core = 1166
+		add_state_core = 381
+		add_state_core = 388
+		add_state_core = 470
+		add_state_core = 473
+		add_state_core = 740
+		add_state_core = 471
+		add_state_core = 463
+		add_state_core = 1273
+		add_state_core = 484
+		add_state_core = 483
+		add_state_core = 482
+		add_state_core = 481
+		add_state_core = 629
+		add_state_core = 726
+		add_state_core = 727
+		add_state_core = 642
+		add_state_core = 630
+		add_state_core = 631
+		add_state_core = 632
+		add_state_core = 638
+		hidden_effect = {
+		create_wargoal = {
+			target = var:382.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = var:388.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = var:629.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = var:463.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = var:1166.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = USA
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = CAN
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = MEX
+		}
+	    }
+	}
+	option = {
+		name = KX_california.46.b 
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = { #do we expand or nah
+	id = KX_california.47
+	immediate = { log = "[GetDateText]: [Root.GetName]: event KX_california.47" }
+	title = KX_california.47.t
+	desc = KX_california.47.d
+	picture = GFX_CAL_greater_pacific
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+
+	option = {
+		name = KX_california.47.a
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = KX_california.47.b
+		ai_chance = {
+			factor = 0
+		}
+		every_state = {
+			limit = {
+				is_core_of = WCC
+			}
+			add_core_of = CAL
+		}
+        add_state_core = 387
+		add_state_core = 1157
+		add_state_core = 1164
+		add_state_core = 380
+		add_state_core = 1174
+		add_state_core = 382
+		add_state_core = 377
+		add_state_core = 376
+		add_state_core = 1096
+		add_state_core = 1166
+		add_state_core = 381
+		add_state_core = 388
+		add_state_core = 470
+		add_state_core = 473
+		add_state_core = 740
+		add_state_core = 471
+		add_state_core = 463
+		add_state_core = 1273
+		add_state_core = 484
+		add_state_core = 483
+		add_state_core = 482
+		add_state_core = 481
+		add_state_core = 629
+		add_state_core = 726
+		add_state_core = 727
+		add_state_core = 642
+		add_state_core = 630
+		add_state_core = 631
+		add_state_core = 632
+		add_state_core = 638
+		hidden_effect = {
+		create_wargoal = {
+			target = var:382.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = var:388.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = var:629.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = var:463.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = var:1166.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = USA
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = CAN
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = MEX
+		}
+	    }
+	}
+	option = {
+		name = KX_california.47.c
+		ai_chance = {
+			factor = 0
+		}
+		every_state = {
+			limit = {
+				is_core_of = WCC
+			}
+			add_core_of = CAL
+		}
+		set_cosmetic_tag = CAL_sunset_republic
+		
+        add_state_core = 387
+		add_state_core = 1157
+		add_state_core = 1164
+		add_state_core = 380
+		add_state_core = 1174
+		add_state_core = 382
+		add_state_core = 377
+		add_state_core = 376
+		add_state_core = 1096
+		add_state_core = 1166
+		add_state_core = 381
+		add_state_core = 388
+		add_state_core = 470
+		add_state_core = 473
+		add_state_core = 740
+		add_state_core = 471
+		add_state_core = 463
+		add_state_core = 1273
+		add_state_core = 484
+		add_state_core = 483
+		add_state_core = 482
+		add_state_core = 481
+		add_state_core = 629
+		add_state_core = 726
+		add_state_core = 727
+		add_state_core = 642
+		add_state_core = 630
+		add_state_core = 631
+		add_state_core = 632
+		add_state_core = 638
+		hidden_effect = {
+		create_wargoal = {
+			target = var:382.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = var:388.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = var:629.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = var:463.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = var:1166.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = USA
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = CAN
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = MEX
+		}
+	    }
+		hidden_effect = {
+			country_event = {
+				id = KX_california.49
+				days = 1
+				}
+		}
+		
+	}
+	option = {
+		name = KX_california.47.e
+			trigger = {
+				has_government = radical_socialist
+				}
+		ai_chance = {
+			factor = 0
+		}
+		every_state = {
+			limit = {
+				is_core_of = WCC
+			}
+			add_core_of = CAL
+		}
+		set_cosmetic_tag = CAL_pacific_commonwealth
+		
+        add_state_core = 387
+		add_state_core = 1157
+		add_state_core = 1164
+		add_state_core = 380
+		add_state_core = 1174
+		add_state_core = 382
+		add_state_core = 377
+		add_state_core = 376
+		add_state_core = 1096
+		add_state_core = 1166
+		add_state_core = 381
+		add_state_core = 388
+		add_state_core = 470
+		add_state_core = 473
+		add_state_core = 740
+		add_state_core = 471
+		add_state_core = 463
+		add_state_core = 1273
+		add_state_core = 484
+		add_state_core = 483
+		add_state_core = 482
+		add_state_core = 481
+		add_state_core = 629
+		add_state_core = 726
+		add_state_core = 727
+		add_state_core = 642
+		add_state_core = 630
+		add_state_core = 631
+		add_state_core = 632
+		add_state_core = 638
+		hidden_effect = {
+		create_wargoal = {
+			target = var:382.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = var:388.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = var:629.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = var:463.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = var:1166.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = USA
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = CAN
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = MEX
+		}
+	    }
+	}
+	option = {
+		name = KX_california.47.f
+			trigger = {
+				has_country_leader = { ruling_only = yes name = "William Randolph Hearst"}
+				}
+		ai_chance = {
+			factor = 0
+		}
+		every_state = {
+			limit = {
+				is_core_of = WCC
+			}
+			add_core_of = CAL
+		}
+		set_cosmetic_tag = CAL_pacific_hearst
+		
+        add_state_core = 387
+		add_state_core = 1157
+		add_state_core = 1164
+		add_state_core = 380
+		add_state_core = 1174
+		add_state_core = 382
+		add_state_core = 377
+		add_state_core = 376
+		add_state_core = 1096
+		add_state_core = 1166
+		add_state_core = 381
+		add_state_core = 388
+		add_state_core = 470
+		add_state_core = 473
+		add_state_core = 740
+		add_state_core = 471
+		add_state_core = 463
+		add_state_core = 1273
+		add_state_core = 484
+		add_state_core = 483
+		add_state_core = 482
+		add_state_core = 481
+		add_state_core = 629
+		add_state_core = 726
+		add_state_core = 727
+		add_state_core = 642
+		add_state_core = 630
+		add_state_core = 631
+		add_state_core = 632
+		add_state_core = 638
+		hidden_effect = {
+		create_wargoal = {
+			target = var:382.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = var:388.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = var:629.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = var:463.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = var:1166.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = USA
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = CAN
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = MEX
+		}
+	    }
+	}
+	option = {
+		name = KX_california.47.g
+			trigger = {
+				has_country_flag = ARNOLD_IN_POWER
+				}
+		ai_chance = {
+			factor = 0
+		}
+		every_state = {
+			limit = {
+				is_core_of = WCC
+			}
+			add_core_of = CAL
+		}
+		set_cosmetic_tag = CAL_pacific_defense
+		
+        add_state_core = 387
+		add_state_core = 1157
+		add_state_core = 1164
+		add_state_core = 380
+		add_state_core = 1174
+		add_state_core = 382
+		add_state_core = 377
+		add_state_core = 376
+		add_state_core = 1096
+		add_state_core = 1166
+		add_state_core = 381
+		add_state_core = 388
+		add_state_core = 470
+		add_state_core = 473
+		add_state_core = 740
+		add_state_core = 471
+		add_state_core = 463
+		add_state_core = 1273
+		add_state_core = 484
+		add_state_core = 483
+		add_state_core = 482
+		add_state_core = 481
+		add_state_core = 629
+		add_state_core = 726
+		add_state_core = 727
+		add_state_core = 642
+		add_state_core = 630
+		add_state_core = 631
+		add_state_core = 632
+		add_state_core = 638
+		hidden_effect = {
+		create_wargoal = {
+			target = var:382.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = var:388.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = var:629.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = var:463.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = var:1166.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = USA
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = CAN
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = MEX
+		}
+	    }
+	}
+}
+
+country_event = { #do we expand or nah spiritualism edition
+	id = KX_california.48
+	immediate = { log = "[GetDateText]: [Root.GetName]: event KX_california.48" }
+	title = KX_california.48.t
+	desc = KX_california.48.d
+	picture = GFX_CAL_spiritualists
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+
+	option = {
+		name = KX_california.48.a
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = KX_california.48.b
+		ai_chance = {
+			factor = 0
+		}
+		every_state = {
+			limit = {
+				is_core_of = WCC
+			}
+			add_core_of = CAL
+		}
+		set_cosmetic_tag = CAL_pacific_spiritualist
+		
+        add_state_core = 387
+		add_state_core = 1157
+		add_state_core = 1164
+		add_state_core = 380
+		add_state_core = 1174
+		add_state_core = 382
+		add_state_core = 377
+		add_state_core = 376
+		add_state_core = 1096
+		add_state_core = 1166
+		add_state_core = 381
+		add_state_core = 388
+		add_state_core = 470
+		add_state_core = 473
+		add_state_core = 740
+		add_state_core = 471
+		add_state_core = 463
+		add_state_core = 1273
+		add_state_core = 484
+		add_state_core = 483
+		add_state_core = 482
+		add_state_core = 481
+		add_state_core = 629
+		add_state_core = 726
+		add_state_core = 727
+		add_state_core = 642
+		add_state_core = 630
+		add_state_core = 631
+		add_state_core = 632
+		add_state_core = 638
+		hidden_effect = {
+		create_wargoal = {
+			target = var:382.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = var:388.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = var:629.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = var:463.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = var:1166.owner
+			type = annex_everything
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = USA
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = CAN
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = MEX
+		}
+	    }
+	}
+}
+
+country_event = { #sunset flag
+	id = KX_california.49
+	immediate = { log = "[GetDateText]: [Root.GetName]: event KX_california.49" }
+	title = KX_california.49.t
+	desc = KX_california.49.d
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+
+	option = {
+		name = KX_california.49.a
+		}
+	option = {
+		name = KX_california.49.b
+		hidden_effect = {
+			set_cosmetic_tag = CAL_sunset_republic2
+			}
+	}
+}
+
+country_event = { #Henry Wallace is nuts
+	id = KX_california.50
+	immediate = { 
+	log = "[GetDateText]: [Root.GetName]: event KX_california.50" 
+	set_country_flag = CAL_Wallace_Spiritualist
+	}
+	title = KX_california.50.t
+	desc = KX_california.50.d
+	picture = GFX_report_event_TIB_roerich_stand
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = KX_california.50.a
+		ai_chance = { factor = 50 }
+		add_political_power = 30
+		increase_ruling_party_popularity_by_3 = yes
+		add_stability = 0.03
+		}
+	option = {
+		name = KX_california.50.b
+		ai_chance = { factor = 25 }
+		set_country_leader_ideology = socdem_spiritualism_subtype
+		add_command_power = 30
+		add_political_power = -30
+		decrease_ruling_party_popularity_by_3 = yes
+		add_stability = -0.03
+	}
+	option = {
+		name = KX_california.50.c
+		ai_chance = { factor = 25 }
+		set_country_leader_ideology = socdem_esoteric_leninism_subtype
+		add_command_power = 50
+		add_political_power = -50
+		decrease_ruling_party_popularity_by_5 = yes
+		add_stability = -0.05
+		set_country_flag = CAL_Wallace_Shalala
+		set_cosmetic_tag = CAL_wallace_shambhala
+		CAL = { add_opinion_modifier = { target = TIB modifier = small_increase } }
+		TIB = { add_opinion_modifier = { target = CAL modifier = small_increase } }
+	}
+}
+
 country_event = { #growing distrust
 	id = calpeaceout.1
 	immediate = { log = "[GetDateText]: [Root.GetName]: event calpeaceout.1" }
@@ -14705,6 +15733,7 @@ country_event = { #growing distrust
 			}
 			complete_national_focus = CAL_arnold_coup
 			set_global_flag = CAl_peaceoutgang
+			set_country_flag = CAL_peacecoreflag
 			every_state = {
 				limit = {
 					is_claimed_by = CAL
@@ -15595,9 +16624,93 @@ country_event = {# shared ceasefire event
 	}
 }
 
+country_event = { #begone California
+	id = calpeaceout.22
+	immediate = { log = "[GetDateText]: [Root.GetName]: event calpeaceout.2" }
+	title = calpeaceout.22.t
+	desc = calpeaceout.22.d
+	picture = GFX_CAL_legislature 
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
 
 
+	option = {
+		name = calpeaceout.22.a #fine
+		add_political_power = 150
+		add_stability = -0.1
+		378 = {
+			set_state_name = "Jefferson"
+		}
+		829 = {
+			set_state_name = "Mojave"
+		}
 
+	}
+	option = {
+		name = calpeaceout.22.b #fuck no
+		add_offsite_building = { type = industrial_complex level = 3 }
+		add_stability = -0.25
+		378 = {
+			set_state_name = "Jefferson"
+		}
+		829 = {
+			set_state_name = "Mojave"
+		}
+		798 = {
+			set_state_name = "Angels"
+		}
+		797 = {
+			set_state_name = "Frisco"
+		}
+	}	
 
+	option = {
+		name = calpeaceout.22.c #fuck no
+		add_stability = 0.05
+	}	
+}
 
+country_event = { #Japan peaceout
+	id = calpeaceout.23
+	immediate = { log = "[GetDateText]: [Root.GetName]: event calpeaceout.3" }
+	title = calpeaceout.23.t
+	desc = calpeaceout.23.d
+	picture = GFX_CAL_legislature 
 
+	trigger= {
+		has_war_with = CAL
+		CAL = { 
+			is_ai = yes 
+			is_in_faction_with = JAP
+			has_capitulated = yes
+		}
+		JAP = { is_ai = YES }
+	}
+
+	fire_only_once = yes
+	
+	option = {
+		name = calpeaceout.23.a #yes
+		ai_chance = {
+			factor = 100
+		}
+		every_enemy_country = {
+			limit = {
+				is_in_faction_with = CAL
+			}
+			white_peace = ROOT
+		}
+		annex_country = {
+			target = CAL
+		}
+	}
+	option = {
+		name = calpeaceout.23.c #no
+		ai_chance = {
+			factor = 0
+		}
+		add_war_support = 0.1
+	}	
+}

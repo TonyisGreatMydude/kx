@@ -40,7 +40,7 @@ ideas = {
 				surrender_limit = -0.1
 				land_doctrine_cost_factor = 0.75
 			}
-		picture = chi_incompetent_officers
+		picture = RUS_divided_army
 	}
 	rus_divided_staff1 = {
 		on_add = {log = "[GetDateText]: [Root.GetName]: add idea rus_divided_staff1"}
@@ -53,7 +53,7 @@ ideas = {
 				training_time_army_factor = 0.15
 				surrender_limit = -0.05
 			}
-		picture = chi_incompetent_officers
+		picture = RUS_divided_army
 	}
 	rus_divided_staff2 = {
 		on_add = {log = "[GetDateText]: [Root.GetName]: add idea rus_divided_staff2"}
@@ -66,7 +66,7 @@ ideas = {
 				training_time_army_factor = 0.12
 				surrender_limit = -0.025
 			}
-		picture = chi_incompetent_officers
+		picture = RUS_divided_army
 	}
 	rus_divided_staff3 = {
 		on_add = {log = "[GetDateText]: [Root.GetName]: add idea rus_divided_staff3"}
@@ -78,7 +78,7 @@ ideas = {
 				conscription_factor = -0.12
 				training_time_army_factor = 0.1
 			}
-		picture = chi_incompetent_officers
+		picture = RUS_divided_army
 	}
 	rus_divided_staff4 = {
 		on_add = {log = "[GetDateText]: [Root.GetName]: add idea rus_divided_staff4"}
@@ -90,7 +90,7 @@ ideas = {
 				conscription_factor = -0.1
 				training_time_army_factor = 0.05
 			}
-		picture = chi_incompetent_officers
+		picture = RUS_divided_army
 	}
 	rus_divided_staff5 = {
 		on_add = {log = "[GetDateText]: [Root.GetName]: add idea rus_divided_staff5"}
@@ -102,7 +102,7 @@ ideas = {
 				training_time_army_factor = 0.05
 				experience_gain_army = 0.05
 			}
-		picture = chi_incompetent_officers
+		picture = RUS_divided_army
 	}
 	rus_divided_staff6 = {
 		on_add = {log = "[GetDateText]: [Root.GetName]: add idea rus_divided_staff6"}
@@ -114,7 +114,7 @@ ideas = {
 				training_time_army_factor = 0.05
 				experience_gain_army = 0.1
 			}
-		picture = chi_incompetent_officers
+		picture = RUS_divided_army
 	}
 	rus_experienced_military = {
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea rus_experienced_military"}
@@ -136,7 +136,7 @@ ideas = {
 			production_speed_dockyard_factor = -0.1
 			naval_doctrine_cost_factor = 0.75
 		}
-		picture = generic_coastal_defense_ships2
+		picture = RUS_divided_navy
 	}
 	
 	RUS_vilnius_treaty = {
@@ -281,7 +281,6 @@ ideas = {
 	RUS_senate_duma_conflict = {
 		on_add = {log = "[GetDateText]: [Root.GetName]: add idea RUS_senate_duma_conflict"}
 		on_remove = {
-			remove_power_balance = { id = RUS_senate_duma_conflict }
 			if = {
 				limit = {
 					NOT = { has_country_flag = provisional_government }
@@ -304,16 +303,18 @@ ideas = {
 					}
 				}
 			}
+			remove_power_balance = { id = RUS_senate_duma_conflict }
 		}
-			allowed = { always = no }
+		allowed = { always = no }
 		picture = FRA_scw_intervention_republicans_focus
 	}
 	RUS_RRF = {
-			on_add = {log = "[GetDateText]: [Root.GetName]: add idea RUS_RRF"}
-			allowed = { always = no }
+		on_add = {log = "[GetDateText]: [Root.GetName]: add idea RUS_RRF"}
+		allowed = { always = no }
 		picture = RUS_RRF_idea
 		available = {
 			has_idea = RUS_Boris_V_Savinkov_hog_npo
+			RUS_savinkov_in_power = no
 		}
 		modifier = {
 			stability_weekly = 0.05
@@ -322,12 +323,13 @@ ideas = {
 		}
 	}
 	RUS_RRF_1 = {
-			on_add = {log = "[GetDateText]: [Root.GetName]: add idea RUS_RRF_1"}
-			allowed = { always = no }
+		on_add = {log = "[GetDateText]: [Root.GetName]: add idea RUS_RRF_1"}
+		allowed = { always = no }
 		picture = RUS_RRF_idea
 		name = RUS_RRF
 		available = {
 			has_idea = RUS_Boris_V_Savinkov_hog_npo
+			RUS_savinkov_in_power = no
 		}
 		modifier = {
 			stability_weekly = 0.05
@@ -445,8 +447,15 @@ ideas = {
 		}
 	}
 	RUS_National_Revolution = {
-			on_add = {log = "[GetDateText]: [Root.GetName]: add idea RUS_National_Revolution"}
-			allowed = { always = no }
+		on_add = {
+			log = "[GetDateText]: [Root.GetName]: add idea RUS_National_Revolution"
+			country_lock_all_division_template = yes
+		}
+		on_remove = {
+			log = "[GetDateText]: [Root.GetName]: remove idea RUS_National_Revolution"
+			country_lock_all_division_template = no
+		}
+		allowed = { always = no }
 		picture = chi_war_of_resistance3
 		modifier = {
 			custom_modifier_tooltip = cannot_train_units_tt
@@ -456,8 +465,15 @@ ideas = {
 		}
 	}
 	RUS_army_mutiny = {
-			on_add = {log = "[GetDateText]: [Root.GetName]: add idea RUS_army_mutiny"}
-			allowed = { always = no }
+		on_add = {
+			log = "[GetDateText]: [Root.GetName]: add idea RUS_army_mutiny"
+			country_lock_all_division_template = yes
+		}
+		on_remove = {
+			log = "[GetDateText]: [Root.GetName]: remove idea RUS_army_mutiny"
+			country_lock_all_division_template = no
+		}
+		allowed = { always = no }
 		picture = SPR_disbanded_army
 		available = {
 			OR = {
@@ -478,7 +494,6 @@ ideas = {
 		}
 		modifier = {
 			custom_modifier_tooltip = cannot_train_units_tt
-			disabled_ideas = 1
 			surrender_limit = -0.2
 			army_morale_factor = -0.2
 			army_org_factor = -0.2
@@ -795,7 +810,7 @@ ideas = {
 				industrial_capacity_factory = -0.1
 				stability_weekly = -0.002
 			}
-			picture = capital_outflow
+			picture = HUN_austerity_idea
 	}
 	RUS_concessions_to_senate = {
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea RUS_concessions_to_senate"}
@@ -4339,7 +4354,7 @@ ideas = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea RUS_frunzes_reform_plan_1"}
 			allowed = { always = no }
 			name = RUS_frunzes_reform_plan
-			picture = generic_army_war_college
+			picture = SOV_reform_frunze
 			modifier = {
 				army_defence_factor = 0.1
 				combat_width_factor = -0.15
@@ -4350,7 +4365,7 @@ ideas = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea RUS_frunzes_reform_plan_2"}
 			allowed = { always = no }
 			name = RUS_frunzes_reform_plan
-			picture = generic_army_war_college
+			picture = SOV_reform_frunze
 			modifier = {
 				army_defence_factor = 0.1
 				combat_width_factor = -0.15
@@ -4363,7 +4378,7 @@ ideas = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea RUS_frunzes_reform_plan_3"}
 			allowed = { always = no }
 			name = RUS_frunzes_reform_plan
-			picture = generic_army_war_college
+			picture = SOV_reform_frunze
 			modifier = {
 				army_defence_factor = 0.1
 				combat_width_factor = -0.15
@@ -4378,7 +4393,7 @@ ideas = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea RUS_frunzes_reform_plan_4"}
 			allowed = { always = no }
 			name = RUS_frunzes_reform_plan
-			picture = generic_army_war_college
+			picture = SOV_reform_frunze
 			modifier = {
 				army_defence_factor = 0.1
 				combat_width_factor = -0.15
@@ -4395,7 +4410,7 @@ ideas = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea RUS_zhukovs_reform_plan_1"}
 			allowed = { always = no }
 			name = RUS_zhukovs_reform_plan
-			picture = eng_imperial_conscription
+			picture = SOV_reform_zhukov
 			modifier = {
 				army_attack_factor = 0.05
 				army_defence_factor = 0.05
@@ -4411,7 +4426,7 @@ ideas = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea RUS_zhukovs_reform_plan_2"}
 			allowed = { always = no }
 			name = RUS_zhukovs_reform_plan
-			picture = eng_imperial_conscription
+			picture = SOV_reform_zhukov
 			modifier = {
 				army_attack_factor = 0.05
 				army_defence_factor = 0.05
@@ -4429,7 +4444,7 @@ ideas = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea RUS_zhukovs_reform_plan_3"}
 			allowed = { always = no }
 			name = RUS_zhukovs_reform_plan
-			picture = eng_imperial_conscription
+			picture = SOV_reform_zhukov
 			modifier = {
 				army_attack_factor = 0.05
 				army_defence_factor = 0.05
@@ -4459,7 +4474,7 @@ ideas = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea RUS_tukhachevskiys_reform_plan_1"}
 			allowed = { always = no }
 			name = RUS_tukhachevskiys_reform_plan
-			picture = generic_acquire_tanks
+			picture = SOV_reform_tukhachevsky
 			modifier = {
 				army_attack_factor = 0.1
 			}
@@ -4474,7 +4489,7 @@ ideas = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea RUS_tukhachevskiys_reform_plan_2"}
 			allowed = { always = no }
 			name = RUS_tukhachevskiys_reform_plan
-			picture = generic_acquire_tanks
+			picture = SOV_reform_tukhachevsky
 			modifier = {
 				army_attack_factor = 0.1
 				army_speed_factor = 0.1
@@ -4495,7 +4510,7 @@ ideas = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea RUS_tukhachevskiys_reform_plan_3"}
 			allowed = { always = no }
 			name = RUS_tukhachevskiys_reform_plan
-			picture = generic_acquire_tanks
+			picture = SOV_reform_tukhachevsky
 			modifier = {
 				army_attack_factor = 0.1
 			}
@@ -4514,7 +4529,7 @@ ideas = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea RUS_tukhachevskiys_reform_plan_4"}
 			allowed = { always = no }
 			name = RUS_tukhachevskiys_reform_plan
-			picture = generic_acquire_tanks
+			picture = SOV_reform_tukhachevsky
 			modifier = {
 				army_attack_factor = 0.1
 				army_speed_factor = 0.1
@@ -4995,7 +5010,7 @@ ideas = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea RUS_constitutional_monarchy_1"}
 			allowed = { always = no }
 			available = { RUS_russian_monarch = yes }
-			name = RUS_constitutional_monarchy
+			name = RUS_constitutional_monarchy_idea
 			picture = SOV_the_true_tsars
 			modifier = {
 				stability_factor = 0.05
@@ -5006,7 +5021,7 @@ ideas = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea RUS_constitutional_monarchy_2"}
 			allowed = { always = no }
 			available = { RUS_russian_monarch = yes }
-			name = RUS_constitutional_monarchy
+			name = RUS_constitutional_monarchy_idea
 			picture = SOV_the_true_tsars
 			modifier = {
 				stability_factor = 0.05
@@ -5018,7 +5033,7 @@ ideas = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea RUS_constitutional_monarchy_3"}
 			allowed = { always = no }
 			available = { RUS_russian_monarch = yes }
-			name = RUS_constitutional_monarchy
+			name = RUS_constitutional_monarchy_idea
 			picture = SOV_the_true_tsars
 			modifier = {
 				stability_factor = 0.1
@@ -5866,15 +5881,7 @@ ideas = {
 			}
 		}
 		local_parliaments = {
-			on_add = { 
-				log = "[GetDateText]: [Root.GetName]: add idea local_parliaments"
-				multiply_variable = { RUS.rus_core_integration_cost_compliance = 0.9 }
-				multiply_variable = { RUS.rus_core_integration_time_to_remove = 0.9 }
-			}
-			on_remove = {
-				multiply_variable = { RUS.rus_core_integration_cost_compliance = 1.1 }
-				multiply_variable = { RUS.rus_core_integration_time_to_remove = 1.1 }
-			}
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea local_parliaments" }
 			picture = generic_scales
 			allowed = { always = no }
 			available = { 
@@ -5888,7 +5895,7 @@ ideas = {
 				political_power_gain = 0.1
 				local_resources_factor = 0.10
 				monthly_population = 0.3
-				compliance_growth = 0.2
+				compliance_growth = 0.1
 				custom_modifier_tooltip = bolshevist_enlightenment_1_tooltip
 			}
 		}
@@ -6006,15 +6013,7 @@ ideas = {
 			}
 		}
 		RUS_federal_councils = {
-			on_add = { 
-				log = "[GetDateText]: [Root.GetName]: add idea RUS_federal_councils"
-				multiply_variable = { RUS.rus_core_integration_cost_compliance = 0.9 }
-				multiply_variable = { RUS.rus_core_integration_time_to_remove = 0.9 }
-			}
-			on_remove = {
-				multiply_variable = { RUS.rus_core_integration_cost_compliance = 1.1 }
-				multiply_variable = { RUS.rus_core_integration_time_to_remove = 1.1 }
-			}
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea RUS_federal_councils" }
 			picture = democratic_centralism_1
 			allowed = { always = no }
 			available = { 
@@ -6026,8 +6025,7 @@ ideas = {
 			modifier = {
 				consumer_goods_factor = -0.04
 				production_speed_buildings_factor = 0.12
-				compliance_growth = 0.2
-				custom_modifier_tooltip = bolshevist_enlightenment_1_tooltip
+				compliance_growth = 0.12
 			}
 		}
 		RUS_trade_unionism = {
@@ -6620,15 +6618,7 @@ ideas = {
 			}
 		}
 		one_and_indivisible = {
-			on_add = { 
-				log = "[GetDateText]: [Root.GetName]: add idea one_and_indivisible"
-				multiply_variable = { RUS.rus_core_integration_cost_compliance = 1.05 }
-				multiply_variable = { RUS.rus_core_integration_time_to_remove = 1.05 }
-			}
-			on_remove = {
-				multiply_variable = { RUS.rus_core_integration_cost_compliance = 0.95 }
-				multiply_variable = { RUS.rus_core_integration_time_to_remove = 0.95 }
-			}
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea one_and_indivisible"}
 			available = { NOT = { has_idea = local_parliaments } }
 			allowed = { always = no }
 			picture = generic_pp_unity_bonus
@@ -6636,19 +6626,12 @@ ideas = {
 				political_power_cost = 0.05
 				consumer_goods_factor = -0.1
 				production_factory_max_efficiency_factor = 0.05
-				custom_modifier_tooltip = one_and_indivisible_tooltip
+				compliance_growth = -0.02
+				resistance_target = 0.02
 			}
 		}
 		RUS_russification_policies = {
-			on_add = { 
-				log = "[GetDateText]: [Root.GetName]: add idea RUS_russification_policies"
-				multiply_variable = { RUS.rus_core_integration_cost_compliance = 1.05 }
-				multiply_variable = { RUS.rus_core_integration_time_to_remove = 1.05 }
-			}
-			on_remove = {
-				multiply_variable = { RUS.rus_core_integration_cost_compliance = 0.95 }
-				multiply_variable = { RUS.rus_core_integration_time_to_remove = 0.95 }
-			}
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea RUS_russification_policies" }
 			available = { vns_in_power = yes }
 			allowed = { always = no }
 			picture = generic_oppression
@@ -6656,7 +6639,7 @@ ideas = {
 				political_power_cost = 0.1
 				consumer_goods_factor = 0.05
 				production_factory_max_efficiency_factor = 0.1
-				custom_modifier_tooltip = one_and_indivisible_tooltip
+				resistance_target = 0.02
 			}
 		}
 		
@@ -6720,7 +6703,24 @@ ideas = {
 			modifier = {
 				political_power_gain = 0.05
 				war_support_factor = 0.2
-				national_populist_drift = 0.07
+			}
+		}
+		RRF_victory_expectations = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea RRF_victory_expectations"}
+			available = {
+				NOT = {
+					OR = {
+						has_full_control_of_state = 219
+						has_full_control_of_state = 195
+					}
+				}
+			}
+			allowed = { always = no }
+			picture = IRE_populist_dictatorship_idea
+			available = { has_government = national_populist }
+			modifier = {
+				national_populist_drift = -0.07
+				war_support_weekly = -0.005
 			}
 		}
 		RRF_Combat_Squads = {
@@ -6733,6 +6733,7 @@ ideas = {
 			modifier = {
 				required_garrison_factor = -0.15
 				resistance_growth_on_our_occupied_states = 0.15
+				resistance_target = -0.05
 			}
 		}
 		RRF_Green_Army_Support = {
@@ -6750,12 +6751,41 @@ ideas = {
 				out_of_supply_factor = -0.15
 			}
 		}
+		RCW_joint_front_idea = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea RCW_joint_front_idea"}
+			on_add = { 
+				if = {
+					limit = {
+						NOT = { tag = RVA }
+					}
+					set_major = no 
+				}
+			}
+			on_remove = {
+				if = {
+					limit = {
+						tag = RVA
+						RVA = { is_faction_leader = yes }
+					}
+					RVA = {
+						country_event = rcw.254
+					}
+				}
+			}
+			allowed = { always = no }
+			picture = RUS_fighting_for_together
+			available = { 
+				country_exists = RUS
+			}
+			modifier = {
+				army_attack_factor = 0.05
+				army_defence_factor = 0.05
+				army_strength_factor = 0.05
+			}
+		}
 		RCW_major = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea RCW_major"}
 			allowed = { always = no }
-			on_add = {
-				ROOT = { set_major = yes }
-			}
 			picture = RUS_fighting_for_russia
 			available = {
 				has_global_flag = RCW_begun
@@ -6768,11 +6798,97 @@ ideas = {
 				conscription_factor = 0.2
 				out_of_supply_factor = -0.15
 				no_supply_grace = 60
-				surrender_limit = -0.1
+				surrender_limit = -0.2
 				unit_limit_bonus = 50
+				weekly_casualties_war_support = -0.006
+				weekly_bombing_war_support = -0.003
 			}
-			on_remove = {
-				ROOT = { set_major = no }
+			removal_cost = -1
+		}
+		RCW_major_SOV = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea RCW_major_SOV"}
+			allowed = { always = no }
+			name = RCW_major
+			picture = RUS_fighting_for_soviets
+			available = {
+				has_global_flag = RCW_begun
+				NOT = { has_global_flag = RCW_over }
+			}
+			modifier = {
+				ai_call_ally_desire_factor = -2000
+				training_time_army_factor = -0.1
+				out_of_supply_factor = -0.15
+				no_supply_grace = 60
+				surrender_limit = -0.2
+				unit_limit_bonus = 25
+				weekly_casualties_war_support = -0.006
+				weekly_bombing_war_support = -0.003
+			}
+			removal_cost = -1
+		}
+		RCW_major_TRM = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea RCW_major_TRM"}
+			allowed = { always = no }
+			name = RCW_major
+			picture = RUS_fighting_for_kolchak
+			available = {
+				has_global_flag = RCW_begun
+				NOT = { has_global_flag = RCW_over }
+			}
+			modifier = {
+				ai_call_ally_desire_factor = -2000
+				war_support_factor = 0.20
+				training_time_army_factor = -0.1
+				conscription_factor = 0.2
+				out_of_supply_factor = -0.15
+				no_supply_grace = 60
+				unit_limit_bonus = 50
+				weekly_casualties_war_support = -0.003
+				weekly_bombing_war_support = -0.003
+			}
+			removal_cost = -1
+		}
+		RCW_major_RRF = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea RCW_major_RRF"}
+			allowed = { always = no }
+			name = RCW_major
+			picture = RUS_fighting_for_savinkov
+			available = {
+				has_global_flag = RCW_begun
+				NOT = { has_global_flag = RCW_over }
+			}
+			modifier = {
+				ai_call_ally_desire_factor = -2000
+				war_support_factor = 0.20
+				training_time_army_factor = -0.1
+				conscription_factor = 0.2
+				out_of_supply_factor = -0.15
+				no_supply_grace = 60
+				unit_limit_bonus = 50
+				weekly_casualties_war_support = -0.004
+				weekly_bombing_war_support = -0.003
+			}
+			removal_cost = -1
+		}
+		RCW_major_WRA = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea RCW_major_WRA"}
+			allowed = { always = no }
+			name = RCW_major
+			picture = RUS_fighting_for_germans
+			available = {
+				has_global_flag = RCW_begun
+				NOT = { has_global_flag = RCW_over }
+			}
+			modifier = {
+				ai_call_ally_desire_factor = -2000
+				war_support_factor = 0.25
+				training_time_army_factor = -0.15
+				conscription_factor = 0.25
+				out_of_supply_factor = -0.15
+				no_supply_grace = 60
+				unit_limit_bonus = 50
+				weekly_casualties_war_support = -0.003
+				weekly_bombing_war_support = -0.003
 			}
 			removal_cost = -1
 		}
@@ -7528,6 +7644,7 @@ ideas = {
 				stability_factor = -0.4
 				political_power_gain = -0.5
 				radical_socialist_drift = 0.055
+				syndicalist_drift = 0.055
 			}
 			
 		}
@@ -7553,6 +7670,7 @@ ideas = {
 			modifier = {
 				political_power_gain = 0.2
 				radical_socialist_drift = -0.2
+				syndicalist_drift = -0.2
 			}
 			
 		}

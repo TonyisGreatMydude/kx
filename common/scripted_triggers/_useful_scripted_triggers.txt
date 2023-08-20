@@ -186,6 +186,7 @@ has_socialist_government = {
 			has_country_leader_ideology = socdem_fascism_subtype
 			has_country_leader_ideology = red_tinted_autocracy_subtype
 			has_country_leader_ideology = socdem_tridemism_subtype
+			has_country_leader_ideology = socdem_illegalism_subtype
 		}
 	}
 }
@@ -842,7 +843,7 @@ uses_generic_concerns = {
 		original_tag = ALB
 		original_tag = ANQ
 		original_tag = ARG
-		#original_tag = ARM #Unfinished List
+		original_tag = ARM
 		original_tag = AST
 		original_tag = AUS
 		original_tag = ALA
@@ -850,7 +851,7 @@ uses_generic_concerns = {
 		original_tag = BEL
 		original_tag = BHC
 		original_tag = BBR
-		#original_tag = BOL #Unfinished List
+		original_tag = BOL
 		original_tag = BOS
 		original_tag = BRA
 		original_tag = BUL
@@ -861,6 +862,7 @@ uses_generic_concerns = {
 		original_tag = CNT
 		original_tag = CRO
 		original_tag = COR
+		original_tag = CRM
 		#original_tag = CUB #Unfinished List
 		original_tag = CSA
 		original_tag = DEH
@@ -891,6 +893,7 @@ uses_generic_concerns = {
 		original_tag = ITA
 		original_tag = JAP
 		original_tag = COG
+		original_tag = KAR
 		original_tag = LEC
 		original_tag = LEP
 		original_tag = LIB
@@ -911,6 +914,9 @@ uses_generic_concerns = {
 		original_tag = QIE
 		original_tag = ROM
 		original_tag = RUS
+		original_tag = RVA
+		original_tag = RRF
+		original_tag = WRA
 		original_tag = SAF
 		#original_tag = SAU #Unfinished List
 		original_tag = SCA
@@ -1441,6 +1447,45 @@ has_war_with_non_exiled_country = {
 	}
 }
 
+owns_state_with_naval_base = {
+	any_owned_state = {
+		hidden_trigger = {
+			is_coastal = yes
+			is_controlled_by = PREV
+		}
+		any_province_building_level = {
+			province = {
+				all_provinces = yes
+				limit_to_coastal = yes
+			}
+			building = naval_base
+			level > 0
+		}
+	}
+}
+
+is_controlled_by_ROOT_owner_or_mutual_enemy = {
+	OR = {
+		is_controlled_by = ROOT
+		is_controlled_by = owner
+		controller = {
+			has_war_with = ROOT
+			has_war_with = PREV.owner
+		}
+	}
+}
+
+is_controlled_by_ROOT_or_owner = {
+	OR = {
+		is_controlled_by = ROOT
+		is_controlled_by = owner
+	}
+}
+
+is_in_faction_but_not_leader = {
+	is_in_faction = yes
+	is_faction_leader = no
+}
 
 is_in_tech_research_group = {
 	custom_trigger_tooltip = {
@@ -1457,11 +1502,37 @@ is_in_tech_research_group = {
 			is_in_tech_sharing_group = belgian_research
 			is_in_tech_sharing_group = argentina_research
 			is_in_tech_sharing_group = balkan_research
-			is_in_tech_sharing_group = CHI_KR_industry_tech_group
-			is_in_tech_sharing_group = CHI_KR_research_tech_group
 			is_in_tech_sharing_group = cubcos_research
 			is_in_tech_sharing_group = maliphinsul_research_group
 			is_in_tech_sharing_group = colombia_research
+			is_in_tech_sharing_group = kyiv_conf_research
+			is_in_tech_sharing_group = mizhmoria_research
+		}
+	}
+}
+
+#only use this in integration effects
+core_of_FROM_can_be_integrated_by_ROOT = {
+	OR = {
+		has_variable = can_integrate_@ROOT
+		NOT = {
+			any_country_with_core = {
+				NOT = { has_variable = can_integrate_@FROM }
+				NOT = { has_variable = ROOT.can_integrate_@THIS }
+			}
+		}
+	}
+}
+
+#only use this in integration effects
+core_of_PREV_can_be_integrated_by_ROOT = {
+	OR = {
+		has_variable = can_integrate_@ROOT
+		NOT = {
+			any_country_with_core = {
+				NOT = { has_variable = can_integrate_@PREV.PREV }
+				NOT = { has_variable = ROOT.can_integrate_@THIS }
+			}
 		}
 	}
 }

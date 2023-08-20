@@ -48,6 +48,7 @@ continent = {
 			"GFX_Portrait_Europe_Generic_land_new_12"
 			"GFX_Portrait_Europe_Generic_land_new_13"
 			"GFX_Portrait_Europe_Generic_land_new_14"
+			"GFX_Portrait_Europe_Generic_land_new_15"
 		}
 	}
 
@@ -428,6 +429,7 @@ continent = {
 			"GFX_Portrait_Europe_Generic_land_new_12"
 			"GFX_Portrait_Europe_Generic_land_new_13"
 			"GFX_Portrait_Europe_Generic_land_new_14"
+			"GFX_Portrait_Europe_Generic_land_new_15"
 			"GFX_Portrait_Europe_Generic_new_23"
 		}
 	}
@@ -804,6 +806,7 @@ continent = {
 			"GFX_Portrait_Europe_Generic_land_new_12"
 			"GFX_Portrait_Europe_Generic_land_new_13"
 			"GFX_Portrait_Europe_Generic_land_new_14"
+			"GFX_Portrait_Europe_Generic_land_new_15"
 		}
 	}
 
@@ -829,6 +832,7 @@ continent = {
 				"GFX_Portrait_South_America_Generic_new_7"
 				"GFX_Portrait_South_America_Generic_new_8"
 				"GFX_Portrait_South_America_Generic_new_9"
+				"GFX_Portrait_South_America_Generic_new_10"
 				"GFX_Portrait_Europe_Generic_new_13"
 				"GFX_Portrait_Europe_Generic_new_2"
 				"GFX_Portrait_Europe_Generic_new_5"
@@ -846,6 +850,7 @@ continent = {
 				"GFX_Portrait_South_America_Generic_new_7"
 				"GFX_Portrait_South_America_Generic_new_8"
 				"GFX_Portrait_South_America_Generic_new_9"
+				"GFX_Portrait_South_America_Generic_new_10"
 				"GFX_Portrait_Europe_Generic_new_13"
 				"GFX_Portrait_Europe_Generic_new_10"
 				"GFX_Portrait_Europe_Generic_new_15"
@@ -867,6 +872,7 @@ continent = {
 				"GFX_Portrait_South_America_Generic_new_7"
 				"GFX_Portrait_South_America_Generic_new_8"
 				"GFX_Portrait_South_America_Generic_new_9"
+				"GFX_Portrait_South_America_Generic_new_10"
 				"GFX_Portrait_Europe_Generic_new_13"
 				"GFX_Portrait_Europe_Generic_new_10"
 				"GFX_Portrait_Europe_Generic_new_15"
@@ -888,6 +894,7 @@ continent = {
 				"GFX_Portrait_South_America_Generic_new_7"
 				"GFX_Portrait_South_America_Generic_new_8"
 				"GFX_Portrait_South_America_Generic_new_9"
+				"GFX_Portrait_South_America_Generic_new_10"
 				"GFX_Portrait_Europe_Generic_new_13"
 				"GFX_Portrait_Europe_Generic_new_10"
 				"GFX_Portrait_Europe_Generic_new_15"
@@ -910,6 +917,7 @@ continent = {
 				"GFX_Portrait_South_America_Generic_new_7"
 				"GFX_Portrait_South_America_Generic_new_8"
 				"GFX_Portrait_South_America_Generic_new_9"
+				"GFX_Portrait_South_America_Generic_new_10"
 				"GFX_Portrait_Europe_Generic_new_13"
 				"GFX_Portrait_Europe_Generic_new_10"
 				"GFX_Portrait_Europe_Generic_new_15"
@@ -932,6 +940,7 @@ continent = {
 				"GFX_Portrait_South_America_Generic_new_7"
 				"GFX_Portrait_South_America_Generic_new_8"
 				"GFX_Portrait_South_America_Generic_new_9"
+				"GFX_Portrait_South_America_Generic_new_10"
 				"GFX_Portrait_Europe_Generic_new_13"
 				"GFX_Portrait_Europe_Generic_new_10"
 				"GFX_Portrait_Europe_Generic_new_15"
@@ -954,6 +963,7 @@ continent = {
 				"GFX_Portrait_South_America_Generic_new_7"
 				"GFX_Portrait_South_America_Generic_new_8"
 				"GFX_Portrait_South_America_Generic_new_9"
+				"GFX_Portrait_South_America_Generic_new_10"
 				"GFX_Portrait_Europe_Generic_new_13"
 				"GFX_Portrait_Europe_Generic_new_10"
 				"GFX_Portrait_Europe_Generic_new_15"
@@ -976,6 +986,7 @@ continent = {
 				"GFX_Portrait_South_America_Generic_new_7"
 				"GFX_Portrait_South_America_Generic_new_8"
 				"GFX_Portrait_South_America_Generic_new_9"
+				"GFX_Portrait_South_America_Generic_new_10"
 				"GFX_Portrait_Europe_Generic_new_13"
 				"GFX_Portrait_Europe_Generic_new_14"
 				"GFX_Portrait_Europe_Generic_new_3"
@@ -993,6 +1004,7 @@ continent = {
 				"GFX_Portrait_South_America_Generic_new_7"
 				"GFX_Portrait_South_America_Generic_new_8"
 				"GFX_Portrait_South_America_Generic_new_9"
+				"GFX_Portrait_South_America_Generic_new_10"
 				"GFX_Portrait_Europe_Generic_new_13"
 				"GFX_Portrait_Europe_Generic_new_15"
 				"GFX_Portrait_Europe_Generic_new_9"
@@ -1010,6 +1022,7 @@ continent = {
 				"GFX_Portrait_South_America_Generic_new_7"
 				"GFX_Portrait_South_America_Generic_new_8"
 				"GFX_Portrait_South_America_Generic_new_9"
+				"GFX_Portrait_South_America_Generic_new_10"
 				"GFX_Portrait_Europe_Generic_new_13"
 				"GFX_Portrait_Europe_Generic_new_15"
 				"GFX_Portrait_Europe_Generic_new_12"
@@ -1037,6 +1050,7 @@ continent = {
 			"GFX_Portrait_Europe_Generic_land_new_12"
 			"GFX_Portrait_Europe_Generic_land_new_13"
 			"GFX_Portrait_Europe_Generic_land_new_14"
+			"GFX_Portrait_Europe_Generic_land_new_15"
 		}
 	}
 
@@ -2360,10 +2374,10 @@ YUC = {
 			"GFX_Portrait_South_America_Generic_land_new_3"
 			"GFX_Portrait_South_America_Generic_land_new_4"
 			"GFX_Portrait_South_America_Generic_land_new_5"
-			"GFX_Portrait_South_America_Generic_land_new_6"
 			"GFX_Portrait_Mexico_Generic"
 			"GFX_Portrait_YUC_Generic"
 			"GFX_Portrait_YUC_Generic_2"
+			"GFX_Portrait_YUC_Generic_3"
 		}
 	}
 
@@ -2868,6 +2882,7 @@ LEC = {
 			"GFX_Portrait_Europe_Generic_land_new_12"
 			"GFX_Portrait_Europe_Generic_land_new_13"
 			"GFX_Portrait_Europe_Generic_land_new_14"
+			"GFX_Portrait_Europe_Generic_land_new_15"
 		}
 	}
 

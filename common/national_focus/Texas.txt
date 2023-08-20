@@ -395,6 +395,17 @@ focus_tree = {
 				id = TXS.116
 				days = 2
 			}
+			hidden_effect = {
+				country_event = {
+					id = TXSKING.33
+					days = 20
+				}
+
+				country_event = {
+					id = TXS.126
+					days = 46
+				}
+			}
 		}
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
 	}
@@ -551,6 +562,21 @@ focus_tree = {
 			increase_ruling_party_popularity_by_5 = yes
 			add_ideas = TXS_red_cowboys
 			custom_effect_tooltip = TXS_ranchers
+			if = {
+				limit = {
+					OR = {
+						has_government = syndicalist
+						has_government = radical_socialist
+					}
+					ARZ = {
+						has_socialist_government = no
+					}
+				}
+				country_event = {
+					id = TXS.125
+					days = 6
+				}
+			}
 		}
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
 	}
@@ -1959,7 +1985,7 @@ focus_tree = {
 		y = 9
 
 		ai_will_do = {
-			factor = 1000
+			factor = 10000
 		}
 
 		completion_reward = {
@@ -1967,6 +1993,12 @@ focus_tree = {
 			custom_effect_tooltip = TXS_ng
 			hidden_effect = {
 				load_oob = TXS_national_guard
+			}
+			hidden_effect = {
+				country_event = {
+					id = TXS.127
+					days = 35
+				}
 			}
 		}
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
@@ -3350,7 +3382,7 @@ focus_tree = {
 		y = 2
 		ai_will_do = { factor = 50 }
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus TXS_Neutrality"
+			log = "[GetDateText]: [Root.GetName]: Focus SIC_secret_police"
 			add_ideas = TXS_Neutrality
 		}
 	}
@@ -3369,47 +3401,8 @@ focus_tree = {
 		y = 2
 		ai_will_do = { factor = 50 }
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus TXS_1848"
-			set_country_flag = TXS_claimed_america
+			log = "[GetDateText]: [Root.GetName]: Focus SIC_secret_police"
 			create_wargoal = { type = annex_everything target = USA }
-			create_wargoal = { type = annex_everything target = COR }
-			create_wargoal = { type = annex_everything target = CAL }
-			create_wargoal = { type = annex_everything target = TEX }
-			create_wargoal = { type = annex_everything target = CSA }
-			if = {
-				limit = {
-					WCC = { is_subject = no }
-				}
-				create_wargoal = { type = annex_everything target = WCC }
-			}
-			if = {
-				limit = {
-					NEE = { has_country_flag = NEE_claimed_america }
-				}
-				create_wargoal = { type = annex_everything target = NEE }
-			}
-			if = {
-				limit = {
-					BBR = { has_country_flag = BBR_claimed_america }
-				}
-				create_wargoal = { type = annex_everything target = BBR }
-			}
-			if = {
-				limit = {
-					NYC = { has_country_flag = NYC_can_invade_america }
-				}
-				create_wargoal = { type = annex_everything target = NYC }
-			}
-			every_state = {
-				limit = {
-					NOT = { is_claim_or_core_of_ROOT = yes }
-					OR = {
-						is_mainland_america = yes
-						region = 33 #Alaska
-					}
-				}
-				add_claim_by = TXS
-			}
 		}
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 	}
@@ -3978,7 +3971,7 @@ focus = {
 				desc = "POLITICS_CACTUS_JACK_GARNER_DESC"
 				picture = "gfx/leaders/TXS/Portrait_Texas_John_Nance_Garner_Authoritarian.png"
 				expire = "1965.1.1"
-				ideology = authoritarian_democrat_subtype
+				ideology = authdem_national_conservative_subtype
 				traits = { dictator cactus_jack }
 			}
 			hidden_effect = {
@@ -4332,11 +4325,11 @@ focus = {
 		cost = 0
 		available = {
 			has_government = social_liberal
-                        hidden_trigger = { has_country_flag = TXS_election_over }
+						hidden_trigger = { has_country_flag = TXS_election_over }
 		}
 		bypass = {
 			has_government = social_liberal
-                        hidden_trigger = { has_country_flag = TXS_election_over }
+						hidden_trigger = { has_country_flag = TXS_election_over }
 		}
 		prerequisite = {
 			focus = TXS_public_elections
@@ -6594,6 +6587,12 @@ focus = {
 				remove_idea = TXS_illegitimate_kingdom_1
 				add_idea = TXS_illegitimate_kingdom_2
 			}
+			hidden_effect = {
+				country_event = {
+					id = cathdeath.118
+					days = 25
+				}
+			}
 		}
 	}
 
@@ -6666,7 +6665,7 @@ focus = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus TXS_i_cant_believe_houston_is_fucking_dead"
-			country_event = TXSKING.9
+			TXS = { country_event = TXSKING.9 }
 		}
 	}
 

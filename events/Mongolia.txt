@@ -2515,9 +2515,7 @@ country_event = {
 		
 		add_stability = -0.2
 		hidden_effect = {
-			set_cosmetic_tag = MON_Sternberg_RUS
-			set_variable = { rus_core_integration_cost_compliance = 30 } #Initial
-			set_variable = { rus_core_integration_time_to_remove = 150 } #Initial
+			set_cosmetic_tag = MON_Sternberg_RUS			
 			country_event = {
 				id = mongolia.104
 				days = 3
@@ -2568,7 +2566,7 @@ country_event = {
 		set_country_leader_ideology = absolute_monarchy_subtype
 		set_country_flag = TRM_become_russia
 		set_global_flag = MON_Sternberg_russian_empire
-		set_country_flag = RUS_can_integrate
+		hidden_effect = { RUS_enable_integration = yes }
 	}
 }
 
@@ -3380,7 +3378,7 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			country_event = { id = mongolia.107 days = 0}
+			country_event = mongolia.107
 		}
 	
 	}
@@ -3391,7 +3389,7 @@ country_event = {
 		ai_chance = { factor = 50 }
 		add_manpower= -10000
 		hidden_effect = {
-			country_event = { id = mongolia.108 days = 0}
+			country_event = mongolia.108
 		}
 	}
 }
@@ -5234,14 +5232,6 @@ country_event = { #religious policy of new empire
 	}
 	option = {
 		name = mongolia.163.e
-		increase_ruling_party_popularity_by_5 = yes
-		add_political_power = 10
-		add_stability = 0.10
-		add_war_support = 0.10
-		set_country_flag = MON_islamic
-	}
-	option = {
-		name = mongolia.163.f
 		increase_ruling_party_popularity_by_10 = yes
 		add_political_power = 20
 		add_stability = 0.05
@@ -5385,10 +5375,7 @@ country_event = { #picking a tsar
 		trigger = {
 			MON = { owns_state = 405 }
 			TRK = { exists = no }
-			AND = {
-				has_country_flag = MON_sternberg_kept_mongolia
-				has_country_flag = MON_islamic
-			}
+			has_country_flag = MON_sternberg_kept_mongolia
 		}
 		set_party_name = {
 			ideology = paternal_autocrat
@@ -9492,16 +9479,10 @@ country_event = { # Sternberg loyalist division storms the capital
 		hidden_effect = {
 			random_list = {
 				80 = {
-					country_event = {
-						id = mon.50
-						days = 0
-					}
+					country_event = mon.50
 				}
 				20 = {
-					country_event = {
-						id = mon.51
-						days = 0
-					}
+					country_event = mon.51
 				}
 			}
 		}
@@ -9515,16 +9496,10 @@ country_event = { # Sternberg loyalist division storms the capital
 		hidden_effect = {
 			random_list = {
 				35 = {
-					country_event = {
-						id = mon.50
-						days = 0
-					}
+					country_event = mon.50
 				}
 				65 = {
-					country_event = {
-						id = mon.51
-						days = 0
-					}
+					country_event = mon.51
 				}
 			}
 		}
@@ -9533,10 +9508,7 @@ country_event = { # Sternberg loyalist division storms the capital
 	option = { # lay down our arms
 		name = mon.49.c
 		hidden_effect = {
-			country_event = {
-				id = mon.51
-				days = 0
-			}
+			country_event = mon.51
 		}
 		add_manpower = -783
 	}
@@ -12774,7 +12746,7 @@ news_event = {# socialists take over Mongolia
 	immediate = { log = "[GetDateText]: [Root.GetName]: event mon.6580" }
 	title = mon.6580.t
 	desc = mon.6580.d
-	picture = GFX_news_event_MON_russian
+	picture = GFX_news_event_MON_socialist
 	is_triggered_only = yes
 
 	option = { name = mon.6580.a }
@@ -14419,6 +14391,10 @@ country_event = { #Leaders
 	option = {
 		name = tot_mon_flavor.24.r
 		trigger = { SKM = { exists = no } }
+		set_politics = {
+			ruling_party = radical_socialist
+			elections_allowed = no
+		}
 		create_country_leader = {
 			name = "Jerman Lepcha"
 			picture = "gfx/leaders/SKM/Portrait_SKM_Jerman_Lepcha.png"

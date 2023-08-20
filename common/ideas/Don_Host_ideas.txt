@@ -402,6 +402,7 @@ ideas = {
 		}
 			
 		DKB_Martial_Law = {
+			name = DKB_Martial_Law_idea
 			picture = NGR_at_lawlesness
 			allowed = { always = no }
             modifier = {
@@ -523,7 +524,6 @@ ideas = {
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea DON_Cossack_state"}
 			allowed = { always = no }
             modifier = {
-				custom_modifier_tooltip = cossack_state_tooltip
 				stability_factor = -0.1
 				political_power_cost = 0.3
 				army_core_attack_factor = 0.2
@@ -868,7 +868,7 @@ ideas = {
 			}
 		}
 		DKB_red_guard_1 = {
-			picture = FOP_revolutionary_army
+			picture = MEX_revolutionary_army
 			available = { has_socialist_government = yes }
 			name = DKB_red_guard
 			allowed = { always = no }
@@ -880,7 +880,7 @@ ideas = {
 			}
 		}
 		DKB_red_guard_2 = {
-			picture = FOP_revolutionary_army
+			picture = MEX_revolutionary_army
 			available = { has_socialist_government = yes }
 			name = DKB_red_guard
 			allowed = { always = no }
@@ -895,7 +895,7 @@ ideas = {
 			}
 		}
 		DKB_red_guard_3 = {
-			picture = FOP_revolutionary_army
+			picture = MEX_revolutionary_army
 			available = { has_socialist_government = yes }
 			name = DKB_red_guard
 			allowed = { always = no }
@@ -997,7 +997,6 @@ ideas = {
 				naval_coordination = 0.025
 			}
 		}
-		DKB_aftermath_idea = { picture = HOL_black_monday_recovery }
 		DKB_workers_unions = {
 			picture = TUS_syndie_economy
 			allowed = { always = no }
@@ -1085,6 +1084,7 @@ ideas = {
 			}
 		}
 		DKB_economic_totalist_3 = { #Bureaucratic centralism + mass
+		    name = DKB_economic_totalist_2
 			picture = generic_communist_army
 			allowed = { always = no }
             modifier = {
@@ -1094,6 +1094,7 @@ ideas = {
 			}
 		}
 		DKB_economic_totalist_4 = { #Bureaucratic centralism + labour
+		    name = DKB_economic_totalist_2
 			picture = generic_communist_army
 			allowed = { always = no }
             modifier = {

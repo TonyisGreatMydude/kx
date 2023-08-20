@@ -40,10 +40,7 @@ country_event = {
 		trigger = {
 			is_ai = no
 		}
-		country_event = {
-			id = tram.999
-			days = 0
-		}
+		country_event = tram.999
 		country_event = {
 			id = trammlad.147
 			days = 10
@@ -59,10 +56,7 @@ country_event = {
 
 	option = {
 		name = tram.intro.a
-		country_event = {
-			id = tram.998
-			days = 0
-		}
+		country_event = tram.998
 	}
 }
 country_event = {
@@ -74,10 +68,7 @@ country_event = {
 
 	option = {
 		name = tram.intro.a
-		country_event = {
-			id = tram.997
-			days = 0
-		}
+		country_event = tram.997
 	}
 }
 country_event = {
@@ -89,10 +80,7 @@ country_event = {
 
 	option = {
 		name = tram.intro.a
-		country_event = {
-			id = tram.996
-			days = 0
-		}
+		country_event = tram.996
 	}
 }
 country_event = {
@@ -104,10 +92,7 @@ country_event = {
 
 	option = {
 		name = tram.intro.a
-		country_event = {
-			id = tram.995
-			days = 0
-		}
+		country_event = tram.995
 	}
 }
 country_event = {
@@ -119,10 +104,7 @@ country_event = {
 
 	option = {
 		name = tram.intro.a
-		country_event = {
-			id = tram.994
-			days = 0
-		}
+		country_event = tram.994
 	}
 }
 country_event = {
@@ -288,6 +270,7 @@ country_event = { #Diterikhs dies
 			TRM_Anatoliy_Pepelyaev_eco_ade 
 			TRM_Arkady_Udintsev_sec_pau
 		}
+		set_country_flag = Mikhail_Diterikhs_dead
 	}
 }
 country_event = { #Diterikhs dies
@@ -517,6 +500,22 @@ country_event = {
 		}
 	}
 
+}
+
+country_event = {
+	id = tram.10
+	immediate = { log = "[GetDateText]: [Root.GetName]: event tram.10" }
+	title = tram.10.t
+	desc = tram.10.d
+	is_triggered_only = yes
+
+	option = {
+		name = tram.10.a
+		add_popularity = {
+			ideology = social_liberal
+			popularity = 0.1
+		}
+	}
 }
 country_event = {
 	id = tram.13
@@ -4772,6 +4771,12 @@ country_event = {
 				days = 1
 			}
 		}
+		every_unit_leader = {
+			limit = { has_unit_leader_flag = CAN_TRM_expedition_leader }
+			set_nationality = TRM
+			remove_unit_leader_trait = GBR_british_exile_trait
+			add_unit_leader_trait = TRM_british_expeditionary
+		}
 	}
 
 	option = { #Partial support
@@ -4842,7 +4847,14 @@ country_event = {
 			popularity = 0.05
 		}
 		add_political_power = 40
-
+		effect_tooltip = {
+			create_corps_commander = {
+				name = "Brian Horrocks"
+			}
+			create_corps_commander = {
+				name = "Eric Charles Hayes"
+			}
+		}
 	}
 
 	option = { #Partial support
@@ -14530,6 +14542,7 @@ country_event = {
 		every_owned_state = {
 			limit = {
 				is_core_of = TRM
+				has_resistance = yes
 			}
 			add_compliance = 10
 		}
@@ -14581,6 +14594,7 @@ country_event = {
 			limit = {
 				is_core_of = TRM
 				NOT = { state = 563 }
+				has_resistance = yes
 			}
 			add_compliance = 5
 		}
@@ -14627,6 +14641,7 @@ country_event = {
 			limit = {
 				is_core_of = TRM
 				NOT = { state = 657 }
+				has_resistance = yes
 			}
 			add_compliance = 5
 		}
@@ -14668,6 +14683,7 @@ country_event = {
 		every_owned_state = {
 			limit = {
 				is_core_of = TRM
+				has_resistance = yes
 			}
 			add_compliance = 10
 		}

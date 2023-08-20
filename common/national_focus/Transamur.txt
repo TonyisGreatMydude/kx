@@ -2862,7 +2862,7 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus TRM_Expand_RCW"
 			army_experience = 25
 			custom_effect_tooltip = RUS_increase_chance_of_war
-			add_to_variable = { global.siberian_war_chance = 0.05 }
+			add_to_variable = { global.siberian_war_chance = 0.15 }
 		}
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}	
@@ -2927,8 +2927,6 @@ focus_tree = {
 		available_if_capitulated = no
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus TRM_FE_RUS"
-			TRM = { country_event = { id = tram.56 days = 1 } }
-
 			custom_effect_tooltip = TRM_rus
 			custom_effect_tooltip = RUS_increase_chance_of_war
 			add_to_variable = { global.siberian_war_chance = 0.15 }
@@ -3314,10 +3312,7 @@ focus_tree = {
 		cancel_if_invalid = yes
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus TRM_Mil_ML_End"
-			country_event = {
-				id = tram.210
-				days = 0
-			}
+			country_event = tram.210
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
@@ -4719,7 +4714,7 @@ focus = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus TRM_Look_Out_To_Brother"
-			SOV = {
+			RUS = {
 				country_event = {
 					id = trmnra.14
 					days = 1
@@ -4839,7 +4834,7 @@ focus = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus TRM_Autonomous_Republic"
-			SOV = {
+			RUS = {
 				country_event = {
 					id = trmnra.17
 					days = 1
@@ -7766,19 +7761,7 @@ focus = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus TRM_Attack_Caucasus"
-			every_state = {
-				limit = {
-					OR = {
-						region = 135 #Kuban
-						region = 134 #Caucasus
-					}
-					NOT = {
-						is_core_of = ROOT
-						is_claimed_by = ROOT
-					}
-				}
-				add_claim_by = ROOT
-			}
+			add_war_support = 0.05
 		}
 	}
 
@@ -8187,16 +8170,6 @@ focus = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus TRM_Attack_CA"
-			every_state = {
-				limit = {
-					region = 136 #Central Asia
-					NOT = {
-						is_core_of = ROOT
-						is_claimed_by = ROOT
-					}
-				}
-				add_claim_by = ROOT
-			}
 			if = {
 				limit = {
 					country_exists = ALO
@@ -8503,12 +8476,6 @@ focus = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus TRM_End_Poland"
-			every_state = {
-				limit = {
-					is_owned_and_controlled_by = POL
-				}
-				add_claim_by = TRM
-			}
 			create_wargoal = {
 				type = annex_everything
 				target = POL
@@ -8561,6 +8528,9 @@ focus = {
 			1222 = {
 				add_claim_by = TRM
 			}
+			1320 = {
+				add_claim_by = TRM
+			}
 			if = {
 				limit = {
 					78 = { is_owned_and_controlled_by = ROM }
@@ -8577,12 +8547,6 @@ focus = {
 				create_wargoal = {
 					type = annex_everything
 					target = UKR
-				}
-			}
-			else = {
-				create_wargoal = {
-					type = annex_everything
-					target = RRM
 				}
 			}
 			if = {
@@ -8603,10 +8567,22 @@ focus = {
 					target = UKR
 				}
 			}
-			else = {
+			if = {
+				limit = {
+					1320 = { is_owned_and_controlled_by = ROM }
+				}
 				create_wargoal = {
 					type = annex_everything
-					target = RRM
+					target = ROM
+				}
+			}
+			else_if = {
+				limit = {
+					1320 = { is_owned_and_controlled_by = UKR }
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = UKR
 				}
 			}
 			

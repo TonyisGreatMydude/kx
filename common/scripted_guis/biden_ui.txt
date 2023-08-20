@@ -11,148 +11,321 @@ scripted_gui = {
 
 		triggers = {
 			pm_frame_visible = {
-				has_country_flag = HOG_veiw
+				OR = {
+					has_country_flag = HOG_veiw
+					has_country_flag = HOG_second_veiw
+				}
 				NOT = {
 					has_idea = USA_Douglas_MacArthur_hog_pau
 					has_idea = USA_William_Leahy_hog_ade
 					has_idea = USA_Ernest_King_hog_pau
-					has_country_flag = CAN_is_republic
-					has_country_flag = UKR_Kruschev_won
+					has_country_flag = CAN_pm_is_hos
 				}
 			}
 			leader_button_visible = {
 				uses_leader_gui = yes
 			}
+			second_leader_button_visible = {
+				has_country_flag = DOUBLE_LEADER_GUI_VISIBLE
+			}
 			RB_Bennett_visible = {
 				AND = {
 					has_country_flag = HOG_veiw
 					has_idea = CAN_RB_Bennett_hog_sco
-					NOT = {
-						has_country_flag = CAN_is_republic
-					}
+					
 				}
 			}
 			Major_James_Coldwell_visible = {
 				AND = {
 					has_country_flag = HOG_veiw
 					has_idea = CAN_Major_James_Coldwell_hog_sde
-					NOT = {
-						has_country_flag = CAN_is_republic
-					}
+					
+				}
+			}
+			Tommy_Douglas_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = CAN_Tommy_Douglas_hog_sde
+					
+				}
+			}
+			Hazen_Argue_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = CAN_Hazen_Argue_hog_sde
+					
 				}
 			}
 			JS_Woodsworth_visible = {
 				AND = {
 					has_country_flag = HOG_veiw
 					has_idea = CAN_JS_Woodsworth_hog_sde
-					NOT = {
-						has_country_flag = CAN_is_republic
-					}
+					
 				}
 			}
 			Louis_St_Laurent_visible = {
 				AND = {
 					has_country_flag = HOG_veiw
 					has_idea = CAN_Louis_St_Laurent_hog_sli
-					NOT = {
-						has_country_flag = CAN_is_republic
-					}
+					
+				}
+			}
+			Lester_B_Pearson_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = CAN_Lester_B_Pearson_hog_sli
+					
 				}
 			}
 			William_Lyon_Mackenzie_King_visible = {
 				AND = {
 					has_country_flag = HOG_veiw
 					has_idea = CAN_William_Lyon_Mackenzie_King_hog_mli
-					NOT = {
-						has_country_flag = CAN_is_republic
-					}
+					
+				}
+			}
+			Charles_Avery_Dunning_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = CAN_Charles_Avery_Dunning_hog_sli
+					
 				}
 			}
 			Charles_Gavan_Power_visible = {
 				AND = {
 					has_country_flag = HOG_veiw
 					has_idea = CAN_Charles_Gavan_Power_hog_mli
-					NOT = {
-						has_country_flag = CAN_is_republic
-					}
+					
+				}
+			}
+			George_A_Drew_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = CAN_George_A_Drew_hog_sco
+					
 				}
 			}
 			John_Bracken_visible = {
 				AND = {
 					has_country_flag = HOG_veiw
 					has_idea = CAN_John_Bracken_hog_sco
-					NOT = {
-						has_country_flag = CAN_is_republic
-					}
+					
+				}
+			}
+			Henry_Herbert_Stevens_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = CAN_Henry_Herbert_Stevens_hog_sco
+					
+				}
+			}
+			John_Diefenbaker_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = CAN_John_Diefenbaker_hog_sco
+					
 				}
 			}
 			Robert_Manion_visible = {
 				AND = {
 					has_country_flag = HOG_veiw
 					has_idea = CAN_Robert_Manion_hog_sco
-					NOT = {
-						has_country_flag = CAN_is_republic
-					}
+					
 				}
 			}
 			Arthur_Meighen_visible = {
 				AND = {
 					has_country_flag = HOG_veiw
-					has_idea = CAN_Arthur_Meighen_hog_ade
-					NOT = {
-						has_country_flag = CAN_is_republic
-					}
+					has_idea = CAN_Arthur_Meighen_hog_sco
+					
 				}
 			}
 			JH_Blackmore_visible = {
 				AND = {
 					has_country_flag = HOG_veiw
 					has_idea = CAN_JH_Blackmore_hog_ade
-					NOT = {
-						has_country_flag = CAN_is_republic
-					}
+					
 				}
 			}
 			Harry_Crerar_visible = {
 				AND = {
 					has_country_flag = HOG_veiw
 					has_idea = CAN_Harry_Crerar_hog_pau
-					NOT = {
-						has_country_flag = CAN_is_republic
-					}
+					
 				}
 			}
-			Henry_Herbert_Stevens_visible = {
+			Harold_Harmsworth_visible = {
 				AND = {
 					has_country_flag = HOG_veiw
-					has_idea = CAN_Henry_Herbert_Stevens_hog_npo
-					NOT = {
-						has_country_flag = CAN_is_republic
-					}
+					has_idea = CAN_Harold_Harmsworth_hog_pau
+					
 				}
 			}
-			John_Diefenbaker_visible = {
+			Baron_Beaverbrook_visible = {
 				AND = {
 					has_country_flag = HOG_veiw
-					has_idea = CAN_John_Diefenbaker_hog_npo
-					NOT = {
-						has_country_flag = CAN_is_republic
-					}
+					has_idea = CAN_Lord_Beaverbrook_hog_pau
+					
 				}
 			}
+			William_Aberhart_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = CAN_William_Aberhart_hog_pau
+					
+				}
+			}
+			Ernest_Manning_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = CAN_Ernest_Manning_hog_ade
+					
+				}
+			}
+			CH_Douglas_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = CAN_CH_Douglas_hog_ade
+					
+				}
+			}
+			W_A_C_Bennett_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = CAN_W_A_C_Bennett_hog_ade
+					
+				}
+			}
+			William_Duncan_Herridge_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = CAN_William_Duncan_Herridge_hog_ade
+					
+				}
+			}
+			Solon_Earl_Low_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = CAN_Solon_Earl_Low_hog_ade
+					
+				}
+			}
+			John_Hargrave_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = CAN_John_Hargrave_hog_pau
+					
+				}
+			}
+			Real_Caouette_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = CAN_Real_Caouette_hog_pau
+					
+				}
+			}
+			Adrien_Arcand_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = CAN_Adrien_Arcand_hog_npo
+					
+				}
+			}
+			JFC_Fuller_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = CAN_JFC_Fuller_hog_npo
+					
+				}
+			}
+			Anthony_Ludovici_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = CAN_Anthony_Ludovici_hog_npo
+					
+				}
+			}
+			John_Ross_Taylor_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = CAN_John_Ross_Taylor_hog_npo
+					
+				}
+			}
+			
+			Edward_VIII_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = CAN_Edward_VIII_hog_npo
+					
+				}
+			}
+	
 			Vacant_Office_visible = {
 				AND = {
 					has_country_flag = HOG_veiw
 					OR = {
 						has_idea = CAN_King_Albert_I_hog_pau
+						has_idea = CAN_Queen_Elizabeth_II_hog_pau
 						has_idea = CAN_King_Edward_VIII_hog_pau
 						has_idea = CAN_King_George_VI_hog_pau
 						has_idea = CAN_King_Henry_IX_hog_pau
-						has_country_flag = CAN_VACANT
+						NOT = {
+							has_idea_with_trait = head_of_government
+						}
 					}
-					NOT = {
-						has_country_flag = CAN_is_republic
-					}
+					
+				}
+			}
+			
+			### Newfies ###
+			
+			Peter_John_Cashin_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = NFL_Peter_John_Cashin_hog_sde
+				}
+			}
+			
+			Chesley_Crosbie_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = NFL_Chesley_Crosbie_hog_sde
+				}
+			}
+			
+			Sam_Drover_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = NFL_Sam_Drover_hog_sde
+				}
+			}
+			
+			Joey_Smallwood_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = NFL_Joey_Smallwood_hog_sli
+				}
+			}
+			
+			Richard_Squires_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = NFL_Richard_Squires_hog_mli
+				}
+			}
+			
+			Frederick_C_Alderdice_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = NFL_Frederick_C_Alderdice_hog_sco
+				}
+			}
+			
+			Walter_Stanley_Monroe_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = NFL_Walter_Stanley_Monroe_hog_sco
 				}
 			}
 			
@@ -162,6 +335,13 @@ scripted_gui = {
 				AND = {
 					has_country_flag = HOG_veiw
 					has_idea = GBR_Henry_Page_Croft_hog_ade
+				}
+			}
+			
+			Ezra_Pound_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = GBR_Ezra_Pound_hog_ade
 				}
 			}
 			
@@ -186,6 +366,34 @@ scripted_gui = {
 				}
 			}
 			
+			Edward_Halifax_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = GBR_Edward_Halifax_hog_sco
+				}
+			}
+			
+			Stanley_Baldwin_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = GBR_Stanley_Baldwin_hog_sco
+				}
+			}
+			
+			Neville_Chamberlain_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = GBR_Neville_Chamberlain_hog_sco
+				}
+			}
+			
+			Douglas_Hogg_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = GBR_Douglas_Hogg_hog_sco
+				}
+			}
+			
 			Hugh_Gaitskell_visible = {
 				AND = {
 					has_country_flag = HOG_veiw
@@ -200,10 +408,59 @@ scripted_gui = {
 				}
 			}
 			
+			Malcolm_MacDonald_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = GBR_Malcolm_MacDonald_hog_sde
+				}
+			}
+			
+			Derwent_Hall_Caine_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = GBR_Derwent_Hall_Caine_hog_sde
+				}
+			}
+			
 			John_Simon_visible = {
 				AND = {
 					has_country_flag = HOG_veiw
 					has_idea = GBR_John_Simon_hog_mli
+				}
+			}
+			
+			Archibald_Sinclair_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = GBR_Archibald_Sinclair_hog_mli
+				}
+			}
+			
+			Bernard_Montgomery_visible = { #No way to get them but they have portraits anyway
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = GBR_Bernard_Montgomery_hog_pau
+				}
+			}
+			
+			Louis_Mountbatten_visible = { #No way to get them but they have portraits anyway
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = GBR_Louis_Mountbatten_hog_pau
+				}
+			}
+			
+			Archibald_Ramsay_visible = { #No way to get them but they have portraits anyway
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = GBR_Archibald_Ramsay_hog_npo
+				}
+			}
+			
+			Rotha_Beryl_Lintorn_Orman_visible = { #No way to get them but they have portraits anyway
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = GBR_Rotha_Beryl_Lintorn_Orman_hog_npo
 				}
 			}
 			
@@ -276,14 +533,7 @@ scripted_gui = {
 					has_idea = GER_Heinrich_Class_hog_npo
 				}
 			}
-			
-			Franz_Xaver_Ritter_von_Epp_visible = { #Has a Portrait, but won't actually appear in game
-				AND = {
-					has_country_flag = HOG_veiw
-					has_idea = GER_Franz_Xaver_Ritter_von_Epp_hog_pau
-				}
-			}
-			
+				
 			Alfred_Hugenberg_visible = { #Has a Portrait, but won't actually appear in game
 				AND = {
 					has_country_flag = HOG_veiw
@@ -295,20 +545,6 @@ scripted_gui = {
 				AND = {
 					has_country_flag = HOG_veiw
 					has_idea = GER_Manfred_Freiherr_von_Richthofen_hog_ade
-				}
-			}
-			
-			Ernst_Roehm_visible = { #Has a Portrait, but won't actually appear in game
-				AND = {
-					has_country_flag = HOG_veiw
-					has_idea = GER_Ernst_Roehm_hog_npo
-				}
-			}
-			
-			Gregor_Strasser_visible = { #Has a Portrait, but won't actually appear in game
-				AND = {
-					has_country_flag = HOG_veiw
-					has_idea = GER_Gregor_Strasser_hog_npo
 				}
 			}
 			
@@ -333,14 +569,36 @@ scripted_gui = {
 						has_idea = GER_Kurt_von_Schleicher_hog_pau
 						has_idea = GER_Franz_von_Papen_hog_ade
 						has_idea = GER_Hermann_von_Goering_hog_npo
-						has_idea = GER_Franz_Xaver_Ritter_von_Epp_hog_pau
 						has_idea = GER_Heinrich_Class_hog_npo
 						has_idea = GER_Manfred_Freiherr_von_Richthofen_hog_ade
 						has_idea = GER_Alfred_Hugenberg_hog_pau
-						has_idea = GER_Ernst_Roehm_hog_npo
-						has_idea = GER_Gregor_Strasser_hog_npo
 						has_idea = GER_Carl_Friedrich_Goerdeler_hog_ade
 					}
+				}
+			}
+			
+			Karl_I_visible = {
+				AND = {
+					has_country_flag = HOG_second_veiw
+					has_country_flag = GER_AUS_KAISER_VISIBLE
+					NOT = {	
+						has_global_flag = AUS_Kaiser_Otto_I
+					}
+				}
+			}
+			
+			Otto_I_visible = {
+				AND = {
+					has_country_flag = HOG_second_veiw
+					has_country_flag = GER_AUS_KAISER_VISIBLE
+					has_global_flag = AUS_Kaiser_Otto_I
+				}
+			}
+			
+			Council_of_Europe_visible = {
+				AND = {
+					has_country_flag = HOG_second_veiw
+					has_country_flag = EU_COUNCIL_VISIBLE
 				}
 			}
 			
@@ -476,6 +734,141 @@ scripted_gui = {
 				}
 			}
 			
+			### New Zealand ###
+			
+			Sidney_Holland_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = NZL_Sidney_Holland_hog_sco
+				}
+			}
+
+			Adam_Hamilton_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = NZL_Adam_Hamilton_hog_sco
+				}
+			}
+
+			Albert_Davy_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = NZL_Albert_Davy_hog_ade
+				}
+			}
+
+			Apirana_Ngata_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = NZL_Apirana_Ngata_hog_mli
+				}
+			}
+
+			Arther_Field_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = NZL_Arthur_Nelson_Field_hog_npo
+				}
+			}
+
+			Bill_Veitch_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = NZL_Bill_Veitch_hog_mli
+				}
+			}
+
+			Bob_Semple_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = NZL_Bob_Semple_hog_sde
+				}
+			}
+
+			Eruera_Tirikatene_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = NZL_Eruera_Tirikatene_hog_sli
+				}
+			}
+
+			Evan_Parry_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = NZL_Evan_Parry_hog_ade
+				}
+			}
+
+			George_Forbes_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = NZL_George_Forbes_hog_mli
+				}
+			}
+
+			Gordon_Coates_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = NZL_Gordon_Coates_hog_sco
+				}
+			}
+
+			John_Lee_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = NZL_John_Lee_hog_sde
+				}
+			}
+
+			Michael_Joseph_Savage_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = NZL_Michael_Joseph_Savage_hog_sde
+				}
+			}
+
+			Peter_Fraser_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = NZL_Peter_Fraser_hog_sde
+				}
+			}
+
+			Robert_Begg_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = NZL_Robert_Begg_hog_ade
+				}
+			}
+
+			Walter_Nash_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = NZL_Walter_Nash_hog_sde
+				}
+			}
+
+			Lydia_Liliuokalani_visible = {
+				AND = {
+					has_country_flag = HOG_second_veiw
+					has_country_flag = NZL_Lydia
+				}
+			}	
+	
+			David_Kalakaua_visible = {
+				AND = {
+					has_country_flag = HOG_second_veiw
+					has_country_flag = NZL_David 
+				}
+			}
+
+			Jonah_Kuhio_visible = {
+				AND = {
+					has_country_flag = HOG_second_veiw
+					has_country_flag = NZL_Jonah
+				}
+			}		
+
 			### Liberians ###
 			Harvey_Firestone_visible = {
 				AND = {
@@ -521,84 +914,215 @@ scripted_gui = {
 				}
 			}
 			
-			### Hetmans ###
-			Volodymyr_Vynnychenko_visible = {
-				AND = {
-					has_country_flag = HOG_veiw
-					has_idea = UKR_Vladimir_Vynnychenko_hog_sco
-					has_country_flag = UKR_Vynnych_won
-				}
-			}
-			Vyacheslav_Lypynsky_visible = {
-				AND = {
-					has_country_flag = HOG_veiw
-					has_country_flag = UKR_had_election
-					has_government = social_conservative
-				}
-			}
-			Boris_Martos_visible = {
-				AND = {
-					has_country_flag = HOG_veiw
-					has_country_flag = UKR_had_election
-					has_government = market_liberal
-				}
-			}
-			Dmitri_Doroshenko_visible = {
-				AND = {
-					has_country_flag = HOG_veiw
-					has_country_flag = UKR_had_election
-					has_government = social_liberal
-				}
-			}
+			### Ukrainians ###
+			
 			Symon_Petliura_visible = {
 				AND = {
 					has_country_flag = HOG_veiw
-					has_country_flag = UKR_had_election
-					has_government = social_democrat
-					NOT = {
-						has_country_flag = UKR_Vynnych_won
-					}
-				}
-			}
-			Volodymyr_Chekhivsky_visible = {
-				AND = {
-					has_country_flag = HOG_veiw
-					has_idea = UKR_Volodymyr_Chekhivsky_hog_rso
-					has_government = radical_socialist
-				}
-			}
-						
-			Nikita_Khrushchev_visible = {
-				AND = {
-					has_country_flag = HOG_veiw
-					has_idea = UKR_Nikita_Kruschev_hog_tot
-					has_government = social_democrat
+					UKR_andriy_melnyk_in_power = yes
+					has_country_flag = UKR_petliura_melnyk
 				}
 			}
 			
-			Mikhail_Bulgakov_visible = {
+			Andriy_Melnyk_visible = {
 				AND = {
 					has_country_flag = HOG_veiw
-					has_idea = UKR_Mikhail_Bulgakov_hog_ade
-					has_government = social_conservative
+					has_country_leader = {
+						name = "Symon Petliura"
+						ruling_only = yes
+					}
+					has_country_flag = UKR_petliura_melnyk
+				}
+			}
+			
+			Oleksander_Shumskyi_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_country_leader = {
+						name = "Symon Petliura"
+						ruling_only = yes
+					}
+					has_country_flag = UKR_petliura_shumskyi
 				}
 			}
 			
 			Pavlo_Skoropadsky_visible = {
 				AND = {
 					has_country_flag = HOG_veiw
+					UKR_pavlo_skoropadsky_in_power = no
 					has_idea = UKR_Pavlo_Skoropadsky_hog_pau
-					has_government = authoritarian_democrat
 				}
 			}
 			
-			Dmitri_Dontsov_visible = {
+			Vasyl_Kochubei_visible = {
 				AND = {
 					has_country_flag = HOG_veiw
-					has_idea = UKR_Dmitri_Dontsov_hog_npo
-					has_government = national_populist
+					OR = {
+						UKR_pavlo_skoropadsky_in_power = yes
+						has_country_leader_with_trait = UKR_hetman_title
+						has_country_leader_with_trait = UKR_king_title
+						UKR_vasyl_in_power = yes
+					}
+					has_idea = UKR_Vasyl_Kochubei_hog_pau
 				}
 			}
+						
+			Ivan_Poltvets_Ostrianytsia_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					OR = {
+						UKR_pavlo_skoropadsky_in_power = yes
+						has_country_leader_with_trait = UKR_hetman_title
+						has_country_leader_with_trait = UKR_king_title
+						UKR_vasyl_in_power = yes
+					}
+					has_idea = UKR_Ivan_Poltvets_Ostrianytsia_hog_pau
+				}
+			}
+						
+			Mykola_Mikhnovsky_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					OR = {
+						UKR_pavlo_skoropadsky_in_power = yes
+						has_country_leader_with_trait = UKR_hetman_title
+						has_country_leader_with_trait = UKR_king_title
+						UKR_vasyl_in_power = yes
+					}
+					has_idea = UKR_Mykola_Mikhnovsky_hog_pau
+				}
+			}
+						
+			Volodymyr_Zalozatskyi_Sas_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					OR = {
+						UKR_pavlo_skoropadsky_in_power = yes
+						has_country_leader_with_trait = UKR_hetman_title
+						has_country_leader_with_trait = UKR_king_title
+						UKR_vasyl_in_power = yes
+					}
+					has_idea = UKR_Volodymyr_Zalozetskyi_Sas_hog_sco
+				}
+			}
+						
+			Dmytro_Doroshenko_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					OR = {
+						UKR_pavlo_skoropadsky_in_power = yes
+						has_country_leader_with_trait = UKR_hetman_title
+						has_country_leader_with_trait = UKR_king_title
+						UKR_vasyl_in_power = yes
+					}
+					has_idea = UKR_Dmytro_Doroshenko_hog_sli
+				}
+			}
+			
+			Serhiy_Shemet_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					OR = {
+						UKR_pavlo_skoropadsky_in_power = yes
+						has_country_leader_with_trait = UKR_hetman_title
+						has_country_leader_with_trait = UKR_king_title
+						UKR_vasyl_in_power = yes
+					}
+					has_idea = UKR_Serhiy_Shemet_hog_ade
+				}
+			}
+			
+			Vyacheslav_Lypynsky_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					OR = {
+						UKR_pavlo_skoropadsky_in_power = yes
+						has_country_leader_with_trait = UKR_hetman_title
+						has_country_leader_with_trait = UKR_king_title
+						UKR_vasyl_in_power = yes
+					}
+					has_idea = UKR_Vyacheslav_Lypynskyi_hog_ade
+				}
+			}
+			
+			Opanas_Andrievskyi_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					OR = {
+						UKR_pavlo_skoropadsky_in_power = yes
+						has_country_leader_with_trait = UKR_hetman_title
+						has_country_leader_with_trait = UKR_king_title
+						UKR_vasyl_in_power = yes
+					}
+					has_idea = UKR_Opanas_Andrievskyi_hog_ade
+				}
+			}
+			
+			Oleksander_Shapoval_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					OR = {
+						UKR_pavlo_skoropadsky_in_power = yes
+						has_country_leader_with_trait = UKR_hetman_title
+						has_country_leader_with_trait = UKR_king_title
+						UKR_vasyl_in_power = yes
+					}
+					has_idea = UKR_Oleksander_Shapoval_hog_ade
+				}
+			}
+			
+			Petro_Bolbochan_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					OR = {
+						UKR_pavlo_skoropadsky_in_power = yes
+						has_country_leader_with_trait = UKR_hetman_title
+						has_country_leader_with_trait = UKR_king_title
+						UKR_vasyl_in_power = yes
+					}
+					has_idea = UKR_Petro_Bolbochan_hog_ade
+				}
+			}
+			
+			Oleksander_Hrekiv_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					OR = {
+						UKR_pavlo_skoropadsky_in_power = yes
+						has_country_leader_with_trait = UKR_hetman_title
+						has_country_leader_with_trait = UKR_king_title
+						UKR_vasyl_in_power = yes
+					}
+					has_idea = UKR_Oleksander_Hrekiv_hog_ade
+				}
+			}
+			
+			Valentin_Otamanovskyi_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					OR = {
+						UKR_pavlo_skoropadsky_in_power = yes
+						has_country_leader_with_trait = UKR_hetman_title
+						has_country_leader_with_trait = UKR_king_title
+						UKR_vasyl_in_power = yes
+					}
+					has_idea = UKR_Valentin_Otamanovskyi_hog_ade
+				}
+			}
+			
+			Borys_Butenko_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					OR = {
+						UKR_pavlo_skoropadsky_in_power = yes
+						has_country_leader_with_trait = UKR_hetman_title
+						has_country_leader_with_trait = UKR_king_title
+						UKR_vasyl_in_power = yes
+					}
+					has_idea = UKR_Borys_Butenko_hog_mli
+				}
+			}
+			
 			
 			### Congolese PM ###
 			
@@ -613,6 +1137,13 @@ scripted_gui = {
 				AND = {
 					has_country_flag = HOG_veiw
 					has_idea = LPD_Emile_Janssens_hog_pau
+				}
+			}
+			
+			Joseph_Kasa_Vubu_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = KIV_Joseph_Kasa_Vubu_hog_sli
 				}
 			}
 			
@@ -700,6 +1231,34 @@ scripted_gui = {
 			}	
 			
 			### Mexicans ###
+			
+			Pancho_Villa_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = MEX_Pancho_Villa_hog_rso
+				}
+			}
+			
+			Gerardo_Murillo_Cornado_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = MEX_Gerardo_Murillo_Cornado_hog_syn
+				}
+			}
+			
+			Pascual_Ortiz_Rubio_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = MEX_Pascual_Ortiz_Rubio_hog_sde
+				}
+			}
+			
+			Vicente_Lombardo_Toledano_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = MEX_Vicente_Lombardo_Toledano_hog_tot
+				}
+			}
 			
 			Lazaro_Cardenas_visible = {
 				AND = {
@@ -1334,6 +1893,13 @@ scripted_gui = {
 				}
 			}
 			
+			Helen_Gahagan_Douglas_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = CAL_Helen_Gahagan_Douglas_hog_sde
+				}
+			}
+			
 			CAL_Henry_Wallace_visible = {
 				AND = {
 					has_country_flag = HOG_veiw
@@ -1786,6 +2352,13 @@ scripted_gui = {
 				}
 			}
 			
+			William_Butler_Yeats_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = IRE_William_Butler_Yeats_hog_pau
+				}
+			}
+			
 			Betty_Sinclair_visible = {
 				AND = {
 					has_country_flag = HOG_veiw
@@ -1797,6 +2370,13 @@ scripted_gui = {
 				AND = {
 					has_country_flag = HOG_veiw
 					has_idea = IRE_Maurice_Twomey_hog_rso
+				}
+			}
+			
+			James_Joyce_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = IRE_James_Joyce_hog_rso
 				}
 			}
 			
@@ -1816,6 +2396,13 @@ scripted_gui = {
 				}
 			}
 			
+			Peter_Munch_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = DEN_Peter_Munch_hog_sli
+				}
+			}
+			
 			Thomas_Madsen_Mygdal_visible = {
 				AND = {
 					has_country_flag = HOG_veiw
@@ -1830,6 +2417,13 @@ scripted_gui = {
 				}
 			}
 			
+			J_Christmas_Moeller_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = DEN_J_Christmas_Moeller_hog_sco
+				}
+			}
+			
 			Victor_Puerschel_visible = {
 				AND = {
 					has_country_flag = HOG_veiw
@@ -1837,6 +2431,28 @@ scripted_gui = {
 				}
 			}
 			
+			### Icelandic PMs ###
+			
+			Jon_Baldvinsson_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = ICE_Jon_Baldvinsson_hog_sde
+				}
+			}
+			
+			Stefan_Johann_Stefansson_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = ICE_Stefan_Johann_Stefansson_hog_sde
+				}
+			}
+			
+			Thor_Thors_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = ICE_Thor_Thors_hog_pau
+				}
+			}
 			
 			### Belgian PMs ###
 			
@@ -1909,6 +2525,13 @@ scripted_gui = {
 				AND = {
 					has_country_flag = HOG_veiw
 					has_idea = SWE_Tage_Erlander_hog_sde
+				}
+			}
+			
+			Axel_Pehrsson_Bramstorp_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = SWE_Axel_Pehrsson_Bramstorp_hog_sli
 				}
 			}
 			
@@ -2093,6 +2716,13 @@ scripted_gui = {
 				AND = {
 					has_country_flag = HOG_veiw
 					has_idea = NOR_Magnus_Nilssen_hog_sde
+				}
+			}
+			
+			Haakon_Five_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = NOR_Haakon_Five_hog_sli
 				}
 			}
 			
@@ -3157,6 +3787,13 @@ scripted_gui = {
 				}
 			}
 			
+			Nguyen_Tai_Hoc_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = VIN_Nguyen_Tai_Hoc_hog_sde
+				}
+			}
+			
 			Henriette_Bui_Quang_Chieu_visible = {
 				AND = {
 					has_country_flag = HOG_veiw
@@ -3582,6 +4219,80 @@ scripted_gui = {
 				}
 			}
 			
+			### MSF People ###
+			
+			Ivor_Thord_Gray_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = MSF_Ivor_Thord_Gray_hog_npo
+				}
+			}
+
+			Gunnar_Hallstrom_visible = {
+				AND = {
+					has_country_flag = HOG_second_veiw
+					has_country_flag = MSF_BROTHERS_VISIBLE
+				}
+			}
+			
+			### Afghans ###
+			
+			Muhammad_Taraki_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = AFG_Muhammad_Taraki_hog_tot
+				}
+			}
+			
+			Khan_Abdul_Ghaffar_Khan_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = AFG_Khan_Abdul_Ghaffar_Khan_hog_rso
+				}
+			}
+			
+			Ghulam_Muhammad_Ghobar_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = AFG_Ghulam_Muhammad_Ghobar_hog_sde
+				}
+			}
+			
+			Abdul_Rauf_Benawa_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = AFG_Abdul_Rauf_Benawa_hog_sli
+				}
+			}
+			
+			Abdul_Hadi_Dawai_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = AFG_Abdul_Hadi_Dawai_hog_mli
+				}
+			}
+			
+			Muhammad_Iqbal_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = AFG_Muhammad_Iqbal_hog_sco
+				}
+			}
+			
+			Muhammed_Hashim_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = AFG_Muhammed_Hashim_hog_ade
+				}
+			}
+			
+			Mahmud_Khan_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_idea = AFG_Mahmud_Khan_hog_ade
+				}
+			}
+			
 			### The Others ###
 			
 			Albert_I_visible = {
@@ -3609,6 +4320,7 @@ scripted_gui = {
 				AND = {
 					has_country_flag = HOG_veiw
 					has_idea = TRM_Anastasiy_Vonsyatsky_hog_npo
+					has_country_flag = TRM_restore_nat
 				}
 			}
 			
@@ -3667,21 +4379,21 @@ scripted_gui = {
 					has_country_flag = BIDEN_COUNCIL
 				}
 			}
-			
+
 			Michael_D_Higgins_visible = {
 				AND = {
 					has_country_flag = HOG_veiw
 					has_idea = BDN_Michael_D_Higgins_hog_sde
 				}
 			}
-			
+
 			Barry_O_Bama_visible = {
 				AND = {
 					has_country_flag = HOG_veiw
 					has_idea = BDN_Barry_O_Bama_hog_sde
 				}
 			}
-
+			
 			Leon_Blum_visible = {
 				AND = {
 					has_country_flag = HOG_veiw
@@ -3689,9 +4401,34 @@ scripted_gui = {
 					has_government = social_democrat
 				}
 			}
+
+			Bonnie_Parker_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_country_flag = BONNIE_VISIBLE
+				}
+			}
+
+			Mayme_Hatcher_Johnson_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_country_flag = MAYME_VISIBLE
+				}
+			}
+
+			Francisco_May_Pech_visible = {
+				AND = {
+					has_country_flag = HOG_veiw
+					has_country_flag = MAY_PECH_VISIBLE
+				}
+			}
 			
 			pm_name_visible = {
 				has_country_flag = HOG_veiw
+			}
+			
+			second_pm_name_visible = {
+				has_country_flag = HOG_second_veiw
 			}
 			
 		}
@@ -3766,6 +4503,10 @@ scripted_gui = {
 			CAL_Huey_Long = {
 				image = "[GetLongPortrait]"
 			}
+
+			Bonnie_Parker = {
+				image = "[GetBonniePortrait]"
+			}
 			
 			### Dynamic Portraits ###
 			
@@ -3773,9 +4514,21 @@ scripted_gui = {
 				image = "[GetMaurrasPortrait]"
 			}
 			
+			James_Joyce = {
+				image = "[GetJoycePortrait]"
+			}
+			
 			William_Lyon_Mackenzie_King = {
 				image = "[GetWLMKPortrait]"
-			}			
+			}
+			
+			Adrien_Arcand = {
+				image = "[GetAdrienArcandPortrait]"
+			}
+
+			Francisco_May_Pech = {
+				image = "[GetMayPechPortrait]"
+			}
 		}
 		
 	
@@ -3796,7 +4549,33 @@ scripted_gui = {
 						set_country_flag = HOG_veiw
 					}
 				}
+				if = {
+					limit = {
+						has_country_flag = HOG_second_veiw
+					}
+					clr_country_flag = HOG_second_veiw
+				}
 			}
+			
+			second_leader_button_click = {
+				if = {
+					limit = {
+						has_country_flag = HOG_second_veiw
+					}
+					clr_country_flag = HOG_second_veiw
+					else = {
+						set_country_flag = HOG_second_veiw
+					}
+				}
+				if = {
+					limit = {
+						has_country_flag = HOG_veiw
+					}
+					clr_country_flag = HOG_veiw
+				}
+			}
+			
+			
 		}
 	}
 }
@@ -3816,6 +4595,10 @@ scripted_gui = {
 			
 			for_leader_button_visible = {
 				uses_leader_gui = yes
+			}
+			
+			for_second_leader_button_visible = {
+				has_country_flag = DOUBLE_LEADER_GUI_VISIBLE
 			}
 			
 			#for_leader_frame_visible = {

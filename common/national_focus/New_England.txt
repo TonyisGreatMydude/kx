@@ -1983,6 +1983,11 @@ focus_tree = {
 				has_government = market_liberal
 				has_government = social_liberal
 			}
+			hidden_trigger = {
+				NOT = { 
+				has_country_leader = { ruling_only = yes name = "Albert Jay Nock" }
+				}
+			}
 		}
 		x = 0
 		y = 1
@@ -3312,7 +3317,7 @@ focus_tree = {
 			factor = 50
 		}
 		available = {
-			has_government = paternal_autocrat
+			has_country_flag = NEE_remnant_victory
 		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -3320,7 +3325,12 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus NEE_protect_liberty_from_democracy"
 			add_popularity = { ideology = paternal_autocrat popularity = 0.05 }
-			add_political_power = 50
+			hidden_effect = {
+				country_event = {
+					id = newengland.140
+					days = 18
+				}
+			}
 		}
 	}
 	
@@ -3384,6 +3394,13 @@ focus_tree = {
 			add_war_support = 0.1
 			add_manpower = 5000
 			add_ideas = NEE_state_militias
+			hidden_effect = {
+				set_technology = { reservation_musket = 1 popup = yes } 
+		add_equipment_to_stockpile = {
+			type = reservation_equipment_0
+			amount = 2000
+		}
+			}
 		}
 	}
 	
@@ -3711,6 +3728,9 @@ focus_tree = {
 			add_popularity = { ideology = national_populist popularity = 0.1 }
 			add_political_power = -50
 			add_stability = -0.15
+			CAN = {
+				country_event = newengland.12
+			}
 			hidden_effect = {
 			country_event = {
 			id = newengland.135
@@ -3721,6 +3741,12 @@ focus_tree = {
 				country_event = {
 					id = newengland.188 
 					days = 10
+				}
+			}
+			hidden_effect = {
+				country_event = {
+					id = newengland.4021
+					days = 15
 				}
 			}
 		}
@@ -4164,6 +4190,9 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus NEE_neo_aristocracy"
 			add_political_power = 50
 			add_ideas = NEE_meritocratic_society
+			CAN = {
+				country_event = newengland.12
+			}
 			hidden_effect = {
 				country_event = {
 					id = newengland.174
@@ -4421,6 +4450,9 @@ focus_tree = {
 		relative_position_id = NEE_lothrop_stoddard
 		ai_will_do = {
 			factor = 50
+		}
+		available = {
+			has_completed_focus = NEE_neo_aristocracy
 		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -7743,7 +7775,7 @@ focus_tree = {
 		complete_tooltip = {}
 		completion_reward = {
 			CAN = {
-				country_event = newengland.124
+				country_event = newengland.125
 			}
 		}
 	}
@@ -10268,8 +10300,8 @@ focus = {
 		has_country_flag = NEE_Pershing_in_Power
 		has_war = no
 	}
-    bypass = { 
-	    has_country_flag = NEE_Pershing_in_Power
+	bypass = { 
+		has_country_flag = NEE_Pershing_in_Power
 		has_war = no
 	}	
 	mutually_exclusive = {
@@ -10494,8 +10526,8 @@ focus = {
 		has_country_flag = NEE_Bingham_in_Power
 		has_war = no
 	}
-    bypass = { 
-	    has_country_flag = NEE_Bingham_in_Power
+	bypass = { 
+		has_country_flag = NEE_Bingham_in_Power
 		has_war = no
 	}		
 	
@@ -11040,7 +11072,7 @@ focus = {
 		has_country_flag = NEE_Groves_in_Power
 		has_war = no
 	}
-    bypass = {
+	bypass = {
 		has_country_flag = NEE_Groves_in_Power
 		has_war = no
 	}		
@@ -12338,7 +12370,7 @@ focus = {
 	prerequisite = { 
 	focus = NEE_Sovereign_Secular_and_Supreme
 	}
-        prerequisite = { 
+		prerequisite = { 
 	focus = NEE_Power_Primacy_Proper_for_President
 	}
 	relative_position_id = NEE_Sovereign_Secular_and_Supreme
@@ -12381,7 +12413,7 @@ focus = {
 	prerequisite = { 
 	focus = NEE_Sovereign_Secular_and_Supreme
 	}
-        prerequisite = { 
+		prerequisite = { 
 	focus = NEE_Power_Primacy_Proper_for_President
 	}
 	relative_position_id = NEE_Sovereign_Secular_and_Supreme
@@ -12409,7 +12441,7 @@ focus = {
 	prerequisite = { 
 	focus = NEE_Tame_the_American_Agrarian_Arcadia
 	}
-        prerequisite = { 
+		prerequisite = { 
 	focus = NEE_Libertarian_Torch_Held_Aloft_by_Worker
 	}
 	relative_position_id = NEE_Tame_the_American_Agrarian_Arcadia
@@ -12469,7 +12501,7 @@ focus = {
 	
 	prerequisite = { 
 	focus = NEE_Democratic_Republicans_Rise_from_Ashes
-        focus = NEE_True_Federalists_Ride_Again
+		focus = NEE_True_Federalists_Ride_Again
 	}
 	relative_position_id = NEE_True_Federalists_Ride_Again
 	x = -2
@@ -12531,7 +12563,7 @@ focus = {
 	
 	prerequisite = { 
 	focus = NEE_True_Federalists_Ride_Again
-        focus = NEE_Whigs_Come_to_Roost_Once_More
+		focus = NEE_Whigs_Come_to_Roost_Once_More
 	}
 	relative_position_id = NEE_True_Federalists_Ride_Again
 	x = 2
@@ -12564,10 +12596,10 @@ focus = {
 	prerequisite = { 
 	focus = NEE_Power_Primacy_Proper_for_President
 	}
-        prerequisite = { 
+		prerequisite = { 
 	focus = NEE_Washingtonian_Militarist_Centrism
 	}
-        prerequisite = { 
+		prerequisite = { 
 	focus = NEE_By_Gavel_and_Congressional_Debate
 	}
 	relative_position_id = NEE_Washingtonian_Militarist_Centrism
@@ -12695,7 +12727,7 @@ focus = {
 	prerequisite = { 
 	focus = NEE_Patriotic_Pious_and_Private
 	}
-        prerequisite = { 
+		prerequisite = { 
 	focus = NEE_By_Gavel_and_Congressional_Debate
 	}
 	relative_position_id = NEE_Patriotic_Pious_and_Private
@@ -12750,7 +12782,7 @@ focus = {
 	prerequisite = { 
 	focus = NEE_Patriotic_Pious_and_Private
 	}
-        prerequisite = { 
+		prerequisite = { 
 	focus = NEE_By_Gavel_and_Congressional_Debate
 	}
 	relative_position_id = NEE_Patriotic_Pious_and_Private
@@ -12784,7 +12816,7 @@ focus = {
 	prerequisite = { 
 	focus = NEE_Meritocracy_Focused_on_Growing_Urban_Heart
 	}
-        prerequisite = { 
+		prerequisite = { 
 	focus = NEE_On_Shoulders_of_Capitalist_Titans
 	}
 	relative_position_id = NEE_Meritocracy_Focused_on_Growing_Urban_Heart
@@ -12814,8 +12846,8 @@ focus = {
 	
 	prerequisite = { 
 	focus = NEE_Ignite_the_Jeffersonian_Revival
-        focus = NEE_Hamiltonian_Fiscalism_and_Adamsian_Conservatism
-        focus = NEE_Spitting_in_Face_of_Jackson_and_Jefferson
+		focus = NEE_Hamiltonian_Fiscalism_and_Adamsian_Conservatism
+		focus = NEE_Spitting_in_Face_of_Jackson_and_Jefferson
 	}
 	relative_position_id = NEE_Hamiltonian_Fiscalism_and_Adamsian_Conservatism
 	x = 0
@@ -13171,9 +13203,9 @@ focus = {
 		add_popularity = { ideology = paternal_autocrat popularity = 0.15 }
 		country_event = neebritishflavor.9
 		set_capital = {
-         state = 361 
-         remember_old_capital = no
-        }
+		state = 361 
+		remember_old_capital = no
+		}
 	}
 }
 
@@ -13274,7 +13306,7 @@ focus = {
 
 focus = {
 	id = NEE_house_kennedy
-	icon = GFX_goal_goal_NEE_house_of_kennedy
+	icon = GFX_goal_NEE_house_of_kennedy
 	cost = 5
 	
 	prerequisite = { focus = NEE_a_monarchy_for_new_england }
@@ -13307,7 +13339,7 @@ focus = {
 
 focus = {
 	id = NEE_house_astor
-	icon = GFX_goal_goal_NEE_house_of_astor
+	icon = GFX_goal_NEE_house_of_astor
 	cost = 5
 	
 	prerequisite = { focus = NEE_a_monarchy_for_new_england }
@@ -13432,12 +13464,15 @@ focus = {
 	
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus NEE_british_modeled_monarchy"
+		if = {
+		limit = { NOT = { has_war_with = CAN } }
 		CAN = {
 			country_event = {
 				id = newengland.270
 				days = 2
 			}
 		}
+	    } 
 	}
 }
 
@@ -13520,6 +13555,12 @@ focus = {
 			id = newengland.274
 			days = 4
 		}
+		hidden_effect = {
+				country_event = {
+					id = cathdeath.118
+					days = 25
+				}
+			}
 		hidden_effect = {	
 			add_ideas = NEE_post_war_devestation
 			add_ideas = NEE_republican_political_system
@@ -14071,10 +14112,7 @@ focus = {
 			CAN = {
 				end_puppet = NEE
 			}
-			country_event = {
-					id = neebritishflavor.3 days = 0
-					###We are now an imperial holding
-				}
+			country_event = neebritishflavor.3
 		}
 	}
 
@@ -14101,10 +14139,7 @@ focus = {
 			CAN = { army_experience = 30 air_experience = 30 navy_experience = 30
 			}
 			hidden_effect = {
-			country_event = {
-					id = newengland.304 days = 0
-					###Exercises with our canadian friends
-				}
+				country_event = newengland.304
 			}
 		}
 	}
@@ -14247,7 +14282,7 @@ focus = {
 	
 	focus = {
 		id = NEE_orders_from_ottowa
-		icon = GFX_goal_goal_NEE_royal_independence
+		icon = GFX_goal_NEE_royal_independence
 		cost = 5
 		mutually_exclusive = { focus = NEE_loyal_to_the_king }
 		prerequisite = { focus = NEE_imperial_integration }
@@ -14276,7 +14311,7 @@ focus = {
 
 	focus = {
 		id = NEE_under_from_the_thumb
-		icon = GFX_goal_goal_NEE_loyalty_to_canada
+		icon = GFX_goal_NEE_loyalty_to_canada
 		cost = 5
 		
 		prerequisite = { focus = NEE_orders_from_ottowa }
@@ -14367,10 +14402,7 @@ focus = {
 		completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus NEE_award_royal_titles"	
 			add_ideas = NEE_elite_society
-			country_event = {
-			id = newengland.1065
-			days = 0
-			}
+			country_event = newengland.1065
 			add_political_power = 20
 			hidden_effect = {
 				country_event = {
@@ -15221,6 +15253,13 @@ focus = {
 			swap_ideas = {
 						remove_idea = NEE_radsoc_cosmic 
 						add_idea = NEE_culutral_cosmic_racism
+			}
+			hidden_effect = {
+				remove_ideas = NEE_cultural_racism 
+				country_event = {
+					id = lovecraftflavor.61
+					days = 32
+				}
 			}
 		}
 	}
@@ -16432,7 +16471,7 @@ focus = {
 	
 	focus = {
 		id = NEE_new_moralism
-		icon = GFX_goal_goal_CAN_negotiate_american_peace
+		icon = GFX_goal_CAN_negotiate_american_peace
 		cost = 5.00
 		prerequisite = {
 			focus = NEE_back_in_business
@@ -16513,8 +16552,6 @@ focus = {
 			increase_ruling_party_popularity_by_5 = yes
 			add_political_power = 50
 			add_war_support = 0.05
-			add_popularity = { ideology = paternal_autocrat popularity = -0.05 }
-			add_popularity = { ideology = authoritarian_democrat popularity = -0.03 }
 		}
 	}
 	
@@ -16795,7 +16832,6 @@ focus = {
 		}
 		available = {
 			is_subject = no
-			is_in_faction = no
 		}
 		relative_position_id = NEE_fortress_america
 		x = -1
@@ -16807,10 +16843,6 @@ focus = {
 
 		available_if_capitulated = no
 		cancel_if_invalid = yes
-
-		bypass = {
-			is_in_faction = yes
-		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus NEE_business_of_neutrality"
@@ -17011,13 +17043,13 @@ focus = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus NEE_league_of_anti_imperialism"
 			unlock_decision_category_tooltip = USA_american_anti_imperialism
-			add_ideas = USA_league_of_america_1
+			add_ideas = NEE_league_of_america_1
 		}
 	}
 	
 	focus = {
 		id = NEE_warn_japan
-		icon = GFX_goal_goal_CAN_stop_japanese_imperialism
+		icon = GFX_goal_CAN_stop_japanese_imperialism
 		cost = 1
 		prerequisite = {
 			focus = NEE_league_of_anti_imperialism
@@ -17157,8 +17189,8 @@ focus = {
 			log = "[GetDateText]: [Root.GetName]: Focus NEE_moral_support"
 			add_war_support = 0.03
 			swap_ideas = {
-			remove_idea = USA_league_of_america_1
-			add_idea = USA_league_of_america_2
+			remove_idea = NEE_league_of_america_1
+			add_idea = NEE_league_of_america_2
 			}
 		}
 	}
@@ -17396,8 +17428,8 @@ focus = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus NEE_defensive_navy"
 			swap_ideas = {
-				remove_idea = USA_league_of_america_2
-				add_idea = USA_league_of_america_3
+				remove_idea = NEE_league_of_america_2
+				add_idea = NEE_league_of_america_3
 			}
 			navy_experience = 10
 			add_doctrine_cost_reduction = {
@@ -17436,19 +17468,6 @@ focus = {
 		}
 		available = {
 			is_subject = no
-			OR = {
-				has_socialist_government = no
-				is_in_faction_with = CAN
-			}
-			NOT = {
-				CAN = {
-					is_subject_of = NEE
-				}
-				ENT = {
-					has_war_with = NEE
-				}
-				has_country_flag = NEE_broken_ties_with_brits_tt
-			}
 		}
 		relative_position_id = NEE_back_in_business
 		x = 0
@@ -17494,13 +17513,16 @@ focus = {
 		}
 		available = {
 			is_subject = no
+			OR = {
+				has_socialist_government = no
+				is_in_faction_with = CAN
+			}
 			NOT = {
-				CAN = {
-					is_subject_of = NEE
-				}
-				ENT = {
-					has_war_with = NEE
-				}
+			ENT = {
+			is_puppet_of = NEE
+			}
+			has_war_with = NEE
+			has_country_flag = NEE_broken_ties_with_brits_tt
 			}
 		}
 		relative_position_id = NEE_new_interventionism
@@ -18619,12 +18641,6 @@ focus = {
 		available = {
 			is_subject = no
 			is_in_faction = no
-			OR = {
-			has_government = authoritarian_democrat
-			has_government = paternal_autocrat
-			has_government = national_populist
-                        has_country_flag = NEE_MILITARY_IN_POWER
-			}
 		}
 		relative_position_id = NEE_back_in_business
 		x = 7
@@ -19390,7 +19406,12 @@ focus = {
 			type = annex_everything
 			target = LEC
 			}
+			add_state_claim = 728
+			add_state_claim = 729
 			add_state_claim = 592
+			add_state_claim = 326
+			add_state_claim = 801
+			add_state_claim = 802
 		}
 	}
 	focus = {

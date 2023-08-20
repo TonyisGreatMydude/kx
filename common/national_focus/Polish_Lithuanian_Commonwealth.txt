@@ -3785,12 +3785,10 @@ focus_tree = {
 			NOT = {
 				CAN = {
 					is_in_faction_with = RUS
-					is_in_faction_with = SOV
 					is_in_faction_with = GER
 				}
 				GBR = {
 					is_in_faction_with = RUS
-					is_in_faction_with = SOV
 					is_in_faction_with = GER
 				}
 			}
@@ -4326,17 +4324,6 @@ focus_tree = {
 					type = annex_everything
 				}
 			}
-			
-			if = {
-				limit = {
-					soviets_exist = yes
-				}
-				declare_war_on = {
-					target = SOV
-					type = annex_everything
-				}
-			}
-			
 			if = {
 				limit = {
 					NOT = {
@@ -4498,7 +4485,13 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus PLC_rocket_experiments"
-			
+
+			every_state = {
+				limit = {
+					is_core_of = GAL
+				}
+				add_core_of = POL
+			}
 			if = {
 				limit = {
 					country_exists = GAL
@@ -4599,8 +4592,12 @@ focus_tree = {
 					}
 				}
 			}
-			add_state_core = 81
-			add_state_core = 46
+			add_state_core = 80
+			add_state_core = 713
+			add_state_core = 1320
+			add_state_core = 78
+			add_state_core = 1222
+			add_state_core = 79
 		}
 	}
 	

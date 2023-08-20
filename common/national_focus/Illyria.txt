@@ -3195,7 +3195,7 @@ focus_tree = {
 				has_government = radical_socialist
 				has_government = syndicalist
 				has_government = totalist
-            }
+			}
 		}
 		relative_position_id = CRO_socdem_elected
 		cost = 5
@@ -3347,6 +3347,7 @@ focus_tree = {
 			add_state_core = 1105
 			add_state_core = 1144
 			add_state_core = 736
+			add_state_core = 1097
 		}
 	}
 	

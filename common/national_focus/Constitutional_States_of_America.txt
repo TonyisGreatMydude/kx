@@ -4049,7 +4049,6 @@ focus_tree = {
 				}
 				division_template = {
 					name = "Patton Tank Division"
-					is_locked = no
 					division_names_group = USA_ARM_01
 					regiments = {
 						light_armor = { x = 0 y = 0 }
@@ -7018,6 +7017,12 @@ focus_tree = {
 			type = annex_everything
 			target = MEX
 			}
+			every_state = {
+			limit = {
+					is_core_of = MEX
+			}
+			add_claim_by = COR
+			}
 		}
 	}
 	
@@ -7057,6 +7062,12 @@ focus_tree = {
 			type = annex_everything
 			target = CUB
 			}
+			every_state = {
+			limit = {
+					is_core_of = CUB
+			}
+			add_claim_by = COR
+			}
 		}
 	}
 	
@@ -7072,6 +7083,8 @@ focus_tree = {
 		}
 		available = {
 			has_government = national_populist
+			owns_state = 315
+			owns_state = 277
 		}
 		cancel_if_invalid = yes
 		available_if_capitulated = yes
@@ -7083,13 +7096,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus COR_complete_the_golden_circle"
-			add_war_support = 0.05
-			add_stability = 0.05
-			create_wargoal = {
-			type = annex_everything
-			target = DOM
-			}
-			add_popularity = { ideology = national_populist popularity = 0.05 }
+			country_event = constate.4094
+			custom_effect_tooltip = COR_golden_circle_tooltip
 		}
 	}
 	
@@ -8670,7 +8678,7 @@ focus_tree = {
 			add_ideas = COR_Patton_plan1
 			add_doctrine_cost_reduction = {
 				name = COR_Spearhead_Doctrine
-				cost_reduction = 1.5
+				cost_reduction = 0.5
 				uses = 1
 				category = cat_mobile_warfare
 			}
@@ -8728,7 +8736,7 @@ focus_tree = {
 			}
 			add_doctrine_cost_reduction = {
 				name = COR_Spearhead_Doctrine
-				cost_reduction = 0.75
+				cost_reduction = 0.5
 				uses = 1
 				category = cat_mobile_warfare
 			}
@@ -8901,7 +8909,7 @@ focus_tree = {
 			}
 			add_doctrine_cost_reduction = {
 				name = COR_Spearhead_Doctrine
-				cost_reduction = 1.5
+				cost_reduction = 0.5
 				uses = 3
 				category = cat_mobile_warfare
 			}
@@ -8940,7 +8948,7 @@ focus_tree = {
 			add_ideas = COR_Moseley_plan1
 			add_doctrine_cost_reduction = {
 				name = COR_Extensive_Planning
-				cost_reduction = 1.5
+				cost_reduction = 0.5
 				uses = 1
 				category = cat_grand_battle_plan
 			}
@@ -8983,7 +8991,7 @@ focus_tree = {
 			}
 			add_doctrine_cost_reduction = {
 				name = COR_Extensive_Planning
-				cost_reduction = 1.5
+				cost_reduction = 0.5
 				uses = 1
 				category = cat_grand_battle_plan
 			}
@@ -9042,7 +9050,7 @@ focus_tree = {
 			}
 			add_doctrine_cost_reduction = {
 				name = COR_Extensive_Planning
-				cost_reduction = 1.5
+				cost_reduction = 0.5
 				uses = 2
 				category = cat_grand_battle_plan
 			}
@@ -9144,7 +9152,7 @@ focus_tree = {
 			add_ideas = COR_mcnarney_advisory_idea
 			add_doctrine_cost_reduction = {
 				name = COR_Overwhelming_Firepower
-				cost_reduction = 1.5
+				cost_reduction = 0.5
 				uses = 1
 				category = cat_superior_firepower
 			}
@@ -9355,7 +9363,7 @@ focus_tree = {
 			}
 			add_doctrine_cost_reduction = {
 				name = COR_Overwhelming_Firepower
-				cost_reduction = 2.5
+				cost_reduction = 0.5
 				uses = 1
 				category = cat_superior_firepower
 			}
@@ -9389,7 +9397,7 @@ focus_tree = {
 			add_manpower = 1000
 			add_doctrine_cost_reduction = {
 				name = COR_Overwhelming_Firepower
-				cost_reduction = 1.5
+				cost_reduction = 0.5
 				uses = 2
 				category = cat_superior_firepower
 			}
@@ -9426,7 +9434,7 @@ focus_tree = {
 			add_ideas = COR_wickliffe_plan1
 			add_doctrine_cost_reduction = {
 				name = COR_War_Of_Numbers
-				cost_reduction = 1.5
+				cost_reduction = 0.5
 				uses = 1
 				category = cat_mass_assault
 			}
@@ -11384,14 +11392,37 @@ focus_tree = {
 			has_army_manpower = { size > 250000 }
 			NOT = { country_exists = CAL }
 			OR = {
-			has_government = authoritarian_democrat
 			has_government = paternal_autocrat
 			has_government = national_populist
 			has_country_leader = {
-					ruling_only = yes
-					name = "James F. Byrnes"
-				}
+				ruling_only = yes
+				name = "George Patton"
 			}
+			has_country_leader = {
+				ruling_only = yes
+				name = "James F. Byrnes"
+			}
+			has_country_leader = {
+				ruling_only = yes
+				name = "Harry F. Byrd"
+			}
+			has_country_leader = {
+				ruling_only = yes
+				name = "Strom Thurmond"
+			}
+			has_country_leader = {
+				ruling_only = yes
+				name = "Joseph Raymond McCarthy"
+			}
+			has_country_leader = {
+				ruling_only = yes
+				name = "George C. Wallace"
+			}
+			has_country_leader = {
+				ruling_only = yes
+				name = "Lurleen B. Wallace"
+			}
+			}	
 		}
 
 		ai_will_do = {
@@ -11405,14 +11436,6 @@ focus_tree = {
 		cancel_if_invalid = yes
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus COR_american_empire"
-			add_political_power = -30
-			if = {
-				limit = { 
-				NOT = {
-				has_government = national_populist }
-				}
-				add_stability = -0.05
-			}
 			add_ideas = COR_american_empire
 			add_threat = 10
 			add_popularity = { ideology = national_populist popularity = 0.05 }
@@ -11611,7 +11634,7 @@ focus_tree = {
 			GUA = {
 			is_puppet_of = COR
 			}
-			controls_state = 313
+			313 = { is_owned_by_ROOT_or_subject = yes }
 			}
 		}
 		relative_position_id = COR_american_empire
@@ -11634,7 +11657,7 @@ focus_tree = {
 
 	focus = {
 		id = COR_quebec_issue
-		icon = GFX_goal_goal_CAN_curtail_quebec
+		icon = GFX_goal_CAN_curtail_quebec
 		cost = 1.00
 		prerequisite = {
 			focus = COR_manifest_destiny
@@ -11642,7 +11665,12 @@ focus_tree = {
 		available = {
 			is_major = yes
 			is_subject = no
+			OR = {
+			QUE = {
+			is_puppet_of = COR
+			}
 			controls_state = 466
+			}
 		}
 		relative_position_id = COR_american_empire
 		x = -1
@@ -11788,42 +11816,14 @@ focus_tree = {
 			focus = COR_look_to_the_reichsadler
 		}
 		available = {
-		CAN = {
-		exists = yes
-		is_in_faction_with = NFA
-			}
-		OR = {
-			OR = {
-			has_country_leader = {
-			ruling_only = yes
-			name = "James F. Byrnes"
-				}
-			has_country_leader = {
-			ruling_only = yes
-			name = "Strom Thurmond"
-				}
-			has_country_leader = {
-			ruling_only = yes
-			name = "Joseph Raymond McCarthy"
-				}
-			has_country_leader = {
-			ruling_only = yes
-			name = "William H. Murray"
-				}
-			has_country_leader = {
-			ruling_only = yes
-			name = "George Patton"
-				}
-			}
-			has_democratic_government = yes
-			OR = {
-			has_country_leader = {
-			ruling_only = yes
-			name = "Hiram Wesley Evans"
-			}
-			}
+		is_subject = no
+		NOT = {
+		ENT = {
+		is_puppet_of = COR
 		}
-	}
+		has_war_with = COR
+		}
+	    }
 		relative_position_id = COR_back_in_business
 		x = -7
 		y = 1
@@ -12221,32 +12221,6 @@ focus_tree = {
 		}
 		available = {
 			is_subject = no
-			OR = {
-				OR = {
-					has_country_leader = {
-						ruling_only = yes
-						name = "William H. Murray"
-					}
-					has_country_leader = {
-						ruling_only = yes
-						name = "Richard Russell Jr."
-					}
-					has_country_leader = {
-						ruling_only = yes
-						name = "George Patton"
-					}
-					has_democratic_government = yes
-				}
-				if = {
-					limit = {
-						has_country_leader = {
-							ruling_only = yes
-							name = "Herbert W. Armstrong"
-						}
-					}
-				}
-				has_completed_focus = COR_unite_the_lost_tribes
-			}
 		}
 		relative_position_id = COR_back_in_business
 		x = -2
@@ -12499,28 +12473,8 @@ focus_tree = {
 		}
 		available = {
 			is_subject = no
-			OR = {
-			OR = {
-			has_country_leader = {
-			ruling_only = yes
-			name = "D.C. Stephenson"
-				}
-			has_country_leader = {
-			ruling_only = yes
-			name = "Harry F. Byrd"
-				}
-			has_country_leader = {
-			ruling_only = yes
-			name = "Strom Thurmond"
-				}
-			has_country_leader = {
-			ruling_only = yes
-			name = "Joseph Raymond McCarthy"
-				}
-			has_government = paternal_autocrat
-			has_democratic_government = yes
-				}
-			}
+			NOT = { has_country_leader = { ruling_only = yes name = "Herbert W. Armstrong" } }
+			NOT = { has_country_leader = { ruling_only = yes name = "James F. Byrnes" } }
 		}
 		mutually_exclusive = {
 			focus = COR_american_empire
@@ -12548,17 +12502,6 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus COR_look_to_the_reichsadler"
-			if = {
-				limit = {
-				NOT = {
-				has_country_leader = {
-				ruling_only = yes
-				name = "Charles Lindbergh"
-				}
-				}
-			}
-				add_stability = -0.03
-			}
 			GER = {
 			add_to_faction = COR
 			}

@@ -348,6 +348,7 @@ MEX_international_decisions = {# Foreign Policy
 				has_completed_focus = MEX_PCM_the_lenin_of_the_west
 				has_completed_focus = MEX_mexicaytol
 			}
+			hidden_trigger = { NOT = { has_country_flag = MEX_Cristeros_Victory } }
 			date > 1937.2.2
 		}
 
@@ -869,6 +870,7 @@ MEX_central_american_intervention = {# dealing with central America
 		}
 		visible = {
 			has_country_flag = MEX_can_invade_yuc
+			country_exists = YUC
 		}
 		days_remove = 20
 		fire_only_once = yes
@@ -907,6 +909,7 @@ MEX_central_american_intervention = {# dealing with central America
 			NOT = {
 				has_war_with = YUC
 			}
+			country_exists = YUC
 		}
 		days_remove = 20
 		fire_only_once = yes
@@ -1982,7 +1985,7 @@ MEX_central_american_intervention = {# dealing with central America
 		}
 		fire_only_once = yes
 		cost = 50
-		days_remove 150
+		days_remove = 150
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision MEX_claim_central_america"
 			every_state = {
@@ -2464,6 +2467,17 @@ MEX_central_american_intervention = {# dealing with central America
 				factor = 0
 				any_enemy_country = { is_actual_major = yes }
 			}
+			modifier = {
+				factor = 0
+				ALA = {
+					OR = {
+						is_in_faction_with = ENT
+						is_in_faction_with = JAP
+						is_in_faction_with = AUS
+						is_in_faction_with = INT
+					}
+				}
+			}
 		}
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision MEX_claim_alaska"
@@ -2661,6 +2675,17 @@ MEX_central_american_intervention = {# dealing with central America
 				factor = 0
 				any_enemy_country = { is_actual_major = yes }
 			}
+			modifier = {
+				factor = 0
+				HAW = {
+					OR = {
+						is_in_faction_with = ENT
+						is_in_faction_with = JAP
+						is_in_faction_with = GER
+						is_in_faction_with = INT
+					}
+				}
+			}
 		}
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision MEX_invade_hawaii"
@@ -2830,7 +2855,6 @@ MEX_central_american_intervention = {# dealing with central America
 		icon = generic_prepare_civil_war
 		allowed = { original_tag = MEX }
 		visible = {
-			has_country_flag = MEX_claims_gran_colombia
 			NOT = {
 				country_exists = GUA
 				country_exists = ELS
